@@ -27,6 +27,7 @@ export default function DataEngineeringPage() {
           </>
         }
         highlight="can trust"
+        highlightInline
         text="Connect data engineering, governance, BI, analytics and AI into one continuous discipline—from raw information to trusted decisions."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
         mediaLabel="Trusted data lifecycle"
@@ -230,7 +231,7 @@ export default function DataEngineeringPage() {
       />
 
       <ShaderCta
-        title="Ready to turn your data into a stronger foundation for growth and AI?"
+        title={<>Ready to turn your data into a stronger foundation for <strong>growth and AI?</strong></>}
         text="Let's identify where better data can create the greatest impact."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
       />

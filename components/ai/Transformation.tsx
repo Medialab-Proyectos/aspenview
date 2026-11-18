@@ -97,7 +97,7 @@ export function AitEnable() {
 const ACTION = [
   {
     eyebrow: "Agentic Engineering",
-    video: "/videos/ait-action-1.mp4",
+    video: "/videos/ait-action-1.webm",
     ratio: "1514 / 486",
     maxW: 514,
     title: "Rethink how software gets built.",
@@ -107,7 +107,7 @@ const ACTION = [
   },
   {
     eyebrow: "Agentic Process Automation",
-    video: "/videos/ait-action-2.mp4",
+    video: "/videos/ait-action-2.webm",
     ratio: "1490 / 548",
     maxW: 449,
     title: "Rethink how work gets done.",
@@ -210,7 +210,7 @@ export function AitOutcomes() {
             <article key={o.title} className={styles.outcome}>
               <div className={styles.outcomeMedia} style={{ aspectRatio: o.ratio }}>
                 <video
-                  src={`/videos/ait-results-${i + 1}.mp4`}
+                  src={`/videos/ait-results-${i + 1}.webm`}
                   autoPlay
                   muted
                   loop

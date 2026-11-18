@@ -202,7 +202,7 @@ export function CsWhatWeDo() {
             </span>
             <video
               className={styles.modelVideo}
-              src={`/videos/cs-what-we-do-0${active + 1}.mp4`}
+              src={`/videos/cs-what-we-do-0${active + 1}.webm`}
               autoPlay
               muted
               loop
@@ -269,7 +269,7 @@ export function CsHowItWorks() {
           <div className={styles.stageCard} role="tabpanel">
             <video
               className={styles.stageVideo}
-              src={`/videos/cs-how-it-works-0${active + 1}.mp4`}
+              src={`/videos/cs-how-it-works-0${active + 1}.webm`}
               autoPlay
               muted
               loop

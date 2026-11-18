@@ -125,11 +125,14 @@
   object-fit: contain;
 }
 
+/* Tablet (Figma 1782:12262): 900px tall, 48px top padding, the title breaks before the blue line
+   and the media sits centred under the copy */
 @media (max-width: 1199px) {
   .inner {
-    min-height: 0;
+    min-height: 900px;
     flex-direction: column;
-    padding-block: 96px;
+    gap: 24px;
+    padding-block: 48px;
   }
 
   .copyCol,
@@ -137,15 +140,57 @@
     flex: none;
     width: 100%;
     min-width: 0;
+    max-width: none;
+  }
+
+  .title,
+  .text {
+    max-width: none;
+  }
+
+  .title {
+    line-height: 1.1;
+  }
+
+  .title br {
+    display: none;
+  }
+
+  .highlightBlock {
+    display: block;
+  }
+
+  .media,
+  .mediaImage {
+    align-self: center;
+    min-width: 0;
   }
 
   .media {
-    min-width: 0;
+    width: 602px;
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  /* Figma 1842:16230: the animated illustration scales down to 570px */
+  .mediaImage {
+    width: min(100%, 570px);
   }
 }
 
+/* Mobile (Figma 1800:12808): 680px tall, full-width button */
 @media (max-width: 767px) {
   .inner {
-    padding-block: 64px;
+    min-height: 680px;
+    padding-block: 32px;
+  }
+
+  .actions,
+  .actions > * {
+    width: 100%;
+  }
+
+  .actions > * {
+    justify-content: center;
   }
 }

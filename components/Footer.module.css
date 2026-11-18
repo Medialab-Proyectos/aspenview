@@ -135,10 +135,16 @@
   text-align: right;
 }
 
-@media (max-width: 767px) {
+/* Tablet + mobile (Figma Footer "Property 1=Tablet", 2672:50602): links, cities and logo stacked
+   52px apart, 24px to the divider and the rights line */
+@media (max-width: 1199px) {
+  .inner {
+    gap: 24px;
+  }
+
   .pageLinks {
     flex-direction: column-reverse;
-    gap: 32px;
+    gap: 52px;
   }
 
   .logoSpacer {
@@ -151,11 +157,16 @@
     width: 100%;
   }
 
-  .right {
-    gap: 24px;
+  .logo {
+    width: 206px;
   }
 
-  .logo {
-    width: 200px;
+  .cities {
+    flex-wrap: nowrap;
+  }
+
+  .cities li {
+    font-size: 14px;
+    line-height: normal;
   }
 }

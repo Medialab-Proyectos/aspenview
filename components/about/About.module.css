@@ -136,6 +136,21 @@
 
 .heroTextNarrow { max-width: 440px; }
 
+/* Leadership: copy (610) and the 534 x 498 photo centred in a 406px row, the photo overflowing it */
+.heroTopPhoto {
+  align-items: center;
+  height: 406px;
+}
+
+.heroTopPhoto .heroCopy { max-width: 610px; }
+
+.heroPhoto {
+  flex-shrink: 0;
+  width: 534px;
+  height: 498px;
+  object-fit: cover;
+}
+
 .heroInner {
   position: relative;
   display: flex;
@@ -787,8 +802,13 @@
 }
 
 @media (max-width: 1199px) {
-  .heroInner { min-height: 0; padding-top: 72px; }
   .heroTop { flex-direction: column; }
+  /* Figma 1908:19567: copy and photo share the row 50/50 */
+  .heroTopPhoto { flex-direction: row; gap: 0; }
+  /* Who we are (Figma 1876:13870): the card stays beside the copy in a 406px row */
+  .heroTopAside { flex-direction: row; align-items: center; height: 406px; }
+  .heroTopPhoto .heroCopy { flex: 0 0 50%; }
+  .heroPhoto { width: 50%; height: auto; aspect-ratio: 360 / 336; }
   .leadRow { flex-direction: column; align-items: center; }
   .leadCopy { max-width: none; width: 100%; }
   .aiOperate,
@@ -797,11 +817,27 @@
   .talentCard,
   .econCopy,
   .econCard { max-width: none; min-width: 100%; }
-  .step { flex-basis: 50%; }
-  .ctaInner { padding-block: 160px; }
+  /* Figma 1891:18998: the four 240px steps scroll sideways */
+  .steps {
+    flex-wrap: nowrap;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .steps::-webkit-scrollbar { display: none; }
+  .step { flex: 0 0 240px; min-width: 0; scroll-snap-align: start; }
+  .ctaInner { padding-block: var(--cta-pad-t, 160px); }
 }
 
 @media (max-width: 767px) {
+  /* Figma 1910:20133: photo drops under the copy */
+  .heroInner { min-height: 680px; padding-top: 32px; }
+  .heroTopPhoto { flex-direction: column; align-items: stretch; height: auto; gap: 16px; }
+  .heroTopAside { flex-direction: column; align-items: stretch; height: auto; }
+  .heroTopPhoto .heroCopy { flex: none; }
+  .heroPhoto { width: 100%; }
   .pillar { min-width: 100%; padding: var(--card-s-y) var(--card-s-x); }
   .globe { width: 100%; height: auto; aspect-ratio: 480 / 514.286; }
   .chips { grid-template-columns: minmax(0, 1fr); }
@@ -816,8 +852,11 @@
   .hoursRow { flex-direction: column; align-items: flex-start; }
   .hoursBar { width: 100%; }
   .hoursZones { width: 100%; margin-right: 0; }
-  .step { flex-basis: 100%; padding-right: 0; gap: 24px; }
+  /* Figma 1891:19697: 216px steps; the equation breaks before the blue part */
+  .step { flex-basis: 216px; }
+  .equation strong { display: block; }
+  .pillar { min-height: 0; }
   .econChart { gap: 12px; }
   .block { white-space: normal; text-align: center; padding-inline: 8px; }
-  .ctaInner { padding-block: 96px; }
+  .ctaInner { padding-block: 160px; }
 }

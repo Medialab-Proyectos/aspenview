@@ -55,7 +55,7 @@ export function EnableDimensions({ children }: { children: ReactNode }) {
           <AnimatePresence initial={false}>
             <motion.video
               key={active}
-              src={`/videos/ait-foundation-${active + 1}.mp4`}
+              src={`/videos/ait-foundation-${active + 1}.webm`}
               autoPlay
               muted
               loop
@@ -121,7 +121,7 @@ export function ResponsibleAi() {
           <AnimatePresence initial={false}>
             <motion.video
               key={active}
-              src={`/videos/ait-responsible-${active + 1}.mp4`}
+              src={`/videos/ait-responsible-${active + 1}.webm`}
               autoPlay
               muted
               loop

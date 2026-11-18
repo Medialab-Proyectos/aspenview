@@ -20,7 +20,7 @@ export default function ServicesPage() {
         title="Technology services, re‑engineered for"
         highlight="the agentic era."
         cta={{ label: "Schedule your assessment", href: ROUTES.contact }}
-        media={{ video: "/videos/01-service-offerings.mp4", label: "Service offerings animation" }}
+        media={{ video: "/videos/01-service-offerings.webm", label: "Service offerings animation" }}
       >
         <p>
           <b>AspenView</b> combines specialized expertise, nearshore execution and agentic AI to help organizations

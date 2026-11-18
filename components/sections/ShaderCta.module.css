@@ -73,9 +73,13 @@
   width: 100%;
   font-size: var(--text-main-title);
   font-weight: 300;
-  line-height: 0.93835;
+  line-height: 1.0996;
   letter-spacing: -0.04em;
   text-align: center;
+}
+
+.title strong {
+  font-weight: 700;
 }
 
 .text {
@@ -98,14 +102,32 @@
   .inner {
     padding-block: 160px;
   }
+
+  /* Figma 1638:21682: body copy narrows to 562px under the 720px title */
+  .text {
+    max-width: 562px;
+  }
 }
 
+/* Figma 1638:24323: 80px padding, 16px gaps, full-width 44px button */
 @media (max-width: 767px) {
   .inner {
-    padding-block: 96px;
+    gap: 16px;
+    padding-block: 80px;
+  }
+
+  .text {
+    max-width: none;
+  }
+
+  .actions {
+    width: 100%;
+    height: auto;
   }
 
   .actions a {
+    width: 100%;
+    justify-content: center;
     white-space: normal;
     text-align: center;
   }

@@ -18,7 +18,7 @@ export default function AgenticEngineeringPage() {
         text="Move beyond AI-assisted coding to an engineering model where intelligent agents work across the development lifecycle — while your engineers govern quality, security and outcomes."
         cta="Explore Agentic engineering"
         ctaHref="#the-shift"
-        video="/videos/agentic-engineering-hero.mp4"
+        video="/videos/agentic-engineering-hero.webm"
         ratio="2074 / 790"
         masked={false}
         textWidth={839}

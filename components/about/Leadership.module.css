@@ -300,16 +300,44 @@
 }
 
 @media (max-width: 1199px) {
-  .whoCopy,
-  .whoImg { min-width: 100%; max-width: none; }
-  .whoImg { max-height: none; min-height: 0; }
+  .whoCopy { min-width: 100%; max-width: none; }
+  /* Figma 1908:19611: 440 x 433 photo centred under the copy */
+  .whoImg {
+    flex: none;
+    width: 440px;
+    max-width: 100%;
+    min-width: 0;
+    max-height: none;
+    min-height: 0;
+    margin-inline: auto;
+    aspect-ratio: 440 / 433.3;
+  }
   .leader { min-width: calc(50% - 14px); max-width: none; }
   .bio { height: auto; }
   .bioMedia { width: 40%; }
 }
 
 @media (max-width: 767px) {
-  .leader { min-width: 100%; aspect-ratio: 288 / 360; }
+  .whoImg { width: 100%; }
+
+  /* Figma 1910:20188: the eight 288 x 388 cards run in one swipeable row */
+  .leaders {
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 16px;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .leaders::-webkit-scrollbar { display: none; }
+
+  .leader {
+    flex: 0 0 288px;
+    scroll-snap-align: start;
+  }
   .overlay { padding: 0; }
   .bio {
     flex-direction: column-reverse;
@@ -327,6 +355,27 @@
     mask-image: linear-gradient(0deg, transparent 0%, #000 25%);
   }
   .bioClose { top: 16px; right: 16px; }
-  .advisor { min-width: 100%; padding-inline: 0; }
+  /* Figma 1910:20207: advisors in columns of three, scrolling sideways */
+  .advisors {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-columns: 283px;
+    gap: 16px;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .advisors::-webkit-scrollbar { display: none; }
+
+  .advisor {
+    min-width: 0;
+    padding-inline: 0;
+    scroll-snap-align: start;
+  }
+
   .advisorImg { width: 96px; height: 96px; }
 }

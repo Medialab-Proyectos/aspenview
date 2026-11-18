@@ -197,66 +197,47 @@
   letter-spacing: -0.5px;
 }
 
+/* Tablet + mobile (Figma 1799:12193 / 1823:29642): the desktop strip of 220px steps scrolls sideways */
 @media (max-width: 1199px) {
-  .steps {
-    flex-direction: column;
+  .body {
+    gap: 24px;
+    min-height: 0;
   }
+
+  .steps {
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .steps::-webkit-scrollbar { display: none; }
 
   .step {
-    flex-direction: row;
-    width: 100%;
-    border-bottom: 1px solid var(--aspen-color-border-subtle);
-  }
-
-  .stepTop {
-    width: 140px;
-    flex-shrink: 0;
-    justify-content: center;
-  }
-
-  .line {
-    display: none;
-  }
-
-  .stepBottom {
-    flex: 1 0 0;
-    border-right: 0;
-  }
-
-  .reveal {
-    grid-template-rows: 1fr;
-    opacity: 1;
-  }
-
-  .step:not(.open) .stepBody {
-    color: var(--aspen-color-ink-muted);
-  }
-
-  .step:not(.open) .stepItems {
-    color: var(--aspen-color-brand-primary);
-  }
-
-  .arrow {
-    display: none;
+    flex: 0 0 220px;
+    scroll-snap-align: start;
   }
 
   .noteLabel,
   .noteText {
-    min-width: 100%;
-    max-width: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .stepTop {
-    width: 104px;
-  }
-
-  .iconBox {
-    padding: 16px 14px;
+    flex: 1 1 100%;
+    min-width: 0;
   }
 
   .noteLabel {
+    height: auto;
+    padding: 16px 20px;
     font-size: 24px;
+  }
+
+  .noteLabel img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .noteText {
+    padding: 16px 20px;
+    font-size: var(--text-body);
   }
 }

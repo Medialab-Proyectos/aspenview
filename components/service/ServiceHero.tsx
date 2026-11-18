@@ -14,6 +14,7 @@ export default function ServiceHero({
   video,
   image,
   padY,
+  highlightInline,
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -26,6 +27,8 @@ export default function ServiceHero({
   image?: { src: string; width: number; height: number };
   /** Desktop vertical padding (Figma varies it per page so the hero stays 800px tall) */
   padY?: number;
+  /** Tablet/mobile: keep the highlight on the same line (Figma breaks before it on most pages) */
+  highlightInline?: boolean;
 }) {
   return (
     <section className={heroStyles.hero}>
@@ -54,7 +57,7 @@ export default function ServiceHero({
             </span>
             <div className={styles.textGroup}>
               <h1 className={styles.title}>
-                {title} <strong>{highlight}</strong>
+                {title} <strong className={highlightInline ? undefined : styles.highlightBlock}>{highlight}</strong>
               </h1>
               <p className={styles.text}>{text}</p>
             </div>

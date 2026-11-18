@@ -178,9 +178,10 @@
 }
 
 @media (max-width: 1199px) {
+  /* Figma 1823:25431: 230px photo over two rows of three cards */
   .photoGrid {
     flex: 1 1 100%;
-    height: 360px;
+    height: 230px;
   }
 
   .grid {
@@ -188,34 +189,70 @@
     flex: 1 1 100%;
   }
 
-  .gridRow {
-    flex-wrap: wrap;
+  .gridCard {
+    min-width: 0;
   }
 
+  /* Figma 1797:11849: photo + the three cards stay in one row that scrolls sideways */
   .row {
-    flex-direction: column;
-    gap: 24px;
+    gap: 32px;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
   }
 
-  .photo {
-    width: 100%;
-    height: 320px;
-  }
+  .row::-webkit-scrollbar { display: none; }
+
+  .photo { scroll-snap-align: start; }
 
   .cards {
-    width: 100%;
-    gap: 24px;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    gap: 36px;
   }
 
   .card {
-    height: auto;
-    gap: 32px;
+    flex: 0 0 276px;
+    scroll-snap-align: start;
   }
 }
 
+/* Figma 1805:13344: 235 x 290 photo, 277 x 290 cards */
 @media (max-width: 767px) {
-  .card,
+  .row { gap: 24px; }
+
+  .photo {
+    width: 235px;
+    height: 290px;
+  }
+
+  .cards { gap: 24px; }
+
+  .card {
+    flex-basis: 277px;
+    height: 290px;
+    gap: 32px;
+  }
+
+  /* Figma 1823:29478: the six 220px cards run in one swipeable row */
+  .grid {
+    flex-direction: row;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar { display: none; }
+
+  .gridRow { flex: 0 0 auto; }
+
   .gridCard {
-    flex: 1 1 100%;
+    flex: 0 0 220px;
+    min-height: 246px;
+    scroll-snap-align: start;
   }
 }

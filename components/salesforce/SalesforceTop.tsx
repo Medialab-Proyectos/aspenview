@@ -8,7 +8,7 @@ export function SfHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroMedia} aria-hidden>
-        <video src="/videos/03-salesforce.mp4" autoPlay muted loop playsInline preload="metadata" />
+        <video src="/videos/03-salesforce.webm" autoPlay muted loop playsInline preload="metadata" />
         <span className={styles.heroFade} />
       </div>
       <span className={styles.heroGlow} aria-hidden>

@@ -152,30 +152,38 @@
   line-height: normal;
 }
 
+/* Tablet (Figma 1811:14295): same desktop row inside the 720 column, overflowing to the right as a swipeable strip */
 @media (max-width: 1199px) {
   .cards {
-    flex-wrap: wrap;
     min-height: 0;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
   }
 
-  .mainCard {
-    flex: 1 1 100%;
-    min-width: 0;
-  }
+  .cards::-webkit-scrollbar { display: none; }
 
-  .sideCard {
-    max-width: none;
-    min-width: 0;
-  }
+  .mainCard { flex: 0 0 500px; scroll-snap-align: start; }
+  .sideCard { flex: 0 0 320px; scroll-snap-align: start; }
 }
 
+/* Mobile (Figma 1811:14394): cards stack full width */
 @media (max-width: 767px) {
-  .sideCard {
-    flex: 1 1 100%;
+  .cards {
+    flex-direction: column;
+    gap: 24px;
+    margin-right: 0;
+    padding-right: 0;
+    overflow: visible;
   }
 
-  .mainMedia {
-    height: 240px;
-    padding: 32px;
+  .mainCard,
+  .sideCard {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
   }
 }

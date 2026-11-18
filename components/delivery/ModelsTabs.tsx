@@ -21,7 +21,7 @@ const MODELS: Model[] = [
     name: "ADNT™",
     short: "Dedicated Nearshore Talent",
     title: "AspenView Dedicated Nearshore Talent",
-    video: "/videos/05-model-adnt.mp4",
+    video: "/videos/05-model-adnt.webm",
     body: (
       <>
         <p>
@@ -42,7 +42,7 @@ const MODELS: Model[] = [
     name: "AFMS™",
     short: "Functional Managed Services",
     title: "AspenView Functional Managed Services",
-    video: "/videos/06-model-afms.mp4",
+    video: "/videos/06-model-afms.webm",
     body: (
       <>
         <p>Specialized managed services to optimize specific IT or data processes.</p>
@@ -55,7 +55,7 @@ const MODELS: Model[] = [
     name: "ALMS™",
     short: "Lifecycle Managed Services",
     title: "AspenView Lifecycle Managed Services",
-    video: "/videos/07-model-alms.mp4",
+    video: "/videos/07-model-alms.webm",
     body: (
       <>
         <p>Comprehensive lifecycle managed services for end-to-end digital transformation.</p>

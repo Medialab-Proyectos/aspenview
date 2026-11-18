@@ -23,7 +23,7 @@ export default function SoftwareEngineeringPage() {
         text="Expert engineering talent combined with a disciplined, AI-accelerated delivery model to build, modernize and scale software,  without compromising quality, security or human accountability."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
         mediaLabel="Governed delivery lifecycle"
-        video="/videos/01-software-engineering.mp4"
+        video="/videos/01-software-engineering.webm"
       />
 
       <Challenge
@@ -210,7 +210,7 @@ export default function SoftwareEngineeringPage() {
       />
 
       <ShaderCta
-        title="Have a software priority that needs to move faster?"
+        title={<>Have a software priority that needs to <strong>move faster?</strong></>}
         text="Bring the engineering expertise and AI-enabled delivery model needed to turn it into execution."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
       />

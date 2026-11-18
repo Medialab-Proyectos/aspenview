@@ -50,57 +50,74 @@ export default function Capabilities({ data }: { data: CapabilitiesData }) {
                     type="button"
                     className={`${styles.item} ${i === active ? styles.itemActive : ""}`}
                     aria-pressed={i === active}
-                    onMouseEnter={() => setActive(i)}
+                    onMouseEnter={() => {
+                      if (window.matchMedia("(min-width: 1200px)").matches) setActive(i);
+                    }}
                     onFocus={() => setActive(i)}
                     onClick={() => setActive(i)}
                   >
                     <MaskIcon src={it.icon} size={32} />
                     <span className={styles.itemLabel}>{it.label}</span>
-                    <img alt="" src="/assets/icons/arrow-right-white.svg" width={32} height={32} />
+                    <img alt="" src="/assets/icons/arrow-right-white.svg" width={32} height={32} className={styles.arrowDesktop} />
+                    <img
+                      alt=""
+                      src={`/assets/capabilities/arrow-${i === active ? "up" : "down"}.svg`}
+                      width={32}
+                      height={32}
+                      className={styles.arrowAccordion}
+                    />
                   </button>
                 </h4>
+                {i === active && <Detail item={it} active={i} className={styles.cardInline} />}
               </li>
             ))}
           </ul>
 
-          <div className={styles.card}>
-            <span className={styles.cardGlow} aria-hidden>
-              <img alt="" src="/assets/capabilities/card-glow.svg" />
-            </span>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={active}
-                className={styles.cardContent}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3, ease: [0, 0, 0.58, 1] }}
-              >
-                <div className={styles.cardTop}>
-                  <span className={styles.ring}>
-                    <MaskIcon src={item.icon} size={50} />
-                  </span>
-                  <p className={styles.tag}>{item.tag}</p>
-                </div>
-                <div className={styles.cardBody}>
-                  <div className={styles.cardCopy}>
-                    <p className={styles.cardTitle}>{item.label}</p>
-                    <p className={styles.cardText}>{item.text}</p>
-                  </div>
-                  <ul className={styles.chips}>
-                    {item.chips.map((c, i) => (
-                      <li key={`${c}-${i}`} className={styles.chip}>
-                        <img alt="" src="/assets/icons/dot-bright.svg" width={6} height={6} />
-                        {c}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          <Detail item={item} active={active} className={styles.cardDesktop} />
         </div>
       </div>
     </section>
+  );
+}
+
+/** Detail card; on tablet/mobile it opens inline under the active selector (Figma 1638:24070). */
+function Detail({ item, active, className }: { item: Capability; active: number; className: string }) {
+  return (
+    <div className={`${styles.card} ${className}`}>
+      <span className={styles.cardGlow} aria-hidden>
+        <img alt="" src="/assets/capabilities/card-glow.svg" />
+      </span>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={active}
+          className={styles.cardContent}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: [0, 0, 0.58, 1] }}
+        >
+          <div className={styles.cardTop}>
+            <span className={styles.ring}>
+              <MaskIcon src={item.icon} size={50} />
+            </span>
+            <p className={styles.tag}>{item.tag}</p>
+          </div>
+          <div className={styles.cardBody}>
+            <div className={styles.cardCopy}>
+              <p className={styles.cardTitle}>{item.label}</p>
+              <p className={styles.cardText}>{item.text}</p>
+            </div>
+            <ul className={styles.chips}>
+              {item.chips.map((c, i) => (
+                <li key={`${c}-${i}`} className={styles.chip}>
+                  <img alt="" src="/assets/icons/dot-bright.svg" width={6} height={6} />
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }

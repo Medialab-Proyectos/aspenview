@@ -231,20 +231,52 @@
   white-space: nowrap;
 }
 
+.cardInline,
+.arrowAccordion {
+  display: none;
+}
+
+/* Tablet + mobile (Figma "Componente - capabilities - Tablet/mobile" 1638:24070):
+   an accordion, the white card opens right under the active selector */
 @media (max-width: 1199px) {
   .inner {
     padding-block: var(--pad-section-y);
   }
 
-  .list,
-  .card {
+  .list {
     flex: 1 1 100%;
+    gap: 16px;
     min-width: 0;
   }
 
-  .card {
+  .item {
+    padding: 8px 20px;
+  }
+
+  .itemLabel {
+    padding: 16px 0;
+  }
+
+  .cardDesktop,
+  .arrowDesktop {
+    display: none;
+  }
+
+  .arrowAccordion {
+    display: block;
+  }
+
+  .cardInline {
+    display: flex;
+    min-width: 0;
     height: auto;
-    min-height: 420px;
+    margin-top: 16px;
+  }
+
+  .cardInline .cardContent {
+    justify-content: flex-start;
+    gap: 48px;
+    padding: 24px 32px;
   }
 
   .glow {

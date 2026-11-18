@@ -24,7 +24,7 @@ export function AeShift() {
           <article className={`${n.meaning} ${styles.shiftCard}`}>
             <p className={n.meaningEyebrow}>AI-ASSISTED CODING</p>
             <div className={styles.shiftMedia} style={{ height: 118.524 }}>
-              <video src="/videos/ae-shift-1.mp4" autoPlay muted loop playsInline preload="metadata" aria-hidden />
+              <video src="/videos/ae-shift-1.webm" autoPlay muted loop playsInline preload="metadata" aria-hidden />
             </div>
             <div className={styles.shiftBody}>
               <div className={n.meaningCopy}>
@@ -44,7 +44,7 @@ export function AeShift() {
           <article className={`${n.meaning} ${styles.shiftCard}`}>
             <p className={n.meaningEyebrow}>AGENTIC ENGINEERING</p>
             <div className={styles.shiftMedia} style={{ height: 81.35 }}>
-              <video src="/videos/ae-shift-2.mp4" autoPlay muted loop playsInline preload="metadata" aria-hidden />
+              <video src="/videos/ae-shift-2.webm" autoPlay muted loop playsInline preload="metadata" aria-hidden />
             </div>
             <div className={styles.shiftBody}>
               <div className={n.meaningCopy}>

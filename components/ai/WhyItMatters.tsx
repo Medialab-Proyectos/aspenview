@@ -15,28 +15,28 @@ const QUESTIONS = [
     q: "Where should AI act?",
     title: "Give agents a clear scope.",
     text: "Identify work where agents can reason, execute and coordinate within a defined process.",
-    video: "/videos/native-meaning-2.mp4",
+    video: "/videos/native-meaning-2.webm",
   },
   {
     icon: "why-user",
     q: "Where should people decide?",
     title: "Keep judgment with people.",
     text: "Make the moments for human direction, review and decisions explicit.",
-    video: "/videos/native-model-1.mp4",
+    video: "/videos/native-model-1.webm",
   },
   {
     icon: "why-routing",
     q: "What needs to change around it?",
     title: "Redesign the way work connects.",
     text: "Bring people, processes and information together so AI becomes part of how work gets done.",
-    video: "/videos/native-meaning-1.mp4",
+    video: "/videos/native-meaning-1.webm",
   },
   {
     icon: "why-shield",
     q: "How do we keep it governed?",
     title: "Build control into the process.",
     text: "Define oversight and validation around the actions agents take.",
-    video: "/videos/native-model-5.mp4",
+    video: "/videos/native-model-5.webm",
   },
 ];
 

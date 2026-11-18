@@ -13,7 +13,7 @@ const CARDS = [
     highlight: true,
     title: "Anticipating talent demand",
     body: "Through Aureum, our proactive talent planning framework, we build qualified, offer-ready pipelines ahead of demand, so the right talent is ready when you need it.",
-    video: "/videos/talent-aureum.mp4",
+    video: "/videos/talent-aureum.webm",
     ratio: "640 / 233",
   },
   {
@@ -21,7 +21,7 @@ const CARDS = [
     name: "Vantage",
     title: "Matching talent with precision",
     body: "Our proprietary AI platform, Vantage, combines intelligent matching, technical validation, and candidate verification to accelerate confident selection.",
-    video: "/videos/talent-vantage.mp4",
+    video: "/videos/talent-vantage.webm",
     ratio: "640 / 320",
   },
   {
@@ -29,7 +29,7 @@ const CARDS = [
     name: "RevMax Agile Delivery",
     title: "Accelerating delivery through agility",
     body: "RevMax Agile Delivery connects Talent Acquisition, Sales, and Delivery through a structured, agile process with daily coordination and quality checkpoints.",
-    video: "/videos/talent-process.mp4",
+    video: "/videos/talent-process.webm",
     ratio: "640 / 320",
   },
   {
@@ -37,7 +37,7 @@ const CARDS = [
     name: "Experienced Talent Specialists",
     title: "Expertise behind every decision",
     body: "Our engineering-certified Talent Acquisition specialists work alongside technical experts to assess capabilities, validate quality, and ensure the right fit.",
-    video: "/videos/talent-specialists.mp4",
+    video: "/videos/talent-specialists.webm",
     ratio: "640 / 320",
   },
 ];
@@ -140,7 +140,7 @@ export default function Talent() {
         <div className={`wrap ${styles.qualityInner}`}>
           <div className={styles.qualityMedia}>
             <video
-              src="/videos/quality-a-plus.mp4"
+              src="/videos/quality-a-plus.webm"
               autoPlay
               muted
               loop

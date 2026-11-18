@@ -25,7 +25,7 @@ export default function AiNativePage() {
         }
         cta="Explore our approach"
         ctaHref="#our-approach"
-        video="/videos/ai-native-hero.mp4"
+        video="/videos/ai-native-hero.webm"
         ratio="2296 / 680"
         masked={false}
       />

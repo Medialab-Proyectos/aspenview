@@ -19,6 +19,7 @@ export function AboutHero({
   text,
   bg,
   aside,
+  photo,
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -27,6 +28,8 @@ export function AboutHero({
   bg?: string;
   /* card on the right of the hero copy (Who we are) */
   aside?: ReactNode;
+  /* cut-out photo on the right of the copy (Leadership 2331:25071) */
+  photo?: string;
 }) {
   return (
     <section className={styles.hero}>
@@ -41,13 +44,14 @@ export function AboutHero({
         </span>
       )}
       <div className={`wrap ${styles.heroInner}`}>
-        <div className={styles.heroTop}>
+        <div className={`${styles.heroTop} ${photo ? styles.heroTopPhoto : ""} ${aside ? styles.heroTopAside : ""}`}>
           <div className={styles.heroCopy}>
             <Eyebrow tone="white">{eyebrow}</Eyebrow>
             <h1 className={styles.heroTitle}>{title}</h1>
             <p className={`${styles.heroText} ${aside ? styles.heroTextNarrow : ""}`}>{text}</p>
           </div>
           {aside}
+          {photo && <img alt="" src={photo} className={styles.heroPhoto} />}
         </div>
         <nav className={styles.heroNav} aria-label="About AspenView">
           <img alt="" src={`${A}/hero-line.svg`} className={styles.heroLine} />
@@ -71,6 +75,7 @@ export function AboutCta({
   cta,
   large = false,
   textWidth,
+  tabletPad,
 }: {
   title: ReactNode;
   text: ReactNode;
@@ -78,10 +83,15 @@ export function AboutCta({
   textWidth?: number;
   /* 64px main title (Leadership / Who we are) instead of the 48px one */
   large?: boolean;
+  /* tablet vertical padding (Figma: 260 on Leadership, 160 elsewhere) */
+  tabletPad?: number;
 }) {
   return (
     <section className={styles.cta}>
-      <div className={`wrap ${styles.ctaInner}`}>
+      <div
+        className={`wrap ${styles.ctaInner}`}
+        style={tabletPad ? ({ "--cta-pad-t": `${tabletPad}px` } as React.CSSProperties) : undefined}
+      >
         <div className={styles.ctaCopy}>
           <span className={styles.ctaGlow} aria-hidden>
             <img alt="" src={`${A}/cta-glow.svg`} />

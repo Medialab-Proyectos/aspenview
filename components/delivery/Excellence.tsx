@@ -45,7 +45,7 @@ export function ExHero() {
       <div className={styles.heroTop}>
         <video
           className={styles.heroVideo}
-          src="/videos/delivery-excellence.mp4"
+          src="/videos/delivery-excellence.webm"
           autoPlay
           muted
           loop

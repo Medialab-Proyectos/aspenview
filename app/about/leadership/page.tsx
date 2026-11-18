@@ -15,11 +15,13 @@ export default function LeadershipPage() {
         eyebrow="Leadership"
         title="We've been on the other side of the challenge"
         text="AspenView was built by experienced technology and business leaders who understand what it takes to transform, scale and deliver inside complex organizations."
+        photo="/assets/about/leadership-hero.webp"
       />
       <LeadershipWho />
       <LeadershipExecutives />
       <LeadershipAdvisors />
       <AboutCta
+        tabletPad={260}
         large
         title="Ready to work with a partner who delivers?"
         text="Tell us about the outcome you need. We'll bring the leadership, the talent and the accountability to get you there."

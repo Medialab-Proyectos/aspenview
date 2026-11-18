@@ -9,14 +9,14 @@ const A = "/assets/ai";
 const MEANING = [
   {
     eyebrow: "THE DESIGN",
-    video: "/videos/native-meaning-1.mp4",
+    video: "/videos/native-meaning-1.webm",
     height: 192.733,
     title: "AI-Native",
     text: "Processes designed around the combined capabilities of people + AI — rather than simply adding AI to the way work has always been done.",
   },
   {
     eyebrow: "THE EXECUTION",
-    video: "/videos/native-meaning-2.mp4",
+    video: "/videos/native-meaning-2.webm",
     height: 135.583,
     title: "Agentic",
     text: "AI agents operating within those processes to reason, execute and coordinate work.",
@@ -89,7 +89,7 @@ export function NativeOperating() {
                 </span>
                 <div className={styles.opVideo} style={{ aspectRatio: o.ratio }}>
                   <video
-                    src={`/videos/native-model-${i + 1}.mp4`}
+                    src={`/videos/native-model-${i + 1}.webm`}
                     autoPlay
                     muted
                     loop

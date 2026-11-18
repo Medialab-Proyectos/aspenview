@@ -52,7 +52,7 @@ export default function Nearshore() {
           </div>
           <div className={styles.media}>
             <video
-              src="/videos/nearshore-colombia.mp4"
+              src="/videos/nearshore-colombia.webm"
               autoPlay
               muted
               loop

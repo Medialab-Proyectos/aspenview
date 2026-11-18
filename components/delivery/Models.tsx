@@ -10,7 +10,7 @@ export function MdHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroMedia} aria-hidden>
-        <video src="/videos/01-hero-service-delivery.mp4" autoPlay muted loop playsInline preload="metadata" />
+        <video src="/videos/01-hero-service-delivery.webm" autoPlay muted loop playsInline preload="metadata" />
         <span className={styles.heroFade} />
       </div>
       <img alt="" src={`${A}/models-hero-ellipse.svg`} className={styles.heroEllipse} aria-hidden />
@@ -39,19 +39,19 @@ export function MdHero() {
 /* ---------- How we deliver value (2804:25292) ---------- */
 const VALUE = [
   {
-    video: "/videos/02-nearshore-expertise.mp4",
+    video: "/videos/02-nearshore-expertise.webm",
     caption: "COLOMBIA · ARGENTINA",
     title: "Nearshore IT Expertise",
     text: "Scalable and cost-effective IT teams based in Colombia and Argentina.",
   },
   {
-    video: "/videos/03-tailored-engagement.mp4",
+    video: "/videos/03-tailored-engagement.webm",
     caption: "ADNT · AFMS · ALMS",
     title: "Tailored Engagement Models",
     text: "Flexible delivery based on your business needs.",
   },
   {
-    video: "/videos/04-delivery-excellence.mp4",
+    video: "/videos/04-delivery-excellence.webm",
     caption: "RELIABILITY · TRANSPARENCY · IMPACT",
     title: "Proven Delivery Excellence",
     text: "A structured approach that ensures reliability, transparency and measurable impact.",
