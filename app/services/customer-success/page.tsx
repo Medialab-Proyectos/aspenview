@@ -18,6 +18,7 @@ export default function CustomerSuccessPage() {
       <CsHowItWorks />
       <CsCapabilities />
       <ShaderCta
+        mobilePad={160}
         title="Stronger customer relationships start with the right people."
         text="Let's explore how experienced Customer Success professionals can help you improve retention, scale your capabilities, and create more value from every customer relationship."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}

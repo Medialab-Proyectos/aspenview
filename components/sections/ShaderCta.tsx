@@ -12,10 +12,13 @@ export default function ShaderCta({
   title,
   text,
   cta,
+  mobilePad,
 }: {
   title: ReactNode;
   text: ReactNode;
   cta: { label: string; href: string };
+  /* mobile vertical padding (Figma: 80 on most pages, 160 on Customer Success) */
+  mobilePad?: number;
 }) {
   return (
     <section className={styles.cta}>
@@ -23,7 +26,10 @@ export default function ShaderCta({
       <span className={styles.grid} aria-hidden>
         <img alt="" src="/assets/pagehero/cta-grid.svg" />
       </span>
-      <div className={styles.inner}>
+      <div
+        className={styles.inner}
+        style={mobilePad ? ({ "--cta-pad-m": `${mobilePad}px` } as React.CSSProperties) : undefined}
+      >
         <div className={styles.copy}>
           <span className={styles.glow} aria-hidden>
             <img alt="" src="/assets/home/cta-glow.svg" />

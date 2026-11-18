@@ -864,6 +864,8 @@
   .value,
   .valuesRowWide .value { flex: 0 0 320px; min-width: 0; height: 416px; scroll-snap-align: start; }
   .team { flex-wrap: nowrap; justify-content: flex-start; gap: 8px; margin-right: calc(-1 * var(--margin)); padding-right: var(--margin); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
+  /* the team strip is itself the full-width .wrap, so it scrolls without the bleed margin */
+  .team.team { margin-right: 0; }
   .teamCard { flex: 0 0 295px; max-width: none; min-width: 0; scroll-snap-align: start; }
   .horizonInner { height: 520px; }
   .testimonialsCopy { min-width: 100%; max-width: none; }

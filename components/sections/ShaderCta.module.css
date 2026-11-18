@@ -113,7 +113,7 @@
 @media (max-width: 767px) {
   .inner {
     gap: 16px;
-    padding-block: 80px;
+    padding-block: var(--cta-pad-m, 80px);
   }
 
   .text {

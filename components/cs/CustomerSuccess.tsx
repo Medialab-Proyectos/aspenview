@@ -43,7 +43,7 @@ export function CsHero() {
             technology companies drive product adoption, strengthen retention, and grow customer accounts.
           </p>
         </div>
-        <PrimaryButton href={ROUTES.contact} arrow>
+        <PrimaryButton href={ROUTES.contact} arrow className={styles.heroBtn}>
           Talk to our team
         </PrimaryButton>
       </div>

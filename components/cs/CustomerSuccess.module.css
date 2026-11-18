@@ -679,20 +679,40 @@
 
 @media (max-width: 1199px) {
   .heroInner {
-    min-height: 0;
     padding-block: 120px;
   }
 
+  /* Figma 2906:57908: the three challenge cards (367px) stay in one swipeable row */
   .challenge {
-    flex-direction: column;
+    max-width: none;
+    border-radius: var(--aspen-radius-lg) 0 0 var(--aspen-radius-lg);
+    margin-right: calc(-1 * var(--margin)); padding-right: var(--margin); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
   }
 
-  .challengeDivider {
-    display: none;
+  .challenge::-webkit-scrollbar,
+  .pills::-webkit-scrollbar { display: none; }
+
+  .challengeCell {
+    flex: 0 0 367px;
+    scroll-snap-align: start;
   }
 
-  .challengeCell + .challengeCell {
-    border-top: 1px solid #fff;
+  /* Figma 2906:57946: capability selectors (270px) scroll sideways above the card */
+  .pills {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-width: none;
+    margin-right: calc(-1 * var(--margin)); padding-right: var(--margin); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+  }
+
+  .pillHeading {
+    flex: 0 0 270px;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  .pill {
+    height: 67px;
   }
 
   .models {
@@ -726,7 +746,14 @@
     min-width: 150px;
   }
 
-  .pillHeading {
-    min-width: 100%;
+  /* Figma 2906:57882: 633px hero, full-width button */
+  .heroInner {
+    min-height: 633px;
+    padding-block: 162px 32px;
+  }
+
+  .heroBtn {
+    width: 100%;
+    justify-content: center;
   }
 }
