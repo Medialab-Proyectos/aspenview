@@ -1,14 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+// Roboto variable (latin, wght 300–700) self-hosted so builds never depend on Google Fonts at build time
+const roboto = localFont({
+  src: "./fonts/roboto-latin-variable.woff2",
+  weight: "300 700",
+  style: "normal",
   display: "swap",
   variable: "--font-roboto",
+  fallback: ["system-ui", "Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
