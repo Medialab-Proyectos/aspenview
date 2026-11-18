@@ -1,0 +1,44 @@
+.logo {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+  /* Width drives the size; Figma lockup ratio is 211 × 40 */
+  aspect-ratio: 211 / 40;
+}
+
+.piece {
+  position: absolute;
+  display: block;
+}
+
+.piece img,
+.divider img,
+.markInnerBlue img,
+.markInnerWhite img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.divider {
+  position: absolute;
+  inset: 0 -1.25px;
+}
+
+.mark {
+  position: absolute;
+  inset: 9.52% 2.05% 10.78% 86.77%;
+  overflow: hidden;
+}
+
+.markInnerBlue {
+  position: absolute;
+  inset: -1.36% -0.16% -0.12% -0.16%;
+}
+
+.markInnerWhite {
+  position: absolute;
+  inset: -1.11% -0.13% 0 -0.13%;
+}

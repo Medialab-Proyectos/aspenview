@@ -1,0 +1,93 @@
+.maskIcon {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Eyebrow */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--aspen-color-brand-primary);
+}
+
+.eyebrowWhite {
+  color: #fff;
+}
+
+.eyebrowSoft {
+  color: var(--aspen-color-brand-soft);
+}
+
+.eyebrowLine {
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.eyebrowText {
+  padding: 8px 24px 8px 0;
+  font-size: var(--text-body-variable);
+  line-height: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 1199px) {
+  .eyebrowLine {
+    height: 2px;
+  }
+}
+
+/* Primary button */
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-radius: 32px;
+  background: var(--aspen-color-brand-primary);
+  color: var(--aspen-color-neutral-white);
+  font-weight: 600;
+  font-size: var(--buttons-text-size);
+  line-height: 1.36;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+
+.primary:hover {
+  background: var(--aspen-color-brand-bright);
+  color: #fff;
+}
+
+.primary img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Link button */
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-radius: 32px;
+  color: var(--aspen-color-brand-primary);
+  font-weight: 600;
+  font-size: var(--buttons-text-size);
+  line-height: 1.36;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+

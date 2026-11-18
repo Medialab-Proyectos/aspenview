@@ -1,0 +1,82 @@
+.band {
+  overflow: hidden;
+  background: var(--aspen-color-brand-primary);
+  color: #fff;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gutter);
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: var(--gutter) var(--margin);
+}
+
+.lead {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: 16px;
+  min-width: 310px;
+}
+
+.iconRing {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 99px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.title {
+  flex: 1 0 0;
+  max-width: 688px;
+  min-width: 0;
+  font-size: var(--text-big-title);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.text {
+  flex: 1 0 0;
+  max-width: 514px;
+  min-width: 310px;
+  font-size: var(--text-body-large);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 179px;
+  padding: 12px 24px;
+  border: 1.5px solid var(--aspen-color-brand-primary);
+  border-radius: 32px;
+  background: #fff;
+  color: var(--aspen-color-brand-primary);
+  font-size: var(--buttons-text-size);
+  font-weight: 600;
+  line-height: 1.36;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .lead,
+  .text {
+    min-width: 100%;
+  }
+}

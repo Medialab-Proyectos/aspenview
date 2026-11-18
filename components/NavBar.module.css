@@ -1,0 +1,378 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 24px 74px -30px rgba(0, 0, 0, 0.35);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 16px var(--margin);
+  height: var(--nav-height);
+}
+
+.logoLink {
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 211px;
+}
+
+.desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.item {
+  position: relative;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 0;
+  color: var(--aspen-color-ink-strong);
+  font-size: 16px;
+  line-height: 1.48;
+  letter-spacing: -0.32px;
+  white-space: nowrap;
+  transition: color 0.2s var(--ease-out);
+}
+
+.navBtnWide {
+  gap: 12px;
+  line-height: 1.36;
+  letter-spacing: -0.5px;
+}
+
+.navBtn:hover,
+.active {
+  color: var(--aspen-color-brand-primary);
+}
+
+.chev {
+  transition: transform 0.2s var(--ease-out);
+}
+
+.active .chev {
+  transform: rotate(180deg);
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: var(--aspen-radius-full);
+  background: #fff;
+  color: var(--aspen-color-ink-strong);
+  transition: color 0.2s var(--ease-out);
+}
+
+.langBtn:hover,
+.langBtn.active {
+  color: var(--aspen-color-brand-primary);
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 127px;
+  padding: 12px 24px;
+  border-radius: 32px;
+  background: var(--aspen-color-brand-primary);
+  color: var(--aspen-color-neutral-white);
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.contact:hover {
+  background: var(--aspen-color-brand-bright);
+  color: #fff;
+}
+
+/* Dropdown overlays */
+.dropdown {
+  position: absolute;
+  top: 53.5px;
+  z-index: 10;
+}
+
+/* Bridge the gap between the trigger and the overlay so hover doesn't drop */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -24px;
+  height: 24px;
+}
+
+.ddServices,
+.ddSimple {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  padding: 16px 40px 24px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 24px 74px -30px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.ddSimple {
+  box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.2);
+}
+
+.ddServices {
+  gap: 64px;
+  width: 410px;
+}
+
+.ddCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1 0 0;
+}
+
+.ddColFixed {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ddHead {
+  display: block;
+  padding: 4px 0;
+  color: var(--aspen-color-brand-primary);
+  font-size: 16px;
+  line-height: 1.48;
+  letter-spacing: -0.32px;
+}
+
+.ddList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ddItem {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  color: var(--aspen-color-ink-strong);
+  font-size: 16px;
+  line-height: 1.48;
+  letter-spacing: -0.32px;
+  text-align: left;
+  transition: color 0.2s var(--ease-out);
+}
+
+.ddItem:hover {
+  color: var(--aspen-color-brand-primary);
+}
+
+/* Burger */
+.burger {
+  display: none;
+  width: 28px;
+  height: 37px;
+  padding: 4px 0;
+}
+
+.burger img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1199px) {
+  .desktop {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .logo {
+    width: 170px;
+  }
+}
+
+/* Sidebar */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(16, 16, 16, 0.3);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 0 40px -12px rgba(0, 0, 0, 0.2);
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+.sbTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 24px;
+  width: 100%;
+}
+
+.sbClose button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 28px;
+  padding: 4px 0;
+}
+
+.sbList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.sbGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sbGroupBtn,
+.sbLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0;
+  color: var(--aspen-color-ink-strong);
+  font-size: 16px;
+  line-height: 1.48;
+  letter-spacing: -0.32px;
+  transition: color 0.2s var(--ease-out);
+}
+
+.sbLink {
+  line-height: 1.4;
+}
+
+.sbGroupOpen {
+  color: var(--aspen-color-brand-primary);
+}
+
+.sbChev {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.sbGroupOpen .sbChev {
+  transform: rotate(180deg);
+}
+
+.sbSub {
+  overflow: hidden;
+}
+
+.sbSubLink {
+  display: block;
+  padding: 8px 12px;
+  color: var(--aspen-color-ink-strong);
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  transition: color 0.2s var(--ease-out);
+}
+
+.sbSubLink:hover {
+  color: var(--aspen-color-brand-primary);
+}
+
+.sbLang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 10px;
+  border-radius: var(--aspen-radius-full);
+  background: #fff;
+  box-shadow: 0 1px 6px -2px rgba(0, 0, 0, 0.2);
+  color: var(--aspen-color-ink-strong);
+  font-size: 16px;
+  line-height: 1.48;
+  letter-spacing: -0.32px;
+}
+
+.sbContact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 24px;
+  border-radius: 32px;
+  background: var(--aspen-color-brand-primary);
+  color: var(--aspen-color-neutral-white);
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.sbContact:hover {
+  background: var(--aspen-color-brand-bright);
+}
+
+.sbFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.sbLine {
+  width: 100%;
+  height: 1px;
+}
+
+.sbFooter p {
+  width: 100%;
+  padding: 8px 24px 24px;
+  color: var(--aspen-color-brand-primary);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.12px;
+}

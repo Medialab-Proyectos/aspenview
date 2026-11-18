@@ -1,0 +1,151 @@
+.glowBottom {
+  bottom: -443px;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gutter);
+  max-width: 1440px;
+  min-height: 800px;
+  margin-inline: auto;
+  padding: var(--hero-pad-y, 162px) var(--margin);
+}
+
+.copyCol {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-title-to-text);
+  min-width: 500px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrowLine {
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.eyebrowText {
+  padding: 8px 24px 8px 0;
+  font-size: var(--text-body-variable);
+  line-height: normal;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+}
+
+.title {
+  max-width: 640px;
+  font-size: var(--text-main-title);
+  font-weight: 300;
+  line-height: 0.93835;
+  letter-spacing: -0.04em;
+}
+
+.title strong {
+  color: var(--aspen-color-brand-primary);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.text {
+  max-width: 640px;
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mediaCol {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mediaLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--aspen-color-brand-soft);
+  font-size: 14px;
+  line-height: normal;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mediaLine {
+  width: 31px;
+  height: 1px;
+}
+
+.media {
+  width: 100%;
+  min-width: 400px;
+  min-height: 257.14px;
+  aspect-ratio: 1400 / 900;
+  object-fit: cover;
+}
+
+.mediaImage {
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 1199px) {
+  .inner {
+    min-height: 0;
+    flex-direction: column;
+    padding-block: 96px;
+  }
+
+  .copyCol,
+  .mediaCol {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .media {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    padding-block: 64px;
+  }
+}

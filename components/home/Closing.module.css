@@ -1,0 +1,276 @@
+/* Careers */
+.careers {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.careersBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.careersBg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.careersShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(12, 26, 40, 0) 14.904%, rgba(12, 26, 40, 0.8) 54.808%);
+}
+
+.careersInner {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.careersCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 688px;
+  padding: 180px var(--margin);
+}
+
+.careersTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 33px;
+}
+
+.careersHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+}
+
+.careersHead > :first-child > :last-child {
+  padding-block: 0;
+}
+
+.rooted {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1208 / 239;
+  overflow: hidden;
+}
+
+.rooted img {
+  position: absolute;
+  left: -17.38%;
+  top: -269.46%;
+  width: 132.62%;
+  height: 670.29%;
+}
+
+.careersText {
+  width: 100%;
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.careersCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.careersTitle {
+  width: 100%;
+  font-size: var(--text-subtitle-large);
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+/* Banner 2 */
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter) var(--margin);
+  overflow: hidden;
+  background: var(--aspen-color-ink-strong);
+}
+
+.patron {
+  position: absolute;
+  width: 256.177px;
+  height: 182px;
+  pointer-events: none;
+}
+
+.patron img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 182px;
+  height: 256.177px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.patronRight {
+  right: -16.18px;
+  top: -50.65px;
+}
+
+.patronLeft {
+  left: -73px;
+  top: -2.65px;
+}
+
+.bannerText {
+  position: relative;
+  flex: 1 0 0;
+  max-width: 1248px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.bannerText b {
+  font-weight: 700;
+}
+
+.bright {
+  color: var(--aspen-color-brand-bright);
+}
+
+/* CTA */
+.cta {
+  overflow: hidden;
+  background: var(--aspen-color-ink-strong);
+  color: #fff;
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  max-width: 1440px;
+  min-height: 658px;
+  margin-inline: auto;
+  padding: var(--pad-section-y) var(--margin);
+}
+
+.ctaCopy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 740px;
+}
+
+.glow {
+  position: absolute;
+  left: calc(50% + 0.5px);
+  top: -88.5px;
+  width: 327px;
+  height: 327px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.glow img {
+  position: absolute;
+  inset: -78.04%;
+  width: 256.08%;
+  height: 256.08%;
+}
+
+.ctaTitle {
+  position: relative;
+  width: 100%;
+  font-size: var(--text-main-title);
+  font-weight: 300;
+  line-height: 0.93835;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.ctaText {
+  position: relative;
+  width: 100%;
+  font-size: var(--text-body-large);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  height: 56px;
+}
+
+@media (max-width: 1199px) {
+  .careersInner {
+    justify-content: center;
+  }
+
+  .careersCol {
+    max-width: none;
+    padding-block: 120px;
+  }
+
+  .careersShade {
+    background: rgba(12, 26, 40, 0.6);
+  }
+
+  .bannerText {
+    font-size: 28px;
+  }
+
+  .ctaInner {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 767px) {
+  .careersCol {
+    padding-block: 80px;
+  }
+
+  .bannerText {
+    font-size: 20px;
+  }
+
+  .ctaInner {
+    min-height: 480px;
+  }
+
+  .ctaActions a {
+    white-space: normal;
+    text-align: center;
+  }
+}

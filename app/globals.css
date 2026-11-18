@@ -1,0 +1,257 @@
+/* AspenView design tokens — mirrors the Figma variable collections
+   "AspenView · Foundations", "AspenView · Semantic" and
+   "Variables for responsive modes" (Desktop / Tablet / Mobile). */
+
+:root {
+  /* Foundations */
+  --aspen-color-brand-primary: #008bc9;
+  --aspen-color-brand-bright: #00afe6;
+  --aspen-color-brand-soft: #99cee8;
+  --aspen-color-brand-pale: #ebf3fc;
+  --aspen-color-ink-muted: #506d89;
+  --aspen-color-ink-pre-dark: #1b3244;
+  --aspen-color-ink-strong: #0c1a28;
+  --aspen-color-surface-base: #ffffff;
+  --aspen-color-surface-subtle: #f6f8ff;
+  --aspen-color-border-subtle: #d9d9d9;
+  --aspen-color-status-success: #47d5a6;
+  --aspen-color-status-warning: #f4c544;
+  --aspen-color-status-error: #d94a4a;
+  --aspen-color-neutral-white: #f8f7fa;
+  --aspen-color-neutral-black: #1e1b2a;
+
+  --aspen-color-text-primary: var(--aspen-color-ink-strong);
+  --aspen-color-text-secondary: var(--aspen-color-ink-muted);
+  --aspen-color-text-on-brand: var(--aspen-color-surface-base);
+
+  --aspen-radius-sm: 4px;
+  --aspen-radius-md: 8px;
+  --aspen-radius-lg: 16px;
+  --aspen-radius-xl: 24px;
+  --aspen-radius-full: 999px;
+
+  /* Responsive — Desktop */
+  --margin: 96px;
+  --gutter: 48px;
+  --content-max: 1248px;
+  --text-special-big-data: 120px;
+  --text-hero-title: 72px;
+  --text-main-title: 64px;
+  --text-x-big-title: 48px;
+  --text-big-title: 40px;
+  --text-subtitle-large: 32px;
+  --text-subtitle: 24px;
+  --text-body-large: 20px;
+  --text-body: 16px;
+  --text-body-small: 14px;
+  --text-body-variable: 20px;
+  --text-body-variable-2: 16px;
+  --buttons-text-size: 16px;
+  --pad-section-y: 64px;
+  --gap-title-to-text: 28px;
+  --gap-subtitle-to-texts: 16px;
+  --card-l-x: 56px;
+  --card-l-y: 40px;
+  --pad-footer-y: 120px;
+  --card-m-x: 48px;
+  --card-m-y: 32px;
+  --card-s-x: 32px;
+  --card-s-y: 24px;
+  --card-xs-x: 24px;
+  --card-xs-y: 18px;
+  --card-xxs-x: 16px;
+  --card-xxs-y: 8px;
+  --gap-content-to-media: 32px;
+
+  --nav-height: 75px;
+  --ease-out: cubic-bezier(0, 0, 0.58, 1);
+}
+
+/* Tablet mode */
+@media (max-width: 1199px) {
+  :root {
+    --margin: 24px;
+    --gutter: 24px;
+    --text-special-big-data: 96px;
+    --text-hero-title: 56px;
+    --text-main-title: 48px;
+    --text-x-big-title: 40px;
+    --text-big-title: 36px;
+    --text-subtitle-large: 28px;
+    --text-subtitle: 24px;
+    --text-body-large: 16px;
+    --text-body: 16px;
+    --text-body-small: 14px;
+    --text-body-variable: 16px;
+    --text-body-variable-2: 16px;
+    --pad-section-y: 48px;
+    --gap-title-to-text: 24px;
+    --gap-subtitle-to-texts: 8px;
+    --card-l-x: 40px;
+    --card-l-y: 32px;
+    --pad-footer-y: 80px;
+    --card-m-x: 32px;
+    --card-m-y: 24px;
+    --card-s-x: 24px;
+    --card-s-y: 18px;
+    --card-xs-x: 20px;
+    --card-xs-y: 16px;
+    --card-xxs-x: 16px;
+    --card-xxs-y: 8px;
+    --gap-content-to-media: 24px;
+    --nav-height: 72px;
+  }
+}
+
+/* Mobile mode */
+@media (max-width: 767px) {
+  :root {
+    --margin: 16px;
+    --gutter: 16px;
+    --text-special-big-data: 64px;
+    --text-hero-title: 36px;
+    --text-main-title: 32px;
+    --text-x-big-title: 32px;
+    --text-big-title: 32px;
+    --text-subtitle-large: 24px;
+    --text-subtitle: 18px;
+    --text-body-large: 16px;
+    --text-body: 16px;
+    --text-body-small: 14px;
+    --text-body-variable: 14px;
+    --text-body-variable-2: 14px;
+    --pad-section-y: 32px;
+    --gap-title-to-text: 16px;
+    --gap-subtitle-to-texts: 8px;
+    --card-l-x: 32px;
+    --card-l-y: 24px;
+    --pad-footer-y: 48px;
+    --card-m-x: 24px;
+    --card-m-y: 18px;
+    --card-s-x: 20px;
+    --card-s-y: 16px;
+    --card-xs-x: 18px;
+    --card-xs-y: 14px;
+    --card-xxs-x: 12px;
+    --card-xxs-y: 8px;
+    --gap-content-to-media: 16px;
+    --nav-height: 69px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-roboto), Roboto, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--aspen-color-ink-strong);
+  background: var(--aspen-color-surface-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--aspen-color-brand-primary);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Section inner wrapper: full-bleed backgrounds, 1440 design width */
+.wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Desktop home stack spacing (Figma frame 1435:10456 itemSpacing = 64) */
+.sp64 {
+  margin-top: 64px;
+}
+
+@media (max-width: 1199px) {
+  .sp64 {
+    margin-top: 0;
+  }
+}

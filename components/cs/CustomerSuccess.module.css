@@ -1,0 +1,732 @@
+/* ---------- Shared ---------- */
+.white {
+  background: #fff;
+}
+
+.pale {
+  background: var(--aspen-color-brand-pale);
+}
+
+.dark {
+  position: relative;
+  overflow: hidden;
+  background: var(--aspen-color-ink-strong);
+  color: #fff;
+}
+
+.sectionInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-content-to-media);
+  padding-block: var(--pad-section-y);
+}
+
+.center {
+  align-items: center;
+}
+
+.reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+}
+
+.reveal > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #0c1a28;
+  color: #fff;
+}
+
+.heroGlowA,
+.heroGlowB,
+.heroGlowC {
+  position: absolute;
+  pointer-events: none;
+}
+
+.heroGlowA {
+  left: calc(50% + 430px);
+  top: 572px;
+  width: 412px;
+  height: 412px;
+}
+
+.heroGlowA img {
+  position: absolute;
+  inset: -36.41%;
+  width: 172.82%;
+  height: 172.82%;
+}
+
+.heroGlowB {
+  left: calc(50% - 659px);
+  top: 560px;
+  width: 228px;
+  height: 228px;
+}
+
+.heroGlowB img {
+  position: absolute;
+  inset: -83.33%;
+  width: 266.66%;
+  height: 266.66%;
+}
+
+.heroGlowC {
+  right: -47px;
+  top: -275px;
+  width: 616px;
+  height: 616px;
+}
+
+.heroGlowC img {
+  position: absolute;
+  inset: -27.6%;
+  width: 155.2%;
+  height: 155.2%;
+}
+
+.heroInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-title-to-text);
+  max-width: 1440px;
+  min-height: 800px;
+  margin-inline: auto;
+  padding: 162px var(--margin);
+  text-align: center;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-subtitle-to-texts);
+}
+
+.heroEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-body-large);
+  text-transform: uppercase;
+}
+
+.heroEyebrow > span:last-child {
+  padding: 8px 24px 8px 0;
+}
+
+.heroLine {
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-main-title);
+  font-weight: 300;
+  line-height: 1.0996;
+  letter-spacing: -0.04em;
+}
+
+.heroTitle strong {
+  font-weight: 700;
+}
+
+.heroText {
+  max-width: 700px;
+  margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts));
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+/* ---------- Challenge ---------- */
+.challenge {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1100px;
+  border-radius: var(--aspen-radius-lg);
+  overflow: hidden;
+}
+
+.challengeCell {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.challengeDivider {
+  width: 2px;
+  margin-inline: -1px;
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+}
+
+.challengeCard {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 64px;
+  min-width: 0;
+  padding: var(--card-m-y) var(--card-xs-x);
+  background: var(--aspen-color-brand-pale);
+  cursor: pointer;
+}
+
+.challengeOpen .reveal {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.challengeHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+}
+
+.challengeTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.challengeTitle {
+  flex: 1 0 0;
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-subtitle-large);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.challengeSubtitle {
+  color: var(--aspen-color-brand-primary);
+  font-size: var(--text-body-large);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  min-height: 2.8em;
+}
+
+.challengeBody {
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.challengeCard:not(.challengeOpen) {
+  gap: 0;
+}
+
+.challengeCard {
+  transition: gap 0.3s var(--ease-out);
+}
+
+/* ---------- What we do ---------- */
+.headerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+  width: 100%;
+}
+
+.expand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  max-width: 700px;
+}
+
+.expandBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--aspen-color-brand-primary);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.expandBtn img {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.rotated {
+  transform: rotate(45deg);
+}
+
+.expandText {
+  overflow: hidden;
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.models {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.modelList {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  max-width: 400px;
+  min-width: 300px;
+  padding: var(--card-s-y) var(--card-xs-x);
+  border-radius: 16px 0 0 16px;
+  background: #fff;
+}
+
+.modelHeading {
+  display: flex;
+  flex: 1 0 0;
+}
+
+.modelTab {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--card-s-x);
+  padding: var(--card-m-y) var(--card-s-x);
+  border-left: 2px solid transparent;
+  border-radius: var(--aspen-radius-lg);
+  background: #fff;
+  color: var(--aspen-color-text-secondary);
+  font-size: var(--text-subtitle);
+  line-height: normal;
+  letter-spacing: -0.02em;
+  text-align: left;
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+
+.modelActive {
+  border-left-color: var(--aspen-color-brand-primary);
+  background: var(--aspen-color-brand-pale);
+  color: var(--aspen-color-brand-primary);
+}
+
+.modelLabel {
+  flex: 1 0 0;
+}
+
+.modelPanel {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 500px;
+  padding: var(--card-m-x) var(--card-s-x);
+  border-radius: 0 16px 16px 0;
+  background: var(--aspen-color-ink-strong);
+  overflow: hidden;
+}
+
+.modelGlow {
+  position: absolute;
+  right: 21px;
+  bottom: 35.32px;
+  width: 175px;
+  height: 175px;
+  pointer-events: none;
+}
+
+.modelGlow img {
+  position: absolute;
+  inset: -97.14%;
+  width: 294.28%;
+  height: 294.28%;
+}
+
+.modelVideo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1216 / 396;
+  object-fit: contain;
+}
+
+.modelCopy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+  max-width: 630px;
+  color: #fff;
+}
+
+.modelTitle {
+  font-size: var(--text-subtitle-large);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.modelText {
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+/* ---------- How it works ---------- */
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+}
+
+.stageRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.stageRow > h3 {
+  flex: 1 0 0;
+  min-width: 170px;
+}
+
+.stageBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: var(--card-xs-y) var(--card-xs-x);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.stageNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border: 1px solid var(--aspen-color-ink-muted);
+  border-radius: 28px;
+  background: #fff;
+  color: var(--aspen-color-text-secondary);
+  font-size: var(--text-subtitle);
+  line-height: normal;
+  letter-spacing: -0.02em;
+  transition: background-color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+
+.stageLabel {
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body-large);
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  transition: color 0.3s var(--ease-out);
+}
+
+.stageActive .stageNum {
+  border-color: var(--aspen-color-brand-primary);
+  background: var(--aspen-color-brand-primary);
+  color: #fff;
+}
+
+.stageActive .stageLabel {
+  color: var(--aspen-color-brand-primary);
+}
+
+.stageCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  gap: var(--card-m-y);
+  padding: var(--card-m-y) var(--card-s-x);
+  border-radius: var(--aspen-radius-lg);
+  background: var(--aspen-color-brand-pale);
+}
+
+.stageVideo {
+  flex: 1 0 0;
+  min-width: 300px;
+  min-height: 145.3px;
+  aspect-ratio: 1148 / 556;
+  object-fit: contain;
+}
+
+.stageCopy {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+  min-width: 300px;
+}
+
+.stageHead {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stageIndex {
+  color: var(--aspen-color-brand-primary);
+  font-size: var(--text-body-large);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.stageTitle {
+  color: var(--aspen-color-text-primary);
+  font-size: var(--text-subtitle-large);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.stageText {
+  color: var(--aspen-color-text-secondary);
+  font-size: var(--text-body-variable);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+/* ---------- Capabilities ---------- */
+.capsHeader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+}
+
+.capsGlow {
+  position: absolute;
+  left: calc(50% + 470.5px);
+  top: 51.5px;
+  width: 327px;
+  height: 327px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.capsGlow img {
+  position: absolute;
+  inset: -78.04%;
+  width: 256.08%;
+  height: 256.08%;
+}
+
+.capsHeading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+}
+
+.capsHeading > :first-child {
+  color: var(--aspen-color-brand-pale);
+}
+
+.capsTitle {
+  font-size: var(--text-x-big-title);
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.03em;
+}
+
+.capsSub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts));
+}
+
+.capsSubtitle {
+  color: var(--aspen-color-brand-bright);
+  font-size: var(--text-subtitle);
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.capsText {
+  max-width: 700px;
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.capsBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-content-to-media);
+  width: 100%;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.pillHeading {
+  display: flex;
+  flex: 1 0 0;
+  max-width: 340px;
+  min-width: 270px;
+}
+
+.pill {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: 16px;
+  height: 72px;
+  padding: var(--card-xxs-y) var(--card-xs-x);
+  border: 0.5px solid var(--aspen-color-brand-pale);
+  border-radius: var(--aspen-radius-xl);
+  background: var(--aspen-color-ink-strong);
+  color: var(--aspen-color-brand-pale);
+  font-size: var(--text-body);
+  line-height: normal;
+  letter-spacing: -0.32px;
+  text-align: left;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.pillActive {
+  background: var(--aspen-color-brand-primary);
+}
+
+.pillLabel {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.capCard {
+  width: 100%;
+  border-radius: var(--aspen-radius-lg);
+  background: #fff;
+}
+
+.capCardInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  gap: var(--gap-content-to-media);
+  padding: var(--card-m-y) var(--card-s-x);
+}
+
+.capImage {
+  flex: 1 0 0;
+  min-width: 280px;
+  max-width: 468.75px;
+  max-height: 300px;
+  min-height: 179.2px;
+  aspect-ratio: 900 / 576;
+  object-fit: cover;
+}
+
+.capCopy {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+  min-width: 280px;
+}
+
+.capTitle {
+  color: var(--aspen-color-text-primary);
+  font-size: var(--text-subtitle-large);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.capText {
+  color: var(--aspen-color-text-secondary);
+  font-size: var(--text-body-variable);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+@media (max-width: 1199px) {
+  .heroInner {
+    min-height: 0;
+    padding-block: 120px;
+  }
+
+  .challenge {
+    flex-direction: column;
+  }
+
+  .challengeDivider {
+    display: none;
+  }
+
+  .challengeCell + .challengeCell {
+    border-top: 1px solid #fff;
+  }
+
+  .models {
+    flex-direction: column;
+  }
+
+  .modelList {
+    max-width: none;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .modelPanel {
+    min-width: 0;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .pills {
+    min-width: 0;
+  }
+
+  .capsGlow {
+    left: auto;
+    right: -160px;
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .stageRow > h3 {
+    flex: 0 0 150px;
+    min-width: 150px;
+  }
+
+  .pillHeading {
+    min-width: 100%;
+  }
+}

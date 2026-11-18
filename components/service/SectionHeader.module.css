@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+}
+
+.title {
+  max-width: 839px;
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-x-big-title);
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.03em;
+}
+
+.title strong {
+  color: var(--aspen-color-brand-primary);
+  font-weight: 700;
+}
+
+.text {
+  max-width: 818px;
+  margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts));
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.text b {
+  color: var(--aspen-color-ink-strong);
+  font-weight: 700;
+}
+
+.text p + p {
+  margin-top: 1.4em;
+}
+
+.dark .title,
+.dark .text {
+  color: #fff;
+  max-width: 700px;
+}

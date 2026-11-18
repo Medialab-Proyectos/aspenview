@@ -1,0 +1,154 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* Base colour of the shader gradient; visible only until/unless WebGPU renders */
+  background: var(--aspen-color-ink-strong);
+  color: #fff;
+}
+
+.shader {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 900px;
+  padding: 40px 0;
+}
+
+.topSpacer {
+  width: 80px;
+  height: 12px;
+}
+
+.stack {
+  display: grid;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.slide {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gutter);
+  padding-inline: var(--margin);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.slideActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.eyebrow {
+  width: 100%;
+  color: var(--aspen-color-brand-soft);
+  font-size: var(--text-body);
+  line-height: normal;
+  letter-spacing: -0.32px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title {
+  width: 100%;
+  max-width: 908px;
+  font-size: var(--text-hero-title);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.title strong {
+  font-weight: 700;
+}
+
+.line {
+  display: block;
+}
+
+.textWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-inline: 72px;
+}
+
+.text {
+  flex: 1 0 0;
+  max-width: 750px;
+  font-size: var(--text-body-variable);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-title-to-text);
+  width: 80px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.5s var(--ease-out);
+}
+
+.dotActive {
+  background: #fff;
+}
+
+@media (max-width: 1199px) {
+  .inner {
+    height: 800px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    height: 600px;
+  }
+
+  .textWrap {
+    padding-inline: 0;
+  }
+
+  .actions a {
+    padding-inline: 22px;
+    white-space: normal;
+    text-align: center;
+  }
+}

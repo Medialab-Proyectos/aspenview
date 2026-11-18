@@ -1,0 +1,161 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--aspen-color-ink-strong);
+  color: #fff;
+}
+
+.glowRight {
+  position: absolute;
+  left: calc(100% - 300px);
+  top: -355px;
+  width: 710px;
+  height: 710px;
+  pointer-events: none;
+}
+
+.glowLeft {
+  position: absolute;
+  left: -412px;
+  top: 104px;
+  width: 730px;
+  height: 730px;
+  pointer-events: none;
+}
+
+.glowRight img {
+  position: absolute;
+  inset: -56.34%;
+  width: 212.68%;
+  height: 212.68%;
+}
+
+.glowLeft img {
+  position: absolute;
+  inset: -54.79%;
+  width: 209.58%;
+  height: 209.58%;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: var(--pad-footer-y) var(--margin);
+}
+
+.pageLinks {
+  display: flex;
+  align-items: flex-start;
+  gap: 52px;
+  width: 100%;
+}
+
+.logos {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+}
+
+.logoSpacer {
+  display: block;
+  width: 168.889px;
+  height: 80px;
+}
+
+.logo {
+  width: 260px;
+  aspect-ratio: 260 / 49.1667;
+}
+
+.right {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 52px;
+  min-width: 0;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+}
+
+.links a {
+  padding: 4px 0;
+  font-size: var(--buttons-text-size);
+  line-height: 1.36;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  transition: color 0.2s var(--ease-out);
+}
+
+.links a:hover {
+  color: var(--aspen-color-brand-bright);
+}
+
+.cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.cities li {
+  padding: 8px 12px;
+  border-radius: 32px;
+  font-size: var(--text-body-variable-2);
+  line-height: 1.1094;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+}
+
+.rights {
+  width: 100%;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .pageLinks {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .logoSpacer {
+    display: none;
+  }
+
+  .logos,
+  .right {
+    flex: none;
+    width: 100%;
+  }
+
+  .right {
+    gap: 24px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+}
