@@ -58,7 +58,7 @@ export default function Nearshore() {
               loop
               playsInline
               preload="metadata"
-              aria-label="Medellín, Colombia"
+              aria-label="Plaza de Bolívar, Bogotá, Colombia"
             />
           </div>
         </div>
