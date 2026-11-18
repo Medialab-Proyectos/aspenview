@@ -588,6 +588,8 @@
 
 @media (max-width: 1199px) {
   .gap { margin-top: 0; }
+  /* Figma 2280:37756: the hero video keeps its own ratio (720 x 213 / 319 on tablet) */
+  .heroMedia { height: auto; margin-top: 0; }
   .enable { row-gap: 32px; }
   .enableCol { max-width: none; min-width: 100%; }
   .dimCard { max-width: none; min-width: 100%; height: auto; gap: 24px; }
@@ -596,15 +598,18 @@
   .resp { flex-direction: column; }
   .respList { max-width: none; }
   .respCard { min-width: 0; }
-  .outcomes { min-height: 0; row-gap: 16px; }
-  .outcome { flex-basis: 33.33%; height: auto; }
+  /* Figma 2272:28068: outcome cards (220px) in one swipeable row */
+  .outcomes { flex-wrap: nowrap; min-height: 0; margin-right: calc(-1 * var(--margin)); padding-right: var(--margin); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
+  .outcomes::-webkit-scrollbar { display: none; }
+  .outcome { flex: 0 0 220px; scroll-snap-align: start; }
   .advantageImg { width: 100%; height: 360px; }
   .advantageCopy { min-width: 100%; }
   .cta { padding-block: 160px; }
+  /* Agentic engineering keeps the 260px padding on tablet (Figma 2300:39394) */
+  .cta.gap { padding-block: 260px; }
 }
 
 @media (max-width: 767px) {
-  .heroMedia { height: auto; aspect-ratio: 1042 / 339; }
   .heroMasked { -webkit-mask-size: 100% 100%; mask-size: 100% 100%; }
   .dims { max-width: none; }
   .dim { white-space: normal; text-align: center; padding-inline: 8px; }
@@ -612,10 +617,11 @@
   .action { padding: var(--card-s-y) var(--card-xs-x); }
   .respItem { padding-block: 16px; }
   .respCard { gap: 24px; padding: var(--card-s-y) var(--card-xs-x); }
-  .outcome { flex-basis: 50%; min-width: 0; }
+  .outcome { flex-basis: 200px; min-width: 0; }
   .advantageImg { height: 260px; border-top-right-radius: 60px; }
   .advantageBtn { width: 100%; }
-  .cta { padding-block: 96px; }
+  .cta,
+  .cta.gap { padding-block: 96px; }
   .ctaRingLg { width: 700px; height: 700px; }
   .ctaRingSm { width: 420px; height: 420px; }
 }

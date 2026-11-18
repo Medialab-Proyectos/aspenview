@@ -513,34 +513,42 @@
 .connectBtn { width: 344px; flex-shrink: 0; }
 
 @media (max-width: 1199px) {
-  .heroInner { padding-block: 120px; }
-  .values { flex-wrap: wrap; justify-content: center; }
-  .value { flex-basis: calc(50% - 8px); max-width: none; }
+  /* Figma 2807:36741: 601px hero */
+  .heroInner { min-height: 601px; padding-block: 127px 48px; }
+  /* Figma 2807:36765 / 36789 / 36804: the card rows become swipeable strips */
+  .values,
+  .diffs,
+  .qualities { flex-wrap: nowrap; justify-content: flex-start; gap: 24px; margin-right: calc(-1 * var(--margin)); padding-right: var(--margin); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
+  .values::-webkit-scrollbar,
+  .diffs::-webkit-scrollbar,
+  .qualities::-webkit-scrollbar { display: none; }
+  .value { flex: 0 0 320px; max-width: none; scroll-snap-align: start; }
+  .diff { flex: 0 0 257px; min-height: 318px; scroll-snap-align: start; }
+  .qualityCard { flex: 0 0 260px; min-height: 300px; scroll-snap-align: start; }
   .tabName { font-size: 24px; }
   .panelDivider { display: none; }
   .panelMedia { max-width: none; min-width: 100%; }
   .panelVideo { max-width: 320px; }
   .panelCopy { min-width: 100%; }
-  .diffs { flex-wrap: wrap; gap: 16px; }
-  .diff { flex-basis: calc(50% - 8px); min-height: 0; }
-  .qualities { flex-wrap: wrap; gap: 16px; }
-  .qualityCard { flex-basis: calc(50% - 8px); min-height: 220px; }
   .connect { flex-direction: column; }
 }
 
 @media (max-width: 767px) {
-  .heroInner { padding-block: 96px; }
+  .heroInner { min-height: 600px; padding-block: 124px 32px; }
   .heroMedia { aspect-ratio: auto; top: 0; bottom: 0; transform: none; }
-  .value,
-  .diff,
-  .qualityCard { flex-basis: 100%; }
-  .tabs { flex-direction: column; align-items: stretch; }
-  .tab { border-radius: 0; }
-  .tab:first-child { border-radius: var(--aspen-radius-lg) var(--aspen-radius-lg) 0 0; }
+  /* Figma 2812:36463 / 36487 / 36502 */
+  .values,
+  .diffs,
+  .qualities { gap: 16px; }
+  .value { flex-basis: 257px; }
+  .diff { flex-basis: 223px; min-height: 260px; }
+  .qualityCard { flex-basis: 179px; min-height: 230px; }
+  /* Figma 2812:36477: the three tabs stay in one row */
   .tabName { font-size: 20px; }
   .panelMedia { min-width: 100%; padding: 16px 0; }
   .panelCopy { padding-inline: 0; }
-  .connectBtn { width: 100%; }
+  .connectBtn,
+  .heroBtn { width: 100%; justify-content: center; }
   .modelsGlow,
   .qualityGlow { display: none; }
 }

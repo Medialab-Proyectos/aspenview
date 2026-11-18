@@ -439,17 +439,37 @@
 }
 
 @media (max-width: 1199px) {
-  .phases { flex-wrap: wrap; row-gap: 32px; }
-  .phase { flex-basis: calc(100% / 3); }
+  /* Figma 2440:39191: the five 250px phases scroll sideways */
+  .phases {
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .phases::-webkit-scrollbar { display: none; }
+  .phase { flex: 0 0 250px; scroll-snap-align: start; }
   .qs { min-width: 100%; min-height: 0; }
-  .compare { flex-direction: column; }
-  .compareCard { width: 100%; }
+  /* Figma 2457:39770: use cases stack full width */
+  .use { min-width: 100%; }
   .ctaGlow { display: none; }
 }
 
 @media (max-width: 767px) {
-  .phase { flex-basis: 50%; }
   .timeline { flex-direction: column; }
   .pill { border-radius: 24px; }
-  .use { min-width: 100%; }
+  /* Figma 2478:45366: 305px quick-start cards in a swipeable row */
+  .quick {
+    flex-wrap: nowrap;
+    gap: 16px;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .quick::-webkit-scrollbar { display: none; }
+  .qs { flex: 0 0 305px; min-width: 0; scroll-snap-align: start; }
+  .compare { flex-direction: column; }
+  .compareCard { width: 100%; }
 }

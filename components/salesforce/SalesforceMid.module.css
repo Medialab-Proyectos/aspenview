@@ -422,9 +422,27 @@
     flex-direction: column;
   }
 
-  .industry,
   .agent {
     min-width: 100%;
+  }
+
+  /* Figma 2497:32969: 300px industry cards in a swipeable row */
+  .industries {
+    flex-wrap: nowrap;
+    gap: 16px;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .industries::-webkit-scrollbar { display: none; }
+
+  .industry {
+    flex: 0 0 300px;
+    min-width: 0;
+    scroll-snap-align: start;
   }
 
   .backBtn {

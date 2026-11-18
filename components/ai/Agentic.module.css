@@ -243,8 +243,10 @@
   .bars { gap: 12px; height: auto; }
   .barCol { flex: 1 0 0; min-width: 0; gap: 16px; }
   .barLabel { font-size: 14px; }
-  .advCards { flex-direction: column; }
-  .advCard { height: auto; gap: 48px; }
+  /* Figma 2300:39389: 380 x 350 advantage cards scroll sideways */
+  .advCards { margin-right: calc(-1 * var(--margin)); padding-right: var(--margin); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
+  .advCards::-webkit-scrollbar { display: none; }
+  .advCard { flex: 0 0 380px; scroll-snap-align: start; }
 }
 
 @media (max-width: 767px) {
@@ -258,6 +260,8 @@
     scrollbar-width: none;
   }
   .barCol { flex: 0 0 140px; }
+  /* Figma 2314:24428 */
+  .advCard { flex-basis: 280px; height: 260px; padding: 16px; }
   .roadFoot { flex-direction: column; align-items: flex-start; gap: 8px; }
   .roadHeadline { text-align: left; }
   .roadMeta:last-child { text-align: left; }

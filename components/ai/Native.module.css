@@ -269,7 +269,20 @@
 
 @media (max-width: 1199px) {
   .meaning { min-width: 100%; height: auto; gap: 32px; }
-  .ops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Figma 2280:37821: the six 350px cards scroll sideways */
+  .ops {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 350px;
+    gap: 8px;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .ops::-webkit-scrollbar { display: none; }
+  .op { scroll-snap-align: start; }
   .why { flex-direction: column; align-items: stretch; }
   .whyList,
   .whyCard { width: 100%; }
@@ -277,7 +290,6 @@
 
 @media (max-width: 767px) {
   .meaning { padding: var(--card-s-y) var(--card-xs-x); }
-  .ops { grid-template-columns: minmax(0, 1fr); }
   .whyRow { padding-inline: 0; gap: 12px; }
   .whyIcon { width: 44px; height: 44px; padding: 8px; }
   .whyAnswer { padding-left: 56px; padding-right: 0; }

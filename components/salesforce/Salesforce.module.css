@@ -517,9 +517,10 @@
     opacity: 0.5;
   }
 
+  /* Figma 2435:35878: 681px hero, copy 130px from the top */
   .heroInner {
-    min-height: 0;
-    padding-block: 96px;
+    min-height: 681px;
+    padding-block: 130px 48px;
   }
 
   .productPair {
@@ -545,8 +546,30 @@
 }
 
 @media (max-width: 767px) {
-  .productPair {
-    flex-direction: column;
+  .heroInner {
+    min-height: 575px;
+    padding-block: 96px 32px;
+  }
+
+  /* Figma 2478:45298: the four product cards (315px) run in one swipeable row */
+  .products {
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-right: calc(-1 * var(--margin));
+    padding-right: var(--margin);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .products::-webkit-scrollbar { display: none; }
+
+  .productPair { display: contents; }
+
+  .product {
+    flex: 0 0 315px;
+    min-width: 0;
+    scroll-snap-align: start;
   }
 
   .stat {

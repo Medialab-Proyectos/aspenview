@@ -30,7 +30,7 @@ export function MdHero() {
             <p>Seamless execution. High-quality results. A strong partnership between your teams and ours.</p>
           </div>
         </div>
-        <PrimaryButton href="#delivery-models">Explore our delivery models</PrimaryButton>
+        <PrimaryButton href="#delivery-models" className={styles.heroBtn}>Explore our delivery models</PrimaryButton>
       </div>
     </section>
   );
