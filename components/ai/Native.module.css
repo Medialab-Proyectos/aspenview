@@ -1,0 +1,285 @@
+/* ---------- What AI-native means ---------- */
+.meaningSection.meaningSection { padding-top: 0; }
+
+.meaningHeader.meaningHeader {
+  max-width: 700px;
+  gap: var(--gap-subtitle-to-texts);
+}
+
+.lead {
+  margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts));
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.meanings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+}
+
+.meaning {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-width: 500px;
+  height: 519px;
+  padding: var(--card-m-y) var(--card-m-x);
+  border: 1px solid var(--aspen-color-border-subtle);
+  border-radius: var(--aspen-radius-lg);
+  background: #fff;
+}
+
+.meaningEyebrow {
+  align-self: flex-start;
+  color: var(--aspen-color-brand-primary);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.meaningMedia {
+  width: 400px;
+  max-width: 100%;
+}
+
+.meaningMedia video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.meaningCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+}
+
+.meaningTitle {
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-subtitle-large);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.meaningText {
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body-variable);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+/* ---------- Operating model ---------- */
+.wideTitle.wideTitle { max-width: none; }
+
+.ops {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap-subtitle-to-texts);
+  width: 100%;
+}
+
+.op {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--aspen-radius-xl);
+  background: rgba(12, 26, 40, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+}
+
+.opMedia {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 161px;
+  padding: var(--card-m-y) var(--card-s-x);
+  overflow: hidden;
+}
+
+.opGlow {
+  position: absolute;
+  left: 31.25%;
+  right: 34.72%;
+  top: 24px;
+  height: 196px;
+  pointer-events: none;
+}
+
+.opGlow img {
+  position: absolute;
+  inset: -61.22% -87%;
+  width: 274%;
+  height: 222.44%;
+}
+
+.opVideo {
+  position: relative;
+  height: 100%;
+}
+
+.opVideo video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.opTitle {
+  padding: var(--card-s-y) var(--card-s-x);
+  font-size: var(--text-subtitle);
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Why it matters ---------- */
+.why {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+}
+
+.whyList {
+  display: flex;
+  flex-direction: column;
+  width: 589px;
+  flex-shrink: 1;
+}
+
+.whyItem {
+  border-top: 0.5px solid var(--aspen-color-brand-soft);
+  background: var(--aspen-color-ink-strong);
+}
+
+.whyRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: var(--card-xs-y) var(--card-xs-x);
+  color: #fff;
+  text-align: left;
+}
+
+.whyIcon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  padding: 10px;
+  border: 0.5px solid var(--aspen-color-brand-soft);
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s var(--ease-out);
+}
+
+/* Hover variant (2073:34680) and opened state: icon disc turns brand blue */
+.whyRow:hover .whyIcon,
+.whyItemOpen .whyIcon { background: var(--aspen-color-brand-primary); }
+
+.whyQ {
+  flex: 1 0 0;
+  font-size: var(--text-body-large);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.whyReveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s var(--ease-out);
+}
+
+.whyItemOpen .whyReveal { grid-template-rows: 1fr; }
+
+.whyRevealInner { overflow: hidden; }
+
+.whyAnswer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  padding: 0 var(--card-xs-x) var(--card-xs-y) calc(var(--card-xs-x) + 54px + 16px);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.whyAnswerTitle { font-weight: 700; }
+
+.whyCard {
+  display: flex;
+  flex-direction: column;
+  width: 576px;
+  min-width: 300px;
+  height: 360px;
+  overflow: hidden;
+  border-radius: var(--aspen-radius-xl);
+  background: rgba(12, 26, 40, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+}
+
+.whyCardHead {
+  padding: 16px var(--card-s-x);
+  border-radius: 0 0 var(--aspen-radius-xl) var(--aspen-radius-xl);
+  background: rgba(12, 26, 40, 0.5);
+  font-size: var(--text-body-variable);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+.whyCardMedia {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
+  padding: var(--card-m-y) var(--card-s-x);
+  background: rgba(12, 26, 40, 0.5);
+}
+
+.whyVideo {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  height: 135.583px;
+}
+
+.whyVideo video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 1199px) {
+  .meaning { min-width: 100%; height: auto; gap: 32px; }
+  .ops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .why { flex-direction: column; align-items: stretch; }
+  .whyList,
+  .whyCard { width: 100%; }
+}
+
+@media (max-width: 767px) {
+  .meaning { padding: var(--card-s-y) var(--card-xs-x); }
+  .ops { grid-template-columns: minmax(0, 1fr); }
+  .whyRow { padding-inline: 0; gap: 12px; }
+  .whyIcon { width: 44px; height: 44px; padding: 8px; }
+  .whyAnswer { padding-left: 56px; padding-right: 0; }
+  .whyCard { height: 300px; }
+}

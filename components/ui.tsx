@@ -16,9 +16,18 @@ export function MaskIcon({ src, size, className }: { src: string; size: number; 
 /* ---------- Eyebrow: 44px rule + uppercase label ---------- */
 const EYEBROW_TONE = { blue: "", white: styles.eyebrowWhite, soft: styles.eyebrowSoft };
 
-export function Eyebrow({ children, tone = "blue" }: { children: ReactNode; tone?: "blue" | "white" | "soft" }) {
+export function Eyebrow({
+  children,
+  tone = "blue",
+  size = "md",
+}: {
+  children: ReactNode;
+  tone?: "blue" | "white" | "soft";
+  /* sm = "Tag sections" component: 36px rule + 16px label */
+  size?: "md" | "sm";
+}) {
   return (
-    <span className={`${styles.eyebrow} ${EYEBROW_TONE[tone]}`}>
+    <span className={`${styles.eyebrow} ${EYEBROW_TONE[tone]} ${size === "sm" ? styles.eyebrowSm : ""}`}>
       <span className={styles.eyebrowLine} />
       <span className={styles.eyebrowText}>{children}</span>
     </span>

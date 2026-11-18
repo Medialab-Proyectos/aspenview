@@ -41,6 +41,15 @@
   white-space: nowrap;
 }
 
+.eyebrowSm .eyebrowLine {
+  width: 36px;
+  height: 2px;
+}
+
+.eyebrowSm .eyebrowText {
+  font-size: var(--text-body-variable-2);
+}
+
 @media (max-width: 1199px) {
   .eyebrowLine {
     height: 2px;

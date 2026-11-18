@@ -1,0 +1,264 @@
+/* ---------- The shift ---------- */
+.shiftCard.shiftCard { height: 555px; }
+
+.shiftMedia {
+  width: 240px;
+  max-width: 100%;
+}
+
+.shiftMedia video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.shiftBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-content-to-media);
+  width: 100%;
+}
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--aspen-color-border-subtle);
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body-small);
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.flowArrows { display: flex; }
+
+.flowStep {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ---------- Road to agentic ---------- */
+.road {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter);
+  width: 100%;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  height: 374px;
+}
+
+.barCol {
+  display: flex;
+  flex: 0 1 230px;
+  flex-direction: column;
+  gap: var(--gap-content-to-media);
+  min-width: 180px;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: left;
+}
+
+.barLabel {
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  transition: color 0.3s var(--ease-out);
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-block: 24px;
+  overflow: hidden;
+  border-radius: var(--aspen-radius-xl) var(--aspen-radius-xl) var(--aspen-radius-sm) var(--aspen-radius-sm);
+  background-color: rgba(12, 26, 40, 0.5);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+  transition: background-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.barIcon { transition: color 0.3s var(--ease-out); }
+
+.barActive { color: #fff; }
+
+.barActive .bar {
+  background-color: rgba(0, 139, 201, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 2px 50px -18px rgba(0, 139, 201, 0.5);
+}
+
+.roadLine {
+  width: 100%;
+  height: 0.6px;
+}
+
+.roadFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.roadMeta {
+  flex: 1 0 0;
+  color: var(--aspen-color-border-subtle);
+  font-size: var(--text-body-small);
+  line-height: normal;
+}
+
+.roadMeta:last-child { text-align: right; }
+
+.roadHeadline {
+  flex-shrink: 0;
+  font-size: var(--text-body-large);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+/* ---------- Where it creates value ---------- */
+.valueTitle.valueTitle { max-width: 740px; }
+
+.valueCard.valueCard { height: auto; }
+
+/* ---------- Advantage ---------- */
+.advGlow {
+  position: absolute;
+  left: calc(50% - 294px);
+  top: -93px;
+  width: 698px;
+  height: 698px;
+  pointer-events: none;
+}
+
+.advGlow img {
+  position: absolute;
+  inset: -20.06%;
+  width: 140.12%;
+  height: 140.12%;
+}
+
+.advLead {
+  margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts));
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.advCards {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.advCard {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  height: 350px;
+  padding: var(--card-s-y) var(--card-s-x);
+  overflow: hidden;
+  border: 0.5px solid var(--aspen-color-border-subtle);
+  border-radius: var(--aspen-radius-md);
+  background: #fff;
+}
+
+.advCardGlow {
+  position: absolute;
+  left: -8.5px;
+  top: -0.5px;
+  width: 113px;
+  height: 113px;
+  pointer-events: none;
+}
+
+.advCardGlow img {
+  position: absolute;
+  inset: -53.1%;
+  width: 206.2%;
+  height: 206.2%;
+}
+
+.advTop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.advRing {
+  display: flex;
+  padding: 16px;
+  border: 1px solid var(--aspen-color-border-subtle);
+  border-radius: 99px;
+  background: #fff;
+}
+
+.advTag {
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body-variable-2);
+  line-height: normal;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+}
+
+.advCopy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.advTitle {
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-subtitle);
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.advText {
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body-variable);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+@media (max-width: 1199px) {
+  .shiftCard.shiftCard { height: auto; }
+  .bars { gap: 12px; height: auto; }
+  .barCol { flex: 1 0 0; min-width: 0; gap: 16px; }
+  .barLabel { font-size: 14px; }
+  .advCards { flex-direction: column; }
+  .advCard { height: auto; gap: 48px; }
+}
+
+@media (max-width: 767px) {
+  .flow { gap: 10px; padding-inline: 0; }
+  .flowStep { gap: 10px; }
+  .bars {
+    overflow-x: auto;
+    width: calc(100% + 2 * var(--margin));
+    margin-inline: calc(-1 * var(--margin));
+    padding-inline: var(--margin);
+    scrollbar-width: none;
+  }
+  .barCol { flex: 0 0 140px; }
+  .roadFoot { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .roadHeadline { text-align: left; }
+  .roadMeta:last-child { text-align: left; }
+}
