@@ -40,16 +40,31 @@ export function PrimaryButton({
   children,
   arrow = false,
   className,
+  external = false,
 }: {
   href: string;
   children: ReactNode;
   arrow?: boolean;
   className?: string;
+  /* opens an external site (e.g. the job board) in a new tab */
+  external?: boolean;
 }) {
-  return (
-    <Link href={href} className={`${styles.primary} ${className ?? ""}`}>
+  const content = (
+    <>
       <span>{children}</span>
       {arrow && <img alt="" src="/assets/icons/arrow-right-light.svg" width={24} height={24} />}
+    </>
+  );
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={`${styles.primary} ${className ?? ""}`}>
+        {content}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={`${styles.primary} ${className ?? ""}`}>
+      {content}
     </Link>
   );
 }

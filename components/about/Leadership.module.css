@@ -1,0 +1,332 @@
+/* ---------- Who leads ---------- */
+.who {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: var(--pad-section-y);
+}
+
+.whoCopy {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+  max-width: 572px;
+  min-width: 540px;
+}
+
+.whoCopy > div { gap: var(--gap-subtitle-to-texts); }
+.whoCopy > div > p { margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts)); }
+
+.whoTitle {
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-subtitle);
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.whoQuote {
+  padding-left: 24px;
+  border-left: 2px solid var(--aspen-color-brand-primary);
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.whoImg {
+  flex: 1 0 0;
+  max-width: 540px;
+  min-width: 500px;
+  aspect-ratio: 658 / 648;
+  max-height: 531.8px;
+  min-height: 492.4px;
+  object-fit: contain;
+}
+
+/* ---------- Executive cards ---------- */
+.leaders {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.leader {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 288px;
+  max-width: 290px;
+  min-height: 388px;
+  aspect-ratio: 288 / 388;
+  padding: 60px 26px;
+  overflow: hidden;
+  border-radius: var(--aspen-radius-xl);
+}
+
+.leaderBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.leaderPhoto {
+  position: absolute;
+  top: -6.19%;
+  bottom: -7.22%;
+  left: calc(50% - 3px);
+  height: 113.41%;
+  aspect-ratio: 684 / 1024;
+  max-width: none;
+  object-fit: cover;
+  transform: translateX(-50%);
+}
+
+.leaderShade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -50.31px;
+  height: 210px;
+  background: linear-gradient(180deg, rgba(12, 26, 40, 0) 0%, rgba(12, 26, 40, 0.9) 21.12%);
+}
+
+.leaderCopy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #fff;
+}
+
+.leaderName {
+  font-size: var(--text-subtitle);
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.leaderRole {
+  font-size: var(--text-body-variable-2);
+  line-height: 1.1094;
+  letter-spacing: -0.4px;
+}
+
+.leaderBtn {
+  position: absolute;
+  right: 17px;
+  bottom: 16.69px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0.3px solid #fff;
+  border-radius: 999px;
+  background: rgba(12, 26, 40, 0.5);
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.leaderBtn:hover { background: var(--aspen-color-brand-primary); }
+
+/* ---------- Bio overlay ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.bio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1260px;
+  max-width: 100%;
+  height: 868px;
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  border-radius: var(--aspen-radius-xl);
+  background: rgba(12, 26, 40, 0.9);
+  color: #fff;
+}
+
+.bioCopy {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+  max-width: 620px;
+  min-width: 400px;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--card-m-y) 0 var(--card-m-y) var(--card-m-x);
+}
+
+.bioHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  line-height: normal;
+}
+
+.bioName {
+  color: var(--aspen-color-brand-bright);
+  font-size: var(--text-x-big-title);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+
+.bioRole {
+  font-size: var(--text-subtitle);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.bioText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.bioText strong {
+  color: var(--aspen-color-brand-bright);
+  font-weight: 700;
+}
+
+.bioLinkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  border: 0.3px solid #fff;
+  border-radius: 999px;
+  background: #0c1a28;
+}
+
+.bioMedia {
+  position: relative;
+  align-self: stretch;
+  width: 580px;
+  flex-shrink: 1;
+  /* the photo melts into the panel on its left edge, as in the overlay design */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 14%);
+}
+
+.bioMedia img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.bioClose {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  display: flex;
+  padding: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(9.95px);
+  -webkit-backdrop-filter: blur(9.95px);
+}
+
+/* ---------- Advisors ---------- */
+.advisors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-title-to-text);
+  width: 100%;
+}
+
+.advisor {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: 24px;
+  min-width: 300px;
+  padding: var(--card-s-y) var(--card-s-x);
+  border-top: 1px solid var(--aspen-color-border-subtle);
+}
+
+.advisorImg {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.advisorBottom { object-position: bottom; }
+
+.advisorName {
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-body-large);
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+
+.advisorRole {
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body-variable);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+@media (max-width: 1199px) {
+  .whoCopy,
+  .whoImg { min-width: 100%; max-width: none; }
+  .whoImg { max-height: none; min-height: 0; }
+  .leader { min-width: calc(50% - 14px); max-width: none; }
+  .bio { height: auto; }
+  .bioMedia { width: 40%; }
+}
+
+@media (max-width: 767px) {
+  .leader { min-width: 100%; aspect-ratio: 288 / 360; }
+  .overlay { padding: 0; }
+  .bio {
+    flex-direction: column-reverse;
+    max-height: 100vh;
+    height: 100%;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+  .bioCopy { min-width: 0; max-height: none; overflow: visible; padding: 24px var(--margin); }
+  .bioMedia {
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 25%);
+    mask-image: linear-gradient(0deg, transparent 0%, #000 25%);
+  }
+  .bioClose { top: 16px; right: 16px; }
+  .advisor { min-width: 100%; padding-inline: 0; }
+  .advisorImg { width: 96px; height: 96px; }
+}

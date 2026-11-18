@@ -1,0 +1,292 @@
+.max560 { max-width: 560px; }
+.max600 { max-width: 600px; }
+.max750 { max-width: 750px; }
+.max850 { max-width: 850px; }
+
+/* ---------- Hero card ---------- */
+.heroCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-content-to-media);
+  width: 358px;
+  flex-shrink: 0;
+  padding: var(--card-s-y) var(--card-s-x);
+  border: 0.5px solid var(--aspen-color-brand-soft);
+  border-radius: var(--aspen-radius-xl);
+  background: var(--aspen-color-ink-strong);
+  color: #fff;
+}
+
+.heroCardCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.heroCardTitle {
+  font-size: var(--text-subtitle);
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.heroTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.heroTags li {
+  padding: 6px 12px;
+  border: 0.5px solid var(--aspen-color-brand-soft);
+  border-radius: 999px;
+  font-size: var(--text-body-small);
+  line-height: normal;
+}
+
+/* ---------- Grove ---------- */
+.grove {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  /* the next band overlaps the bottom 43px of this frame in Figma */
+  padding-block: var(--pad-section-y) calc(var(--pad-section-y) - 43px);
+}
+
+.groveCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+  width: 608px;
+  max-width: 100%;
+}
+
+.groveCopy > div { gap: var(--gap-subtitle-to-texts); }
+.groveCopy > div > div { margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts)); }
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pills li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 0.5px solid var(--aspen-color-brand-soft);
+  border-radius: 999px;
+  background: var(--aspen-color-brand-pale);
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-body-small);
+  line-height: normal;
+}
+
+.groveMedia {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 400px;
+}
+
+.groveMedia img {
+  width: 544px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 544 / 573;
+}
+
+/* ---------- Belief ---------- */
+.beliefWrap { padding-block: var(--pad-section-y); }
+
+.belief {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: var(--card-m-x);
+  border-radius: var(--aspen-radius-lg);
+  background: var(--aspen-color-brand-pale);
+}
+
+.beliefCopy {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 590px;
+  min-width: 450px;
+}
+
+.beliefQuote {
+  color: var(--aspen-color-ink-strong);
+  font-size: var(--text-subtitle-large);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.beliefImg {
+  width: 400px;
+  min-width: 296px;
+  max-width: 100%;
+  aspect-ratio: 400 / 237.148;
+  object-fit: contain;
+}
+
+/* ---------- What we do ---------- */
+.whatWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: var(--pad-section-y);
+}
+
+.whatCopy {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+  max-width: 580px;
+  min-width: 450px;
+}
+
+.whatText {
+  margin-top: calc(var(--gap-title-to-text) - var(--gap-subtitle-to-texts));
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+}
+
+.whatFigure {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 500px;
+  min-width: 420px;
+  margin: 0;
+}
+
+.whatFigure img {
+  width: 100%;
+  aspect-ratio: 1085 / 570;
+}
+
+.whatFigure figcaption {
+  color: var(--aspen-color-brand-soft);
+  font-size: var(--text-body-small);
+  line-height: normal;
+  text-align: center;
+}
+
+/* ---------- Values grid ---------- */
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  border-top: 1px solid var(--aspen-color-border-subtle);
+  border-left: 1px solid var(--aspen-color-border-subtle);
+}
+
+.value {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  min-width: 0;
+  padding: var(--card-m-y) var(--card-m-x);
+  border-right: 1px solid var(--aspen-color-border-subtle);
+  border-bottom: 1px solid var(--aspen-color-border-subtle);
+  background: #fff;
+}
+
+.valueTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.valueNum {
+  color: var(--aspen-color-brand-primary);
+  font-size: var(--text-body-large);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.valueBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-title-to-text);
+}
+
+.valueSub {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-subtitle-to-texts);
+}
+
+.valueTag {
+  color: var(--aspen-color-brand-primary);
+  font-size: var(--text-body-large);
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+
+.valuePhoto {
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.valuePhotoImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.valuePill {
+  position: relative;
+  align-self: flex-start;
+  padding: 4px 8px;
+  border-radius: 99px;
+  background: var(--aspen-color-ink-strong);
+  color: #fff;
+  font-size: var(--text-body-large);
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+
+@media (max-width: 1199px) {
+  .grove { padding-bottom: var(--pad-section-y); }
+  .groveMedia { min-width: 100%; }
+  .beliefCopy { min-width: 100%; }
+  .whatCopy,
+  .whatFigure { min-width: 100%; max-width: none; }
+  .values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .valuePhoto { min-height: 300px; }
+}
+
+@media (max-width: 767px) {
+  .heroCard { width: 100%; }
+  .groveMedia { min-width: 0; }
+  .belief { padding: var(--card-s-y) var(--card-xs-x); }
+  .beliefCopy { min-width: 0; }
+  .beliefQuote { font-size: 24px; }
+  .beliefImg { min-width: 0; width: 100%; }
+  .whatCopy,
+  .whatFigure { min-width: 0; }
+  .values { grid-template-columns: minmax(0, 1fr); }
+  .value { padding: var(--card-s-y) var(--card-s-x); gap: 32px; }
+}

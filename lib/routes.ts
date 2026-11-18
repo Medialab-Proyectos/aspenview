@@ -25,6 +25,9 @@ export const ROUTES = {
   terms: "/terms",
 } as const;
 
+/** External job board (Figma annotation on the Careers CTAs). */
+export const JOBS_URL = "https://job-boards.greenhouse.io/aspenviewtech";
+
 /** Desktop dropdown content (Figma overlays 806:11245, 1227:13260, 806:10896, 1230:13514). */
 export const SERVICES_MENU = {
   offerings: { label: "Service offerings", href: ROUTES.serviceOfferings },
