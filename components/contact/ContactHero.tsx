@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import ContactForm from "./ContactForm";
 import styles from "./Contact.module.css";
 
+import { T } from "@/components/i18n/T";
+
 /* Same "Moving gradient" shader as the Home hero, layered over the photo at 80% (Figma 2557:22509) */
 const ShaderBg = dynamic(() => import("../sections/ShaderBg"), { ssr: false });
 
@@ -15,10 +17,9 @@ export default function ContactHero() {
         <ShaderBg className={styles.shader} />
       </div>
       <div className={`wrap ${styles.inner}`}>
-        <h1 className={styles.title}>
-          How Can We{" "}
+        <h1 className={styles.title}><T>{"How Can We"}</T>{" "}
           <br />
-          <strong>Help You?</strong>
+          <strong><T>{"Help You?"}</T></strong>
         </h1>
         <ContactForm />
       </div>

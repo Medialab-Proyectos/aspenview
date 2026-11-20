@@ -3,6 +3,8 @@ import WhyItMatters from "./WhyItMatters";
 import t from "./Transformation.module.css";
 import styles from "./Native.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/ai";
 
 /* ---------- What AI-native means (2061:33411) ---------- */
@@ -29,26 +31,22 @@ export function NativeMeaning() {
       <div className={`wrap ${t.section} ${styles.meaningSection}`}>
         <div className={`${t.header} ${styles.meaningHeader}`}>
           <h2 className={t.heading}>
-            <Eyebrow size="sm">What AI-Native Means</Eyebrow>
-            <span className={t.title}>
-              AI-Native by Design. <strong>Built Around a Smarter Way of Working</strong>
+            <Eyebrow size="sm"><T>{"What AI-Native Means"}</T></Eyebrow>
+            <span className={t.title}><T>{"AI-Native by Design. "}</T><strong><T>{"Built Around a Smarter Way of Working"}</T></strong>
             </span>
           </h2>
-          <p className={styles.lead}>
-            AI-Native means designing processes around the combined capabilities of people and AI, rather than simply
-            adding AI tools to existing ways of working.
-          </p>
+          <p className={styles.lead}><T>{"AI-Native means designing processes around the combined capabilities of people and AI, rather than simply adding AI tools to existing ways of working."}</T></p>
         </div>
         <div className={styles.meanings}>
           {MEANING.map((m) => (
             <article key={m.title} className={`${styles.meaning} hover-blue-text`}>
-              <p className={styles.meaningEyebrow}>{m.eyebrow}</p>
+              <p className={styles.meaningEyebrow}><T>{m.eyebrow}</T></p>
               <div className={styles.meaningMedia} style={{ height: m.height }}>
                 <video src={m.video} autoPlay muted loop playsInline preload="metadata" aria-hidden />
               </div>
               <div className={styles.meaningCopy}>
-                <h3 className={styles.meaningTitle}>{m.title}</h3>
-                <p className={styles.meaningText}>{m.text}</p>
+                <h3 className={styles.meaningTitle}><T>{m.title}</T></h3>
+                <p className={styles.meaningText}><T>{m.text}</T></p>
               </div>
             </article>
           ))}
@@ -73,11 +71,8 @@ export function NativeOperating() {
     <section className={`${t.dark} ${t.gap}`}>
       <div className={`wrap ${t.section}`}>
         <h2 className={t.heading}>
-          <Eyebrow tone="white" size="sm">
-            AI Built Into How We Work
-          </Eyebrow>
-          <span className={`${t.title} ${t.titleLight} ${styles.wideTitle}`}>
-            Across the AspenView <strong>Operating Model.</strong>
+          <Eyebrow tone="white" size="sm"><T>{"AI Built Into How We Work"}</T></Eyebrow>
+          <span className={`${t.title} ${t.titleLight} ${styles.wideTitle}`}><T>{"Across the AspenView "}</T><strong><T>{"Operating Model."}</T></strong>
           </span>
         </h2>
         <div className={styles.ops}>
@@ -100,9 +95,9 @@ export function NativeOperating() {
                 </div>
               </div>
               <div className={styles.opCopy}>
-                <h3 className={styles.opTitle}>{o.title}</h3>
+                <h3 className={styles.opTitle}><T>{o.title}</T></h3>
                 <div className="reveal-body">
-                  <p className={styles.opBody}>{o.body}</p>
+                  <p className={styles.opBody}><T>{o.body}</T></p>
                 </div>
               </div>
             </article>
@@ -120,22 +115,15 @@ export function NativeWhy() {
       <div className={`wrap ${t.section}`}>
         <div className={t.header}>
           <h2 className={t.heading}>
-            <Eyebrow tone="white" size="sm">
-              Why It Matters
-            </Eyebrow>
-            <span className={`${t.title} ${t.titleLight}`}>
-              Experience That Goes
-              <br />
-              <strong>Beyond the Theory</strong>
+            <Eyebrow tone="white" size="sm"><T>{"Why It Matters"}</T></Eyebrow>
+            <span className={`${t.title} ${t.titleLight}`}><T>{"Experience That Goes"}</T><br />
+              <strong><T>{"Beyond the Theory"}</T></strong>
             </span>
           </h2>
-          <p className={t.leadLarge}>We face the same questions our clients do.</p>
+          <p className={t.leadLarge}><T>{"We face the same questions our clients do."}</T></p>
         </div>
         <WhyItMatters />
-        <p className={t.governor}>
-          By applying AI to our own operations, we bring practical experience to the transformation we deliver for our
-          clients.
-        </p>
+        <p className={t.governor}><T>{"By applying AI to our own operations, we bring practical experience to the transformation we deliver for our clients."}</T></p>
       </div>
     </section>
   );

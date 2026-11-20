@@ -4,6 +4,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import styles from "./Models.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/delivery";
 const ease = [0, 0, 0.58, 1] as const;
 
@@ -24,15 +26,12 @@ const MODELS: Model[] = [
     video: "/videos/05-model-adnt.webm",
     body: (
       <>
-        <p>
-          Skilled IT professionals seamlessly integrated into your teams. What we provide: Dedicated LatAm talent to
-          augment your teams.
-        </p>
-        <p>Key benefits</p>
+        <p><T>{"Skilled IT professionals seamlessly integrated into your teams. What we provide: Dedicated LatAm talent to augment your teams."}</T></p>
+        <p><T>{"Key benefits"}</T></p>
         <ul>
-          <li>Highly skilled professionals tailored to your project needs</li>
-          <li>Faster hiring and onboarding</li>
-          <li>Lower turnover and higher employee satisfaction</li>
+          <li><T>{"Highly skilled professionals tailored to your project needs"}</T></li>
+          <li><T>{"Faster hiring and onboarding"}</T></li>
+          <li><T>{"Lower turnover and higher employee satisfaction"}</T></li>
         </ul>
       </>
     ),
@@ -45,8 +44,8 @@ const MODELS: Model[] = [
     video: "/videos/06-model-afms.webm",
     body: (
       <>
-        <p>Specialized managed services to optimize specific IT or data processes.</p>
-        <p>What we provide: Focused support for functions such as Quality Assurance or Data Management.</p>
+        <p><T>{"Specialized managed services to optimize specific IT or data processes."}</T></p>
+        <p><T>{"What we provide: Focused support for functions such as Quality Assurance or Data Management."}</T></p>
       </>
     ),
     best: "Best for: Organizations looking to optimize specific technology and data functions.",
@@ -58,11 +57,8 @@ const MODELS: Model[] = [
     video: "/videos/07-model-alms.webm",
     body: (
       <>
-        <p>Comprehensive lifecycle managed services for end-to-end digital transformation.</p>
-        <p>
-          What we provide: Expert solutions across the technology and data lifecycle to drive efficiency, reduce costs and
-          accelerate innovation.
-        </p>
+        <p><T>{"Comprehensive lifecycle managed services for end-to-end digital transformation."}</T></p>
+        <p><T>{"What we provide: Expert solutions across the technology and data lifecycle to drive efficiency, reduce costs and accelerate innovation."}</T></p>
       </>
     ),
     best: "Best for: Organizations pursuing end-to-end digital transformation.",
@@ -85,8 +81,8 @@ export default function ModelsTabs() {
             className={`${styles.tab} ${i === active ? styles.tabActive : "hover-blue"}`}
             onClick={() => setActive(i)}
           >
-            <span className={styles.tabName}>{t.name}</span>
-            <span className={styles.tabText}>{t.short}</span>
+            <span className={styles.tabName}><T>{t.name}</T></span>
+            <span className={styles.tabText}><T>{t.short}</T></span>
           </button>
         ))}
       </div>
@@ -121,10 +117,10 @@ export default function ModelsTabs() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease }}
           >
-            <h3 className={styles.panelTitle}>{m.title}</h3>
-            <div className={styles.panelBody}>{m.body}</div>
+            <h3 className={styles.panelTitle}><T>{m.title}</T></h3>
+            <div className={styles.panelBody}><T>{m.body}</T></div>
             <img alt="" src={`${A}/models-line.svg`} className={styles.panelLine} />
-            <p className={styles.panelBest}>{m.best}</p>
+            <p className={styles.panelBest}><T>{m.best}</T></p>
           </motion.div>
         </AnimatePresence>
       </div>

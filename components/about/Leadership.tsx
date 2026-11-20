@@ -3,6 +3,8 @@ import Executives from "./Executives";
 import a from "./About.module.css";
 import styles from "./Leadership.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/about";
 
 /* ---------- Who leads AspenView (1894:20358) ---------- */
@@ -13,20 +15,12 @@ export function LeadershipWho() {
         <div className={styles.whoCopy}>
           <div className={a.headerTight}>
             <h2 className={a.heading}>
-              <Eyebrow>WHO LEADS ASPENVIEW</Eyebrow>
-              <span className={styles.whoTitle}>
-                Our leadership has built businesses, led global teams and driven technology transformation across Fortune
-                500 companies and high-growth organizations.
-              </span>
+              <Eyebrow><T>{"WHO LEADS ASPENVIEW"}</T></Eyebrow>
+              <span className={styles.whoTitle}><T>{"Our leadership has built businesses, led global teams and driven technology transformation across Fortune 500 companies and high-growth organizations."}</T></span>
             </h2>
-            <p className={a.muted16}>
-              We understand the pressures, decisions and trade-offs our clients navigate because we&apos;ve navigated many
-              of them ourselves.
-            </p>
+            <p className={a.muted16}><T>{"We understand the pressures, decisions and trade-offs our clients navigate because we've navigated many of them ourselves."}</T></p>
           </div>
-          <p className={styles.whoQuote}>
-            That experience shapes how AspenView leads, how we solve problems and how we deliver for our clients.
-          </p>
+          <p className={styles.whoQuote}><T>{"That experience shapes how AspenView leads, how we solve problems and how we deliver for our clients."}</T></p>
         </div>
         <img alt="" src={`${A}/who-leads.png`} className={styles.whoImg} />
       </div>
@@ -41,13 +35,10 @@ export function LeadershipExecutives() {
       <div className={`wrap ${a.section} ${a.sectionGutter}`}>
         <div className={a.headerTight}>
           <h2 className={a.heading}>
-            <Eyebrow>EXECUTIVE LEADERSHIP</Eyebrow>
-            <span className={`${a.title} ${a.max700}`}>The People Accountable for How AspenView Delivers</span>
+            <Eyebrow><T>{"EXECUTIVE LEADERSHIP"}</T></Eyebrow>
+            <span className={`${a.title} ${a.max700}`}><T>{"The People Accountable for How AspenView Delivers"}</T></span>
           </h2>
-          <p className={`${a.muted16} ${a.max700}`}>
-            Leaders who have built businesses and led technology at scale, now bringing that experience to every client
-            engagement.
-          </p>
+          <p className={`${a.muted16} ${a.max700}`}><T>{"Leaders who have built businesses and led technology at scale, now bringing that experience to every client engagement."}</T></p>
         </div>
         <Executives />
       </div>
@@ -75,22 +66,12 @@ export function LeadershipAdvisors() {
       <div className={`wrap ${a.section} ${a.sectionGutter}`}>
         <div className={a.headerTight}>
           <h2 className={a.heading}>
-            <Eyebrow>ADVISORY BOARD</Eyebrow>
-            <span className={`${a.title} ${a.max700}`}>
-              Perspective That Keeps Us
-              <br />
-              Looking Forward
-            </span>
+            <Eyebrow><T>{"ADVISORY BOARD"}</T></Eyebrow>
+            <span className={`${a.title} ${a.max700}`}><T>{"Perspective That Keeps Us"}</T><br /><T>{"Looking Forward"}</T></span>
           </h2>
           <div className={`${a.muted16} ${a.paras} ${a.max700}`}>
-            <p>
-              Our Advisory Board brings together experienced leaders across technology, business, operations, talent and
-              transformation.
-            </p>
-            <p>
-              Their collective perspective challenges our thinking, broadens our view and helps AspenView continue evolving
-              around the changing needs of our clients.
-            </p>
+            <p><T>{"Our Advisory Board brings together experienced leaders across technology, business, operations, talent and transformation."}</T></p>
+            <p><T>{"Their collective perspective challenges our thinking, broadens our view and helps AspenView continue evolving around the changing needs of our clients."}</T></p>
           </div>
         </div>
         <ul className={styles.advisors}>
@@ -102,8 +83,8 @@ export function LeadershipAdvisors() {
                 className={`${styles.advisorImg} ${i === 7 ? styles.advisorBottom : ""}`}
               />
               <div>
-                <h3 className={styles.advisorName}>{name}</h3>
-                <p className={styles.advisorRole}>Advisor</p>
+                <h3 className={styles.advisorName}><T>{name}</T></h3>
+                <p className={styles.advisorRole}><T>{"Advisor"}</T></p>
               </div>
             </li>
           ))}

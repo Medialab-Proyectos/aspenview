@@ -4,6 +4,8 @@ import { useState, type ReactNode } from "react";
 import SectionHeader from "./SectionHeader";
 import styles from "./Challenge.module.css";
 
+import { T } from "@/components/i18n/T";
+
 type Graphic = { src: string; inset?: string; opacity?: number };
 
 type Expanded = { title: ReactNode; text: string; tags: string[] };
@@ -70,27 +72,30 @@ export default function Challenge({ data }: { data: ChallengeData }) {
                     <GraphicImg g={c.image} />
                   </div>
                   <p className={styles.label} aria-hidden={isOpen}>
-                    {c.label}
+                    <T>{c.label}</T>
                   </p>
                 </div>
                 <div className={styles.body}>
                   {isOpen ? (
                     <div key="open" className={styles.bodyIn}>
-                      <h3 className={styles.openTitle}>{c.open.title}</h3>
-                      <p className={styles.openText}>{c.open.text}</p>
-                      <ul className={styles.tags}>
-                        {c.open.tags.map((t) => (
-                          <li key={t} className={styles.tag}>
-                            <img alt="" src="/assets/icons/dot-bright.svg" width={6} height={6} />
-                            {t}
-                          </li>
-                        ))}
-                      </ul>
+                      <h3 className={styles.openTitle}><T>{c.open.title}</T></h3>
+                      <p className={styles.openText}><T>{c.open.text}</T></p>
+                      {/* Figma only defines tags for the first card's open state */}
+                      {c.open.tags.length > 0 && (
+                        <ul className={styles.tags}>
+                          {c.open.tags.map((t) => (
+                            <li key={t} className={styles.tag}>
+                              <img alt="" src="/assets/icons/dot-bright.svg" width={6} height={6} />
+                              <T>{t}</T>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   ) : (
                     <div key="short" className={styles.bodyIn}>
-                      <h3 className={styles.shortTitle}>{c.short.title}</h3>
-                      <p className={styles.shortText}>{c.short.text}</p>
+                      <h3 className={styles.shortTitle}><T>{c.short.title}</T></h3>
+                      <p className={styles.shortText}><T>{c.short.text}</T></p>
                     </div>
                   )}
                 </div>

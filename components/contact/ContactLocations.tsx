@@ -1,6 +1,8 @@
 import { Eyebrow } from "../ui";
 import styles from "./Contact.module.css";
 
+import { T } from "@/components/i18n/T";
+
 /* Excel 61: AspenView office locations */
 const OFFICES = [
   { city: "Denver, USA", label: "Corporate Headquarters", address: "1550 Wewatta St, Suite 200, Denver, CO 80202, USA" },
@@ -14,21 +16,21 @@ export default function ContactLocations() {
     <section className={styles.locations}>
       <div className={`wrap ${styles.locationsInner}`}>
         <h2 className={styles.locationsHeading}>
-          <Eyebrow>Our offices</Eyebrow>
-          <span className={styles.locationsTitle}>AspenView Office Locations</span>
+          <Eyebrow><T>{"Our offices"}</T></Eyebrow>
+          <span className={styles.locationsTitle}><T>{"AspenView Office Locations"}</T></span>
         </h2>
         <ul className={styles.offices}>
           {OFFICES.map((o) => (
             <li key={o.city} className={`${styles.office} hover-blue`}>
-              {o.label && <p className={styles.officeLabel}>{o.label}</p>}
-              <h3 className={styles.officeCity}>{o.city}</h3>
+              {o.label && <p className={styles.officeLabel}><T>{o.label}</T></p>}
+              <h3 className={styles.officeCity}><T>{o.city}</T></h3>
               <a
                 className={styles.officeAddress}
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {o.address}
+                <T>{o.address}</T>
               </a>
             </li>
           ))}

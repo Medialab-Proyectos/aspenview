@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import styles from "./Leadership.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/about";
 const ease = [0, 0, 0.58, 1] as const;
 
@@ -99,8 +101,8 @@ function Highlight({ text }: { text: string }) {
     <>
       {parts.map((p, i) => (
         <span key={i}>
-          {i > 0 && <strong>AspenView</strong>}
-          {p}
+          {i > 0 && <strong><T>{"AspenView"}</T></strong>}
+          <T>{p}</T>
         </span>
       ))}
     </>
@@ -137,8 +139,8 @@ export default function Executives() {
             <img alt="" src={`${A}/${l.img}`} className={styles.leaderPhoto} />
             <span className={styles.leaderShade} aria-hidden />
             <div className={styles.leaderCopy}>
-              <h3 className={styles.leaderName}>{l.name}</h3>
-              <p className={styles.leaderRole}>{l.role}</p>
+              <h3 className={styles.leaderName}><T>{l.name}</T></h3>
+              <p className={styles.leaderRole}><T>{l.role}</T></p>
             </div>
             <button
               type="button"
@@ -176,9 +178,9 @@ export default function Executives() {
               <div className={styles.bioCopy}>
                 <div className={styles.bioHead}>
                   <h3 id="leader-bio-name" className={styles.bioName}>
-                    {leader.name}
+                    <T>{leader.name}</T>
                   </h3>
-                  <p className={styles.bioRole}>{leader.role}</p>
+                  <p className={styles.bioRole}><T>{leader.role}</T></p>
                 </div>
                 <div className={styles.bioText}>
                   {leader.bio.map((p) => (

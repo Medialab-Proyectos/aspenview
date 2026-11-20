@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import { PrimaryButton } from "../ui";
 import styles from "./PageHero.module.css";
 
+import { T } from "@/components/i18n/T";
+
 /**
  * Dark sub-page hero (Figma 1277:7170 and siblings): dotted masks left/right,
  * blue glows, animated media on the left and copy on the right.
@@ -58,19 +60,19 @@ export default function PageHero({
           <div className={styles.copy}>
             <span className={styles.eyebrow}>
               <span className={styles.eyebrowLine} />
-              <span className={styles.eyebrowText}>{eyebrow}</span>
+              <span className={styles.eyebrowText}><T>{eyebrow}</T></span>
             </span>
             <div className={styles.textGroup}>
               <h1 className={styles.title}>
-                <span className={styles.titleLine}>{title}</span>
-                {highlight && <strong className={styles.highlight}>{highlight}</strong>}
+                <span className={styles.titleLine}><T>{title}</T></span>
+                {highlight && <strong className={styles.highlight}><T>{highlight}</T></strong>}
               </h1>
               {children && <div className={styles.body}>{children}</div>}
             </div>
           </div>
           {cta && (
             <div className={styles.actions}>
-              <PrimaryButton href={cta.href}>{cta.label}</PrimaryButton>
+              <PrimaryButton href={cta.href}><T>{cta.label}</T></PrimaryButton>
             </div>
           )}
         </div>

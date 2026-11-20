@@ -2,6 +2,8 @@ import { Eyebrow, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./About.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/about";
 
 /* ---------- One partnership (1877:15054) ---------- */
@@ -16,12 +18,8 @@ export function WhyPillars() {
     <section className={styles.white}>
       <div className={`wrap ${styles.section}`}>
         <h2 className={styles.heading}>
-          <Eyebrow>WHY ASPENVIEW</Eyebrow>
-          <span className={styles.title}>
-            One Partnership Built for Speed, Quality
-            <br />
-            and Measurable Business Impact
-          </span>
+          <Eyebrow><T>{"WHY ASPENVIEW"}</T></Eyebrow>
+          <span className={styles.title}><T>{"One Partnership Built for Speed, Quality"}</T><br /><T>{"and Measurable Business Impact"}</T></span>
         </h2>
         <div className={styles.pillars}>
           {PILLARS.map((p, i) => (
@@ -31,8 +29,8 @@ export function WhyPillars() {
                 <img alt="" src={`${A}/${p.icon}.svg`} width={p.w} height={32} />
               </div>
               <div className={styles.pillarCopy}>
-                <h3 className={styles.title32}>{p.title}</h3>
-                <p className={styles.muted16tight}>{p.text}</p>
+                <h3 className={styles.title32}><T>{p.title}</T></h3>
+                <p className={styles.muted16tight}><T>{p.text}</T></p>
               </div>
             </article>
           ))}
@@ -49,7 +47,7 @@ function Chips({ items, iconSize }: { items: { icon: string; label: string }[]; 
       {items.map((c) => (
         <li key={c.label} className={styles.chip}>
           <img alt="" src={`${A}/${c.icon}.svg`} width={iconSize} height={iconSize} />
-          <span>{c.label}</span>
+          <span><T>{c.label}</T></span>
         </li>
       ))}
     </ul>
@@ -69,19 +67,12 @@ export function WhyLeadership() {
         <div className={styles.leadCopy}>
           <div className={styles.headerTight}>
             <h2 className={styles.heading}>
-              <Eyebrow>LEADERSHIP</Eyebrow>
-              <span className={styles.title}>
-                Leadership That Understands
-                <br />
-                Your World
-              </span>
+              <Eyebrow><T>{"LEADERSHIP"}</T></Eyebrow>
+              <span className={styles.title}><T>{"Leadership That Understands"}</T><br /><T>{"Your World"}</T></span>
             </h2>
             <div className={`${styles.muted16} ${styles.paras}`}>
-              <p>
-                Our leaders have built businesses, transformed global organizations and led technology and operations at
-                scale. That experience changes the conversation.
-              </p>
-              <p>We understand that behind every technology initiative there is:</p>
+              <p><T>{"Our leaders have built businesses, transformed global organizations and led technology and operations at scale. That experience changes the conversation."}</T></p>
+              <p><T>{"We understand that behind every technology initiative there is:"}</T></p>
             </div>
           </div>
           <Chips
@@ -93,9 +84,7 @@ export function WhyLeadership() {
               { icon: "lead-user-check", label: "An outcome someone is accountable for" },
             ]}
           />
-          <PrimaryButton href={ROUTES.leadership} arrow className={styles.btn344}>
-            Meet our leadership
-          </PrimaryButton>
+          <PrimaryButton href={ROUTES.leadership} arrow className={styles.btn344}><T>{"Meet our leadership"}</T></PrimaryButton>
         </div>
       </div>
     </section>
@@ -116,19 +105,14 @@ export function WhyAiNative() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.headerTight}>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">AI-NATIVE BY DESIGN</Eyebrow>
-            <span className={`${styles.title} ${styles.titleLight} ${styles.title750}`}>
-              AI isn&apos;t a capability we added to our portfolio. It is part of how we operate.
-            </span>
+            <Eyebrow tone="white"><T>{"AI-NATIVE BY DESIGN"}</T></Eyebrow>
+            <span className={`${styles.title} ${styles.titleLight} ${styles.title750}`}><T>{"AI isn't a capability we added to our portfolio. It is part of how we operate."}</T></span>
           </h2>
-          <p className={styles.white16}>
-            We combine human expertise with AI across how we plan, build and deliver, helping teams move faster, make
-            better-informed decisions and continuously improve execution.
-          </p>
+          <p className={styles.white16}><T>{"We combine human expertise with AI across how we plan, build and deliver, helping teams move faster, make better-informed decisions and continuously improve execution."}</T></p>
         </div>
         <div className={styles.aiCards}>
           <article className={`${styles.aiCard} ${styles.aiOperate}`}>
-            <p className={styles.aiEyebrow}>HOW WE OPERATE · HUMAN EXPERTISE + AI</p>
+            <p className={styles.aiEyebrow}><T>{"HOW WE OPERATE · HUMAN EXPERTISE + AI"}</T></p>
             <div className={styles.aiFlow}>
               {OPERATE.map((o, i) => (
                 <div key={o.title} className={styles.aiFlowItem}>
@@ -137,28 +121,26 @@ export function WhyAiNative() {
                     <span className={styles.aiRing}>
                       <img alt="" src={`${A}/${o.icon}.svg`} width={50} height={50} />
                     </span>
-                    <h3 className={styles.aiStageTitle}>{o.title}</h3>
-                    <p className={styles.aiStageText}>{o.text}</p>
+                    <h3 className={styles.aiStageTitle}><T>{o.title}</T></h3>
+                    <p className={styles.aiStageText}><T>{o.text}</T></p>
                   </div>
                 </div>
               ))}
             </div>
             <p className={styles.aiNote}>
-              <img alt="" src={`${A}/ai-spark.svg`} width={18} height={18} />
-              AI embedded across every stage, not bolted on at the end.
-            </p>
+              <img alt="" src={`${A}/ai-spark.svg`} width={18} height={18} /><T>{"AI embedded across every stage, not bolted on at the end."}</T></p>
           </article>
           <article className={`${styles.aiCard} ${styles.aiSolution}`}>
-            <p className={styles.aiEyebrow}>WHEN AI IS THE SOLUTION</p>
+            <p className={styles.aiEyebrow}><T>{"WHEN AI IS THE SOLUTION"}</T></p>
             <div className={styles.aiSolutionBody}>
-              <h3 className={styles.aiSolutionTitle}>From Opportunity to Practical Implementation</h3>
+              <h3 className={styles.aiSolutionTitle}><T>{"From Opportunity to Practical Implementation"}</T></h3>
               <ol className={styles.aiSteps}>
                 {SOLUTION.map((s) => (
                   <li key={s}>
                     <span className={styles.aiStepRing}>
                       <img alt="" src={`${A}/ai-code-sm.svg`} width={24} height={24} />
                     </span>
-                    <span>{s}</span>
+                    <span><T>{s}</T></span>
                   </li>
                 ))}
               </ol>
@@ -178,19 +160,12 @@ export function WhyTalent() {
         <div className={styles.talentCopy}>
           <div className={styles.headerTight}>
             <h2 className={styles.heading}>
-              <Eyebrow>TALENT</Eyebrow>
-              <span className={styles.title}>Exceptional Talent. Closer to You.</span>
+              <Eyebrow><T>{"TALENT"}</T></Eyebrow>
+              <span className={styles.title}><T>{"Exceptional Talent. Closer to You."}</T></span>
             </h2>
             <div className={`${styles.muted16} ${styles.paras}`}>
-              <p>
-                Great delivery still depends on great people. We connect our clients with high-caliber engineering, data
-                and AI talent across Latin America, combining deep technical expertise with geographic proximity,
-                timezone alignment and close collaboration with North American teams.
-              </p>
-              <p>
-                The result is access to the capabilities organizations need without compromising how their teams work
-                together.
-              </p>
+              <p><T>{"Great delivery still depends on great people. We connect our clients with high-caliber engineering, data and AI talent across Latin America, combining deep technical expertise with geographic proximity, timezone alignment and close collaboration with North American teams."}</T></p>
+              <p><T>{"The result is access to the capabilities organizations need without compromising how their teams work together."}</T></p>
             </div>
           </div>
           <Chips
@@ -206,30 +181,28 @@ export function WhyTalent() {
         <div className={styles.talentCard}>
           <img alt="" src={`${A}/talent.jpg`} className={styles.talentPhoto} />
           <div className={styles.talentHours}>
-            <p className={styles.blue14}>SAME WORKING DAY, SHARED HOURS</p>
+            <p className={styles.blue14}><T>{"SAME WORKING DAY, SHARED HOURS"}</T></p>
             <div className={styles.hoursRows}>
               <div className={styles.hoursRow}>
-                <span>North America</span>
+                <span><T>{"North America"}</T></span>
                 <span className={styles.hoursBar}>
                   <span className={styles.hoursFillDark} />
                 </span>
               </div>
               <div className={styles.hoursRow}>
-                <span>Latin America (GMT-5)</span>
+                <span><T>{"Latin America (GMT-5)"}</T></span>
                 <span className={styles.hoursBar}>
                   <span className={styles.hoursFillBlue} />
                 </span>
               </div>
               <div className={styles.hoursZones}>
-                <span>GMT-4</span>
-                <span>GMT-5</span>
-                <span>GMT-6</span>
-                <span>GMT-7</span>
+                <span><T>{"GMT-4"}</T></span>
+                <span><T>{"GMT-5"}</T></span>
+                <span><T>{"GMT-6"}</T></span>
+                <span><T>{"GMT-7"}</T></span>
               </div>
             </div>
-            <p className={styles.muted14}>
-              Overlapping business hours enable real-time collaboration with North American teams.
-            </p>
+            <p className={styles.muted14}><T>{"Overlapping business hours enable real-time collaboration with North American teams."}</T></p>
           </div>
         </div>
       </div>
@@ -251,14 +224,10 @@ export function WhySpeed() {
       <div className={`wrap ${styles.section} ${styles.sectionGutter}`}>
         <div className={styles.headerTight}>
           <h2 className={styles.heading}>
-            <Eyebrow>SPEED &amp; QUALITY</Eyebrow>
-            <span className={styles.title}>Speed Without Sacrificing Quality</span>
+            <Eyebrow><T>{"SPEED & QUALITY"}</T></Eyebrow>
+            <span className={styles.title}><T>{"Speed Without Sacrificing Quality"}</T></span>
           </h2>
-          <p className={`${styles.muted16} ${styles.max700}`}>
-            Moving faster only matters if what gets delivered works. Our approach combines rigorous talent selection,
-            readiness, quality practices and ongoing delivery support to help clients accelerate execution while
-            maintaining the standards their business demands.
-          </p>
+          <p className={`${styles.muted16} ${styles.max700}`}><T>{"Moving faster only matters if what gets delivered works. Our approach combines rigorous talent selection, readiness, quality practices and ongoing delivery support to help clients accelerate execution while maintaining the standards their business demands."}</T></p>
         </div>
         <ol className={styles.steps}>
           {STEPS.map((s, i) => (
@@ -270,17 +239,16 @@ export function WhySpeed() {
                   </span>
                   <img alt="" src={`${A}/step-line.svg`} className={styles.stepLine} />
                 </div>
-                <p className={styles.stepLabel}>STEP {String(i + 1).padStart(2, "0")}</p>
+                <p className={styles.stepLabel}><T>{"STEP "}</T>{String(i + 1).padStart(2, "0")}</p>
               </div>
               <div className={styles.stepCopy}>
-                <h3 className={styles.title24}>{s.title}</h3>
-                <p className={styles.muted16tight}>{s.text}</p>
+                <h3 className={styles.title24}><T>{s.title}</T></h3>
+                <p className={styles.muted16tight}><T>{s.text}</T></p>
               </div>
             </li>
           ))}
         </ol>
-        <p className={styles.equation}>
-          Speed + Quality = <strong>Not a trade-off</strong>
+        <p className={styles.equation}><T>{"Speed + Quality = "}</T><strong><T>{"Not a trade-off"}</T></strong>
         </p>
       </div>
     </section>
@@ -301,63 +269,48 @@ export function WhyEconomics() {
         <div className={styles.econCopy}>
           <div className={styles.headerTight}>
             <h2 className={styles.heading}>
-              <Eyebrow>ECONOMICS</Eyebrow>
-              <span className={styles.title}>Economics That Create Room to Do More</span>
+              <Eyebrow><T>{"ECONOMICS"}</T></Eyebrow>
+              <span className={styles.title}><T>{"Economics That Create Room to Do More"}</T></span>
             </h2>
-            <p className={styles.muted16}>
-              Our Latin American delivery model can provide meaningful total cost of employee (TCE) savings compared with
-              equivalent U.S.-based capabilities. But we don&apos;t see cost efficiency as the destination.
-            </p>
+            <p className={styles.muted16}><T>{"Our Latin American delivery model can provide meaningful total cost of employee (TCE) savings compared with equivalent U.S.-based capabilities. But we don't see cost efficiency as the destination."}</T></p>
           </div>
-          <p className={styles.econStatement}>We see it as the opportunity to do more with the same investment.</p>
+          <p className={styles.econStatement}><T>{"We see it as the opportunity to do more with the same investment."}</T></p>
           <ul className={styles.benefits}>
             {BENEFITS.map((b) => (
               <li key={b.title} className={`${styles.benefit} hover-blue`}>
                 <img alt="" src={`${A}/${b.icon}.svg`} width={26} height={26} />
                 <div>
-                  <h3 className={styles.benefitTitle}>{b.title}</h3>
-                  <p className={styles.muted14}>{b.text}</p>
+                  <h3 className={styles.benefitTitle}><T>{b.title}</T></h3>
+                  <p className={styles.muted14}><T>{b.text}</T></p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
         <div className={styles.econCard}>
-          <p className={styles.soft14}>SAME WORKING DAY, SHARED HOURS</p>
+          <p className={styles.soft14}><T>{"SAME WORKING DAY, SHARED HOURS"}</T></p>
           <div className={styles.econChart}>
             <div className={styles.econCol}>
-              <div className={`${styles.block} ${styles.blockMuted}`} style={{ paddingBlock: 82 }}>
-                Core delivery
-              </div>
+              <div className={`${styles.block} ${styles.blockMuted}`} style={{ paddingBlock: 82 }}><T>{"Core delivery"}</T></div>
               <div className={styles.econCaption}>
-                <p className={styles.econCaptionTitle}>U.S.-Based Capability</p>
-                <p>
-                  Same investment,
-                  <br />
-                  one outcome
-                </p>
+                <p className={styles.econCaptionTitle}><T>{"U.S.-Based Capability"}</T></p>
+                <p><T>{"Same investment,"}</T><br /><T>{"one outcome"}</T></p>
               </div>
             </div>
             <div className={styles.econCol}>
               <div className={styles.blockStack}>
-                <div className={`${styles.block} ${styles.blockBlue}`}>Redirected resources</div>
-                <div className={`${styles.block} ${styles.blockBlue}`}>Accelerated priorities</div>
-                <div className={`${styles.block} ${styles.blockBlue}`}>Expanded capacity</div>
-                <div className={`${styles.block} ${styles.blockMuted}`} style={{ paddingBlock: 50 }}>
-                  Core delivery
-                </div>
+                <div className={`${styles.block} ${styles.blockBlue}`}><T>{"Redirected resources"}</T></div>
+                <div className={`${styles.block} ${styles.blockBlue}`}><T>{"Accelerated priorities"}</T></div>
+                <div className={`${styles.block} ${styles.blockBlue}`}><T>{"Expanded capacity"}</T></div>
+                <div className={`${styles.block} ${styles.blockMuted}`} style={{ paddingBlock: 50 }}><T>{"Core delivery"}</T></div>
               </div>
               <div className={styles.econCaption}>
-                <p className={styles.econCaptionTitle}>AspenView Model</p>
-                <p>
-                  Same investment,
-                  <br />
-                  room to do more
-                </p>
+                <p className={styles.econCaptionTitle}><T>{"AspenView Model"}</T></p>
+                <p><T>{"Same investment,"}</T><br /><T>{"room to do more"}</T></p>
               </div>
             </div>
           </div>
-          <p className={styles.muted14}>Illustrative. Actual savings vary by engagement.</p>
+          <p className={styles.muted14}><T>{"Illustrative. Actual savings vary by engagement."}</T></p>
         </div>
       </div>
     </section>

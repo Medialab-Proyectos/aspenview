@@ -2,6 +2,8 @@ import { Eyebrow, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Delivery.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const MODELS = [
   {
     icon: "spark-blue",
@@ -30,17 +32,12 @@ export default function Delivery() {
         <div className={styles.copyCol}>
           <div className={styles.copy}>
             <h2 className={styles.heading}>
-              <Eyebrow>How We Deliver</Eyebrow>
-              <span className={styles.title}>Your Priorities. Our Delivery Commitment.</span>
+              <Eyebrow><T>{"How We Deliver"}</T></Eyebrow>
+              <span className={styles.title}><T>{"Your Priorities. Our Delivery Commitment."}</T></span>
             </h2>
             <div className={styles.textGroup}>
-              <p className={styles.lead}>
-                We work as an extension of your technology teams, bringing the engineering expertise, execution
-                discipline, and commitment needed to make every engagement successful.
-              </p>
-              <PrimaryButton href={ROUTES.deliveryExcellence} arrow>
-                Explore How We Deliver
-              </PrimaryButton>
+              <p className={styles.lead}><T>{"We work as an extension of your technology teams, bringing the engineering expertise, execution discipline, and commitment needed to make every engagement successful."}</T></p>
+              <PrimaryButton href={ROUTES.deliveryExcellence} arrow><T>{"Explore How We Deliver"}</T></PrimaryButton>
             </div>
           </div>
         </div>
@@ -53,8 +50,8 @@ export default function Delivery() {
                 <img alt="" src={`/assets/icons/${m.icon}.svg`} width={32} height={32} />
               </span>
               <div className={styles.cardCopy}>
-                <h3 className={styles.cardTitle}>{m.title}</h3>
-                <p className={styles.cardText}>{m.text}</p>
+                <h3 className={styles.cardTitle}><T>{m.title}</T></h3>
+                <p className={styles.cardText}><T>{m.text}</T></p>
               </div>
             </div>
           ))}

@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
-import Link from "next/link";
+import Link from "@/components/i18n/LocaleLink";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Contact.module.css";
+
+import { T } from "@/components/i18n/T";
+import { useT } from "@/components/i18n/LangProvider";
 
 const A = "/assets/contact";
 
@@ -40,11 +43,11 @@ const TABS = [
 
 type Errors = Partial<Record<"firstName" | "lastName" | "email" | "company" | "country" | "topic" | "consent", string>>;
 
-function Label({ htmlFor, children, required }: { htmlFor?: string; children: string; required?: boolean }) {
+function Label({ htmlFor, children, required }: { htmlFor?: string; children: React.ReactNode; required?: boolean }) {
   return (
     <label htmlFor={htmlFor} className={styles.label}>
       {children}
-      {required && <span className={styles.req}> *</span>}
+      {required &&<span className={styles.req}> *</span>}
     </label>
   );
 }
@@ -102,7 +105,7 @@ function Select({
           }
         }}
       >
-        <span className={value ? undefined : styles.placeholderStrong}>{value || "Select an option"}</span>
+        <span className={value ? undefined : styles.placeholderStrong}><T>{value || "Select an option"}</T></span>
         <img alt="" src={`${A}/${open ? "arrow-up" : "arrow-down"}.svg`} width={24} height={24} />
       </button>
       {open && (
@@ -117,7 +120,7 @@ function Select({
               onMouseDown={(e) => e.preventDefault()}
               onClick={() => choose(i)}
             >
-              {o}
+              <T>{o}</T>
             </li>
           ))}
         </ul>
@@ -149,6 +152,7 @@ function Check({
 }
 
 export default function ContactForm() {
+  const tr = useT();
   const uid = useId();
   const [tab, setTab] = useState(0);
   const [topic, setTopic] = useState("");
@@ -214,8 +218,8 @@ export default function ContactForm() {
     return (
       <div className={styles.card}>
         <div className={styles.sent} role="status">
-          <h2 className={styles.formTitle}>Thank You!</h2>
-          <p className={styles.formIntro}>We received your message and will get back to you shortly.</p>
+          <h2 className={styles.formTitle}><T>{"Thank You!"}</T></h2>
+          <p className={styles.formIntro}><T>{"We received your message and will get back to you shortly."}</T></p>
         </div>
       </div>
     );
@@ -224,8 +228,8 @@ export default function ContactForm() {
   return (
     <form className={styles.card} onSubmit={onSubmit} noValidate>
       <div className={styles.cardHead}>
-        <p className={styles.cardEyebrow}>How can we help you?</p>
-        <div className={styles.tabs} role="tablist" aria-label="Type of inquiry">
+        <p className={styles.cardEyebrow}><T>{"How can we help you?"}</T></p>
+        <div className={styles.tabs} role="tablist" aria-label={tr("Type of inquiry")}>
           {TABS.map((x, i) => (
             <button
               key={x.key}
@@ -240,53 +244,43 @@ export default function ContactForm() {
                 setErrors((er) => ({ ...er, topic: undefined, country: undefined }));
               }}
             >
-              {x.label}
+              <T>{x.label}</T>
             </button>
           ))}
         </div>
       </div>
       <img alt="" src={`${A}/line.svg`} className={styles.divider} />
       <div className={styles.intro}>
-        <h2 className={styles.formTitle}>{t.title}</h2>
-        <p className={styles.formIntro}>{t.intro}</p>
+        <h2 className={styles.formTitle}><T>{t.title}</T></h2>
+        <p className={styles.formIntro}><T>{t.intro}</T></p>
       </div>
 
       <div className={styles.fields}>
         <div className={styles.row}>
           <div className={styles.input}>
-            <Label htmlFor={`${uid}-fn`} required>
-              First name
-            </Label>
-            <input id={`${uid}-fn`} name="firstName" placeholder="First name" autoComplete="given-name" className={`${styles.field} ${errors.firstName ? styles.invalid : ""}`} aria-invalid={!!errors.firstName} />
-            {errors.firstName && <p className={styles.error}>{errors.firstName}</p>}
+            <Label htmlFor={`${uid}-fn`} required><T>{"First name"}</T></Label>
+            <input id={`${uid}-fn`} name="firstName" placeholder={tr("First name")} autoComplete="given-name" className={`${styles.field} ${errors.firstName ? styles.invalid : ""}`} aria-invalid={!!errors.firstName} />
+            {errors.firstName && <p className={styles.error}><T>{errors.firstName}</T></p>}
           </div>
           <div className={styles.input}>
-            <Label htmlFor={`${uid}-ln`} required>
-              Last name
-            </Label>
-            <input id={`${uid}-ln`} name="lastName" placeholder="Last name" autoComplete="family-name" className={`${styles.field} ${errors.lastName ? styles.invalid : ""}`} aria-invalid={!!errors.lastName} />
-            {errors.lastName && <p className={styles.error}>{errors.lastName}</p>}
+            <Label htmlFor={`${uid}-ln`} required><T>{"Last name"}</T></Label>
+            <input id={`${uid}-ln`} name="lastName" placeholder={tr("Last name")} autoComplete="family-name" className={`${styles.field} ${errors.lastName ? styles.invalid : ""}`} aria-invalid={!!errors.lastName} />
+            {errors.lastName && <p className={styles.error}><T>{errors.lastName}</T></p>}
           </div>
         </div>
         <div className={styles.input}>
-          <Label htmlFor={`${uid}-em`} required>
-            Work email
-          </Label>
+          <Label htmlFor={`${uid}-em`} required><T>{"Work email"}</T></Label>
           <input id={`${uid}-em`} name="email" type="email" placeholder="name@company.com" autoComplete="email" className={`${styles.field} ${errors.email ? styles.invalid : ""}`} aria-invalid={!!errors.email} />
-          {errors.email && <p className={styles.error}>{errors.email}</p>}
+          {errors.email && <p className={styles.error}><T>{errors.email}</T></p>}
         </div>
         <div className={styles.input}>
-          <Label htmlFor={`${uid}-co`} required>
-            Company
-          </Label>
-          <input id={`${uid}-co`} name="company" placeholder="Company name" autoComplete="organization" className={`${styles.field} ${errors.company ? styles.invalid : ""}`} aria-invalid={!!errors.company} />
-          {errors.company && <p className={styles.error}>{errors.company}</p>}
+          <Label htmlFor={`${uid}-co`} required><T>{"Company"}</T></Label>
+          <input id={`${uid}-co`} name="company" placeholder={tr("Company name")} autoComplete="organization" className={`${styles.field} ${errors.company ? styles.invalid : ""}`} aria-invalid={!!errors.company} />
+          {errors.company && <p className={styles.error}><T>{errors.company}</T></p>}
         </div>
         {countries && (
           <div className={styles.input}>
-            <Label htmlFor={`${uid}-ct`} required>
-              Country
-            </Label>
+            <Label htmlFor={`${uid}-ct`} required><T>{"Country"}</T></Label>
             <Select
               id={`${uid}-ct`}
               options={countries}
@@ -297,12 +291,12 @@ export default function ContactForm() {
                 setErrors((er) => ({ ...er, country: undefined }));
               }}
             />
-            {errors.country && <p className={styles.error}>{errors.country}</p>}
+            {errors.country && <p className={styles.error}><T>{errors.country}</T></p>}
           </div>
         )}
         <div className={styles.input}>
           <Label htmlFor={`${uid}-tp`} required>
-            {t.question}
+            <T>{t.question}</T>
           </Label>
           <Select
             id={`${uid}-tp`}
@@ -314,16 +308,14 @@ export default function ContactForm() {
               setErrors((er) => ({ ...er, topic: undefined }));
             }}
           />
-          {errors.topic && <p className={styles.error}>{errors.topic}</p>}
+          {errors.topic && <p className={styles.error}><T>{errors.topic}</T></p>}
         </div>
         <div className={styles.input}>
-          <Label htmlFor={`${uid}-dt`}>Give us more details</Label>
-          <textarea id={`${uid}-dt`} name="details" placeholder="A few words about what you need..." className={styles.textarea} />
+          <Label htmlFor={`${uid}-dt`}><T>{"Give us more details"}</T></Label>
+          <textarea id={`${uid}-dt`} name="details" placeholder={tr("A few words about what you need...")} className={styles.textarea} />
         </div>
         <div className={styles.checks}>
-          <Check checked={updates} onChange={setUpdates}>
-            I&apos;d like to receive insights and updates from AspenView. (Optional)
-          </Check>
+          <Check checked={updates} onChange={setUpdates}><T>{"I'd like to receive insights and updates from AspenView. (Optional)"}</T></Check>
           <Check
             checked={consent}
             invalid={!!errors.consent}
@@ -331,19 +323,14 @@ export default function ContactForm() {
               setConsent(val);
               setErrors((er) => ({ ...er, consent: undefined }));
             }}
-          >
-            By submitting, you acknowledge AspenView&apos;s <Link href={ROUTES.privacy}>Privacy Policy</Link> and the
-            processing of your information to respond to your inquiry. *
-          </Check>
-          {errors.consent && <p className={styles.error}>{errors.consent}</p>}
+          ><T>{"By submitting, you acknowledge AspenView's "}</T><Link href={ROUTES.privacy}><T>{"Privacy Policy"}</T></Link><T>{" and the processing of your information to respond to your inquiry. *"}</T></Check>
+          {errors.consent && <p className={styles.error}><T>{errors.consent}</T></p>}
         </div>
         {status === "error" && (
-          <p className={styles.error} role="alert">
-            Something went wrong sending your message. Please try again in a moment.
-          </p>
+          <p className={styles.error} role="alert"><T>{"Something went wrong sending your message. Please try again in a moment."}</T></p>
         )}
         <button type="submit" className={styles.submit} disabled={status === "sending"}>
-          <span>{status === "sending" ? "Sending…" : "Let’s connect"}</span>
+          <span><T>{status === "sending" ? "Sending…" : "Let’s connect"}</T></span>
           <img alt="" src="/assets/icons/arrow-right-light.svg" width={24} height={24} />
         </button>
       </div>

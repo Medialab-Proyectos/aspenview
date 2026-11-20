@@ -1,8 +1,10 @@
-import Link from "next/link";
+import Link from "@/components/i18n/LocaleLink";
 import type { ReactNode } from "react";
 import { Eyebrow, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./About.module.css";
+
+import { T } from "@/components/i18n/T";
 
 const A = "/assets/about";
 
@@ -46,11 +48,11 @@ export function AboutHero({
       <div className={`wrap ${styles.heroInner}`}>
         <div className={`${styles.heroTop} ${photo ? styles.heroTopPhoto : ""} ${aside ? styles.heroTopAside : ""}`}>
           <div className={styles.heroCopy}>
-            <Eyebrow tone="white">{eyebrow}</Eyebrow>
-            <h1 className={styles.heroTitle}>{title}</h1>
-            <p className={`${styles.heroText} ${aside ? styles.heroTextNarrow : ""}`}>{text}</p>
+            <Eyebrow tone="white"><T>{eyebrow}</T></Eyebrow>
+            <h1 className={styles.heroTitle}><T>{title}</T></h1>
+            <p className={`${styles.heroText} ${aside ? styles.heroTextNarrow : ""}`}><T>{text}</T></p>
           </div>
-          {aside}
+          <T>{aside}</T>
           {photo && <img alt="" src={photo} className={styles.heroPhoto} />}
         </div>
         <nav className={styles.heroNav} aria-label="About AspenView">
@@ -58,7 +60,7 @@ export function AboutHero({
           <ul>
             {ABOUT_NAV.map((l) => (
               <li key={l.href}>
-                <Link href={l.href}>{l.label}</Link>
+                <Link href={l.href}><T>{l.label}</T></Link>
               </li>
             ))}
           </ul>
@@ -96,14 +98,14 @@ export function AboutCta({
           <span className={styles.ctaGlow} aria-hidden>
             <img alt="" src={`${A}/cta-glow.svg`} />
           </span>
-          <h2 className={`${styles.ctaTitle} ${large ? styles.ctaTitleLarge : ""}`}>{title}</h2>
+          <h2 className={`${styles.ctaTitle} ${large ? styles.ctaTitleLarge : ""}`}><T>{title}</T></h2>
           <p className={styles.ctaText} style={textWidth ? { maxWidth: textWidth } : undefined}>
-            {text}
+            <T>{text}</T>
           </p>
         </div>
         <div className={styles.ctaBtn}>
           <PrimaryButton href={ROUTES.contact} arrow>
-            {cta}
+            <T>{cta}</T>
           </PrimaryButton>
         </div>
       </div>

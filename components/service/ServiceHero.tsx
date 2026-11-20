@@ -3,6 +3,8 @@ import { PrimaryButton } from "../ui";
 import heroStyles from "../sections/PageHero.module.css";
 import styles from "./ServiceHero.module.css";
 
+import { T } from "@/components/i18n/T";
+
 /** Service detail hero (Figma 1746:22143): copy left, labelled animated media right. */
 export default function ServiceHero({
   eyebrow,
@@ -53,18 +55,18 @@ export default function ServiceHero({
           <div className={styles.copy}>
             <span className={styles.eyebrow}>
               <span className={styles.eyebrowLine} />
-              <span className={styles.eyebrowText}>{eyebrow}</span>
+              <span className={styles.eyebrowText}><T>{eyebrow}</T></span>
             </span>
             <div className={styles.textGroup}>
               <h1 className={styles.title}>
-                {title} <strong className={highlightInline ? undefined : styles.highlightBlock}>{highlight}</strong>
+                <T>{title}</T> <strong className={highlightInline ? undefined : styles.highlightBlock}><T>{highlight}</T></strong>
               </h1>
-              <p className={styles.text}>{text}</p>
+              <p className={styles.text}><T>{text}</T></p>
             </div>
           </div>
           <div className={styles.actions}>
             <PrimaryButton href={cta.href} arrow>
-              {cta.label}
+              <T>{cta.label}</T>
             </PrimaryButton>
           </div>
         </div>
@@ -72,7 +74,7 @@ export default function ServiceHero({
         <div className={styles.mediaCol}>
           <span className={styles.mediaLabel}>
             <img alt="" src="/assets/pagehero/line-soft.svg" className={styles.mediaLine} />
-            <span>{mediaLabel}</span>
+            <span><T>{mediaLabel}</T></span>
           </span>
           {image ? (
             <img

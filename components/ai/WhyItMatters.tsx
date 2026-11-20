@@ -4,6 +4,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import styles from "./Native.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const ease = [0, 0, 0.58, 1] as const;
 const A = "/assets/ai";
 
@@ -60,15 +62,15 @@ export default function WhyItMatters() {
                   <span className={styles.whyIcon}>
                     <img alt="" src={`${A}/${item.icon}.svg`} width={32} height={32} />
                   </span>
-                  <span className={styles.whyQ}>{item.q}</span>
+                  <span className={styles.whyQ}><T>{item.q}</T></span>
                   <img alt="" src={`${A}/${isOpen ? "why-minus" : "why-add"}.svg`} width={24} height={24} />
                 </button>
               </h3>
               <div className={styles.whyReveal}>
                 <div className={styles.whyRevealInner}>
                   <div className={styles.whyAnswer}>
-                    <p className={styles.whyAnswerTitle}>{item.title}</p>
-                    <p>{item.text}</p>
+                    <p className={styles.whyAnswerTitle}><T>{item.title}</T></p>
+                    <p><T>{item.text}</T></p>
                   </div>
                 </div>
               </div>
@@ -86,7 +88,7 @@ export default function WhyItMatters() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15, ease }}
             >
-              {shown.title}
+              <T>{shown.title}</T>
             </motion.p>
           </AnimatePresence>
         </div>

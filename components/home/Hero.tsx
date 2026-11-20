@@ -6,6 +6,8 @@ import { PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Hero.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const ShaderBg = dynamic(() => import("../sections/ShaderBg"), { ssr: false });
 
 type Slide = {
@@ -21,8 +23,7 @@ const SLIDES: Slide[] = [
   {
     eyebrow: "Technology Services",
     title: (
-      <>
-        The AI-Native Technology Partner Built <strong>to Move Fast.</strong>
+      <><T>{"The AI-Native Technology Partner Built "}</T><strong><T>{"to Move Fast."}</T></strong>
       </>
     ),
     text: "We help organizations build and scale technology teams faster, combining expert engineering across Latin America with AI-powered delivery.",
@@ -32,8 +33,7 @@ const SLIDES: Slide[] = [
   {
     eyebrow: "Leadership",
     title: (
-      <>
-        Fortune 500 Experience. <strong>Focused on Your Growth</strong>.
+      <><T>{"Fortune 500 Experience. "}</T><strong><T>{"Focused on Your Growth"}</T></strong>.
       </>
     ),
     text: "Work with a technology partner led by executives who’ve helped some of the world’s largest organizations solve complex business challenges.",
@@ -44,8 +44,8 @@ const SLIDES: Slide[] = [
     eyebrow: "Talent",
     title: (
       <>
-        <span className={styles.line}>The Right Talent. </span>
-        <strong className={styles.line}>Ready to Scale Your Business.</strong>
+        <span className={styles.line}><T>{"The Right Talent. "}</T></span>
+        <strong className={styles.line}><T>{"Ready to Scale Your Business."}</T></strong>
       </>
     ),
     text: "From software engineering to AI and data, we build high-performing nearshore teams that integrate seamlessly with yours.",
@@ -96,14 +96,14 @@ export default function Hero() {
                 inert={!active}
               >
                 <div className={styles.copy}>
-                  <p className={styles.eyebrow}>{s.eyebrow}</p>
-                  {i === 0 ? <h1 className={styles.title}>{s.title}</h1> : <p className={styles.title}>{s.title}</p>}
+                  <p className={styles.eyebrow}><T>{s.eyebrow}</T></p>
+                  {i === 0 ? <h1 className={styles.title}><T>{s.title}</T></h1> : <p className={styles.title}><T>{s.title}</T></p>}
                   <div className={styles.textWrap}>
-                    <p className={styles.text}>{s.text}</p>
+                    <p className={styles.text}><T>{s.text}</T></p>
                   </div>
                 </div>
                 <div className={styles.actions}>
-                  <PrimaryButton href={s.href}>{s.cta}</PrimaryButton>
+                  <PrimaryButton href={s.href}><T>{s.cta}</T></PrimaryButton>
                 </div>
               </div>
             );

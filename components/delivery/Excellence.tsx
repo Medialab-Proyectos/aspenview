@@ -2,6 +2,8 @@ import { Eyebrow, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Excellence.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/delivery";
 
 /* Numbered eyebrow with 4-segment progress (e.g. "01  A STRONG START ━ ─ ─ ─") */
@@ -20,8 +22,8 @@ function StepEyebrow({
 }) {
   return (
     <div className={`${styles.stepEyebrow} ${styles[`tone_${tone}`]} ${center ? styles.stepCenter : ""}`}>
-      <span className={styles.stepNum}>{num}</span>
-      <span className={styles.stepLabel}>{label}</span>
+      <span className={styles.stepNum}><T>{num}</T></span>
+      <span className={styles.stepLabel}><T>{label}</T></span>
       <img alt="" src={`${A}/progress-${step}.svg`} width={175} height={3} className={styles.progress} />
     </div>
   );
@@ -31,7 +33,7 @@ function AospNote() {
   return (
     <p className={styles.note}>
       <img alt="" src={`${A}/check-circle.svg`} width={24} height={24} />
-      <span>Powered by AspenView’s Onboarding Success Protocol (AOSP).</span>
+      <span><T>{"Powered by AspenView’s Onboarding Success Protocol (AOSP)."}</T></span>
     </p>
   );
 }
@@ -61,18 +63,12 @@ export function ExHero() {
         <span className={styles.heroShade} aria-hidden />
         <div className={styles.heroInner}>
           <div className={styles.heroCopy}>
-            <Eyebrow tone="soft">Delivery EXCELLENCE</Eyebrow>
+            <Eyebrow tone="soft"><T>{"Delivery EXCELLENCE"}</T></Eyebrow>
             <h1 className={styles.heroTitle}>
-              <span>Excellence</span> at
-              <br />
-              Every Stage.
-            </h1>
+              <span><T>{"Excellence"}</T></span><T>{" at"}</T><br /><T>{"Every Stage."}</T></h1>
             <div className={styles.heroText}>
-              <p className={styles.heroSub}>From a confident start to lasting business impact.</p>
-              <p>
-                We combine structured onboarding, disciplined execution, and continuous oversight to deliver quality and
-                measurable results across every IT engagement.
-              </p>
+              <p className={styles.heroSub}><T>{"From a confident start to lasting business impact."}</T></p>
+              <p><T>{"We combine structured onboarding, disciplined execution, and continuous oversight to deliver quality and measurable results across every IT engagement."}</T></p>
             </div>
           </div>
         </div>
@@ -83,7 +79,7 @@ export function ExHero() {
             {/* Excel 28: each stage turns blue on its own hover, not the whole strip */}
             <a href={s.href} className={`${styles.stage} hover-blue`}>
               <span className={styles.stageNum}>{String(i + 1).padStart(2, "0")}</span>
-              <span>{s.label}</span>
+              <span><T>{s.label}</T></span>
             </a>
           </li>
         ))}
@@ -105,10 +101,8 @@ export function ExOnboarding() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepEyebrow num="01" label="A STRONG START" step={1} />
-          <h2 className={styles.title}>Onboarding. Aligned From Day One.</h2>
-          <p className={styles.lead}>
-            We align your priorities, teams, and expectations from the start, creating a clear foundation for success.
-          </p>
+          <h2 className={styles.title}><T>{"Onboarding. Aligned From Day One."}</T></h2>
+          <p className={styles.lead}><T>{"We align your priorities, teams, and expectations from the start, creating a clear foundation for success."}</T></p>
         </div>
         <div className={styles.cards}>
           {ONBOARD.map((c, i) => (
@@ -120,8 +114,8 @@ export function ExOnboarding() {
                 <span className={styles.cardNum}>{String(i + 1).padStart(2, "0")}</span>
               </div>
               <div className={styles.cardCopy}>
-                <h3 className={styles.cardTitle}>{c.title}</h3>
-                <p className={styles.cardText}>{c.text}</p>
+                <h3 className={styles.cardTitle}><T>{c.title}</T></h3>
+                <p className={styles.cardText}><T>{c.text}</T></p>
               </div>
             </article>
           ))}
@@ -141,11 +135,8 @@ export function ExLaunch() {
       <div className={`wrap ${styles.launchInner}`}>
         <StepEyebrow num="02" label="CLIENT LAUNCH" step={2} tone="pale" center />
         <div className={styles.launchCopy}>
-          <h2 className={styles.launchTitle}>A Seamless Client Launch. Built for Continuity.</h2>
-          <p className={styles.launchText}>
-            From kickoff to operational readiness, our structured Client Launch process aligns teams, technology, and
-            responsibilities to ensure a smooth transition and confident delivery from day one.
-          </p>
+          <h2 className={styles.launchTitle}><T>{"A Seamless Client Launch. Built for Continuity."}</T></h2>
+          <p className={styles.launchText}><T>{"From kickoff to operational readiness, our structured Client Launch process aligns teams, technology, and responsibilities to ensure a smooth transition and confident delivery from day one."}</T></p>
         </div>
       </div>
     </section>
@@ -170,18 +161,18 @@ export function ExPillars() {
               <span className={styles.zerodIcon}>
                 <img alt="" src={`${A}/shield-check.svg`} width={22} height={22} />
               </span>
-              <p>ZeroD* supports applicable transitions through structured knowledge transfer and readiness validation.</p>
+              <p><T>{"ZeroD* supports applicable transitions through structured knowledge transfer and readiness validation."}</T></p>
             </div>
           </div>
           <div className={styles.pillarsCol}>
-            <h2 className={styles.pillarsTitle}>Four Pillars of a Successful Launch</h2>
+            <h2 className={styles.pillarsTitle}><T>{"Four Pillars of a Successful Launch"}</T></h2>
             <ol className={styles.pillars}>
               {PILLARS.map((p, i) => (
                 <li key={p.title} className={`${styles.pillar} hover-blue`}>
                   <span className={styles.pillarNum}>{String(i + 1).padStart(2, "0")}</span>
                   <div className={styles.pillarCopy}>
-                    <h3 className={styles.pillarTitle}>{p.title}</h3>
-                    <p className={styles.pillarText}>{p.text}</p>
+                    <h3 className={styles.pillarTitle}><T>{p.title}</T></h3>
+                    <p className={styles.pillarText}><T>{p.text}</T></p>
                   </div>
                 </li>
               ))}
@@ -207,11 +198,8 @@ export function ExQuality() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepEyebrow num="03" label="QUALITY AT EVERY STEP" step={3} />
-          <h2 className={styles.title}>Quality You Can Measure.</h2>
-          <p className={styles.lead}>
-            We combine technical oversight, transparent governance, and measurable performance to maintain consistent
-            quality.
-          </p>
+          <h2 className={styles.title}><T>{"Quality You Can Measure."}</T></h2>
+          <p className={styles.lead}><T>{"We combine technical oversight, transparent governance, and measurable performance to maintain consistent quality."}</T></p>
         </div>
         <div className={styles.quality}>
           {QUALITY.map((q, i) => (
@@ -222,9 +210,9 @@ export function ExQuality() {
                   <span className={styles.ring}>
                     <img alt="" src={`${A}/${q.icon}.svg`} width={32} height={32} />
                   </span>
-                  <h3 className={styles.qualityTitle}>{q.title}</h3>
+                  <h3 className={styles.qualityTitle}><T>{q.title}</T></h3>
                 </div>
-                <p className={styles.qualityText}>{q.text}</p>
+                <p className={styles.qualityText}><T>{q.text}</T></p>
               </div>
             </div>
           ))}
@@ -248,10 +236,8 @@ export function ExSuccess() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepEyebrow num="04" label="SUCCESS THAT CONTINUES" step={4} tone="dark" />
-          <h2 className={`${styles.title} ${styles.titleLight}`}>Committed Beyond Delivery.</h2>
-          <p className={`${styles.lead} ${styles.leadPale}`}>
-            We stay connected, anticipate evolving needs, and continuously improve to create lasting value.
-          </p>
+          <h2 className={`${styles.title} ${styles.titleLight}`}><T>{"Committed Beyond Delivery."}</T></h2>
+          <p className={`${styles.lead} ${styles.leadPale}`}><T>{"We stay connected, anticipate evolving needs, and continuously improve to create lasting value."}</T></p>
         </div>
         <div className={styles.success}>
           <article className={styles.successFeature}>
@@ -264,8 +250,8 @@ export function ExSuccess() {
               <span className={styles.successNum}>01</span>
             </div>
             <div className={styles.successCopy}>
-              <h3 className={styles.successTitle}>Proactive Engagement</h3>
-              <p className={styles.successText}>Anticipating what comes next.</p>
+              <h3 className={styles.successTitle}><T>{"Proactive Engagement"}</T></h3>
+              <p className={styles.successText}><T>{"Anticipating what comes next."}</T></p>
             </div>
           </article>
           <div className={styles.successList}>
@@ -276,8 +262,8 @@ export function ExSuccess() {
                     <img alt="" src={`${A}/${s.icon}.svg`} width={32} height={32} />
                   </span>
                   <div className={styles.successCardCopy}>
-                    <h3 className={styles.successCardTitle}>{s.title}</h3>
-                    <p className={styles.successCardText}>{s.text}</p>
+                    <h3 className={styles.successCardTitle}><T>{s.title}</T></h3>
+                    <p className={styles.successCardText}><T>{s.text}</T></p>
                   </div>
                 </div>
                 <span className={styles.successCardNum}>{String(i + 2).padStart(2, "0")}</span>
@@ -296,16 +282,11 @@ export function ExCta() {
     <section className={styles.cta}>
       <div className={`wrap ${styles.ctaInner}`}>
         <div className={styles.ctaCopy}>
-          <h2 className={styles.ctaTitle}>Your Technology Priorities Deserve More Than Great Execution.</h2>
-          <p className={styles.ctaText}>
-            Let’s align your teams, protect continuity, and turn disciplined delivery into measurable business impact at
-            every stage.
-          </p>
+          <h2 className={styles.ctaTitle}><T>{"Your Technology Priorities Deserve More Than Great Execution."}</T></h2>
+          <p className={styles.ctaText}><T>{"Let’s align your teams, protect continuity, and turn disciplined delivery into measurable business impact at every stage."}</T></p>
         </div>
         <div className={styles.ctaAction}>
-          <PrimaryButton href={ROUTES.contact} arrow>
-            Let’s Talk About Your Project
-          </PrimaryButton>
+          <PrimaryButton href={ROUTES.contact} arrow><T>{"Let’s Talk About Your Project"}</T></PrimaryButton>
         </div>
       </div>
     </section>

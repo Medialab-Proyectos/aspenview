@@ -3,6 +3,8 @@ import { ROUTES } from "@/lib/routes";
 import ModelsTabs from "./ModelsTabs";
 import styles from "./Models.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/delivery";
 
 /* ---------- Hero (2801:25258) ---------- */
@@ -16,21 +18,16 @@ export function MdHero() {
       <img alt="" src={`${A}/models-hero-ellipse.svg`} className={styles.heroEllipse} aria-hidden />
       <div className={`wrap ${styles.heroInner}`}>
         <div className={styles.heroCopy}>
-          <Eyebrow tone="white">Delivery models</Eyebrow>
-          <h1 className={styles.heroTitle}>
-            Structured to Deliver.
-            <br />
-            <strong>Agile by Design.</strong>
+          <Eyebrow tone="white"><T>{"Delivery models"}</T></Eyebrow>
+          <h1 className={styles.heroTitle}><T>{"Structured to Deliver."}</T><br />
+            <strong><T>{"Agile by Design."}</T></strong>
           </h1>
           <div className={styles.heroText}>
-            <p>
-              The AspenView Service Delivery System™ (ASDS) brings technical expertise, data-driven decisions and
-              accountability together to help your business scale.
-            </p>
-            <p>Seamless execution. High-quality results. A strong partnership between your teams and ours.</p>
+            <p><T>{"The AspenView Service Delivery System™ (ASDS) brings technical expertise, data-driven decisions and accountability together to help your business scale."}</T></p>
+            <p><T>{"Seamless execution. High-quality results. A strong partnership between your teams and ours."}</T></p>
           </div>
         </div>
-        <PrimaryButton href="#delivery-models" className={styles.heroBtn}>Explore our delivery models</PrimaryButton>
+        <PrimaryButton href="#delivery-models" className={styles.heroBtn}><T>{"Explore our delivery models"}</T></PrimaryButton>
       </div>
     </section>
   );
@@ -64,16 +61,12 @@ export function MdValue() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow>How We Deliver Value</Eyebrow>
-            <span className={styles.title}>
-              The Expertise You Need.
-              <br />
-              <strong>The Delivery You Can Trust.</strong>
+            <Eyebrow><T>{"How We Deliver Value"}</T></Eyebrow>
+            <span className={styles.title}><T>{"The Expertise You Need."}</T><br />
+              <strong><T>{"The Delivery You Can Trust."}</T></strong>
             </span>
           </h2>
-          <p className={styles.lead}>
-            A structured yet agile approach to delivering IT services, built around your business.
-          </p>
+          <p className={styles.lead}><T>{"A structured yet agile approach to delivering IT services, built around your business."}</T></p>
         </div>
         <div className={styles.values}>
           {VALUE.map((v, i) => (
@@ -85,12 +78,12 @@ export function MdValue() {
                 <div className={styles.valueVideo}>
                   <video src={v.video} autoPlay muted loop playsInline preload="metadata" aria-hidden />
                 </div>
-                <p className={styles.valueCaption}>{v.caption}</p>
+                <p className={styles.valueCaption}><T>{v.caption}</T></p>
                 <span className={styles.valueNum}>{String(i + 1).padStart(2, "0")}</span>
               </div>
               <div className={styles.valueBody}>
-                <h3 className={styles.valueTitle}>{v.title}</h3>
-                <p className={styles.valueText}>{v.text}</p>
+                <h3 className={styles.valueTitle}><T>{v.title}</T></h3>
+                <p className={styles.valueText}><T>{v.text}</T></p>
               </div>
             </article>
           ))}
@@ -110,19 +103,13 @@ export function MdModels() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">Our Service Delivery Models</Eyebrow>
-            <span className={`${styles.title} ${styles.titleLight}`}>
-              Three Ways to Partner.
-              <br />
-              <strong>One Commitment to Excellence.</strong>
+            <Eyebrow tone="white"><T>{"Our Service Delivery Models"}</T></Eyebrow>
+            <span className={`${styles.title} ${styles.titleLight}`}><T>{"Three Ways to Partner."}</T><br />
+              <strong><T>{"One Commitment to Excellence."}</T></strong>
             </span>
           </h2>
           <div className={`${styles.lead} ${styles.leadPale}`}>
-            <p>
-              At AspenView, we offer flexible nearshore delivery models, from specialized engineering talent and
-              dedicated teams to managed services, helping businesses accelerate growth, improve operational
-              performance, and turn technology investments into measurable results.
-            </p>
+            <p><T>{"At AspenView, we offer flexible nearshore delivery models, from specialized engineering talent and dedicated teams to managed services, helping businesses accelerate growth, improve operational performance, and turn technology investments into measurable results."}</T></p>
           </div>
         </div>
         <ModelsTabs />
@@ -153,14 +140,12 @@ export function MdDifference() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow>The AspenView Difference</Eyebrow>
-            <span className={styles.title}>
-              Accountability at Every Step.
-              <br />
-              <strong>Confidence in Every Outcome.</strong>
+            <Eyebrow><T>{"The AspenView Difference"}</T></Eyebrow>
+            <span className={styles.title}><T>{"Accountability at Every Step."}</T><br />
+              <strong><T>{"Confidence in Every Outcome."}</T></strong>
             </span>
           </h2>
-          <p className={styles.lead}>Our ASDS™ framework is built on the principles that make delivery dependable.</p>
+          <p className={styles.lead}><T>{"Our ASDS™ framework is built on the principles that make delivery dependable."}</T></p>
         </div>
         <div className={styles.diffs}>
           {DIFF.map((d) => (
@@ -169,8 +154,8 @@ export function MdDifference() {
                 <img alt="" src={`${A}/${d.icon}.svg`} width={32} height={32} />
               </span>
               <div className={styles.diffCopy}>
-                <h3 className={styles.diffTitle}>{d.title}</h3>
-                <p className={styles.diffText}>{d.text}</p>
+                <h3 className={styles.diffTitle}><T>{d.title}</T></h3>
+                <p className={styles.diffText}><T>{d.text}</T></p>
               </div>
             </article>
           ))}
@@ -197,32 +182,26 @@ export function MdQuality() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">Continuous Improvement &amp; Quality Assurance</Eyebrow>
-            <span className={`${styles.title} ${styles.titleLight}`}>
-              Quality Is Built In.
-              <br />
-              <strong>Improvement Never Stops.</strong>
+            <Eyebrow tone="white"><T>{"Continuous Improvement & Quality Assurance"}</T></Eyebrow>
+            <span className={`${styles.title} ${styles.titleLight}`}><T>{"Quality Is Built In."}</T><br />
+              <strong><T>{"Improvement Never Stops."}</T></strong>
             </span>
           </h2>
-          <p className={`${styles.lead} ${styles.leadPale}`}>
-            We believe in constant evolution. Our Total Quality System brings that commitment to every part of delivery.
-          </p>
+          <p className={`${styles.lead} ${styles.leadPale}`}><T>{"We believe in constant evolution. Our Total Quality System brings that commitment to every part of delivery."}</T></p>
         </div>
         <div className={styles.qualities}>
           {QUALITY.map((q, i) => (
             <article key={q.title} className={`${styles.qualityCard} hover-blue`}>
               <span className={styles.qualityNum}>{String(i + 1).padStart(2, "0")}</span>
               <img alt="" src={`${A}/${q.icon}.svg`} width={40} height={40} />
-              <h3 className={styles.qualityTitle}>{q.title}</h3>
+              <h3 className={styles.qualityTitle}><T>{q.title}</T></h3>
             </article>
           ))}
         </div>
         <img alt="" src={`${A}/q-line.svg`} className={styles.qualityLine} />
         <div className={styles.connect}>
-          <p className={styles.connectText}>Let’s find the right delivery model for your business.</p>
-          <PrimaryButton href={ROUTES.contact} className={styles.connectBtn}>
-            Connect with us
-          </PrimaryButton>
+          <p className={styles.connectText}><T>{"Let’s find the right delivery model for your business."}</T></p>
+          <PrimaryButton href={ROUTES.contact} className={styles.connectBtn}><T>{"Connect with us"}</T></PrimaryButton>
         </div>
       </div>
     </section>

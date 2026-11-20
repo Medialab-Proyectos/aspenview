@@ -5,6 +5,8 @@ import type { ReactNode } from "react";
 import { PrimaryButton } from "../ui";
 import styles from "./ShaderCta.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const ShaderBg = dynamic(() => import("./ShaderBg"), { ssr: false });
 
 /** Closing CTA with the moving-gradient shader, grid overlay and glow (Figma 1524:20384). */
@@ -34,12 +36,12 @@ export default function ShaderCta({
           <span className={styles.glow} aria-hidden>
             <img alt="" src="/assets/home/cta-glow.svg" />
           </span>
-          <h2 className={styles.title}>{title}</h2>
-          <p className={styles.text}>{text}</p>
+          <h2 className={styles.title}><T>{title}</T></h2>
+          <p className={styles.text}><T>{text}</T></p>
         </div>
         <div className={styles.actions}>
           <PrimaryButton href={cta.href} arrow>
-            {cta.label}
+            <T>{cta.label}</T>
           </PrimaryButton>
         </div>
       </div>

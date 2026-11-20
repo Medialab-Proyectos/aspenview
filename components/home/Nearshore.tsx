@@ -1,6 +1,8 @@
 import { Eyebrow } from "../ui";
 import styles from "./Nearshore.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const BENEFITS = [
   [
     { icon: "users-group-blue", label: "High-Caliber Talent" },
@@ -20,17 +22,14 @@ export default function Nearshore() {
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.row}>
           <div className={styles.copy}>
-            <Eyebrow>How we deliver</Eyebrow>
+            <Eyebrow><T>{"How we deliver"}</T></Eyebrow>
             <div className={styles.body}>
               <div className={styles.titleGroup}>
-                <h2 className={styles.title}>Nearshore Talent. Fully Integrated With Your Team.</h2>
-                <p className={styles.lead}>
-                  Our engineers work across Colombia, Argentina, Mexico, Brazil, Peru, and Puerto Rico, aligned to
-                  your working hours and integrated into your teams.
-                </p>
+                <h2 className={styles.title}><T>{"Nearshore Talent. Fully Integrated With Your Team."}</T></h2>
+                <p className={styles.lead}><T>{"Our engineers work across Colombia, Argentina, Mexico, Brazil, Peru, and Puerto Rico, aligned to your working hours and integrated into your teams."}</T></p>
               </div>
               <div className={styles.benefits}>
-                <h3 className={styles.benefitsTitle}>Benefits:</h3>
+                <h3 className={styles.benefitsTitle}><T>{"Benefits:"}</T></h3>
                 <ul className={styles.benefitsRow}>
                   {BENEFITS.map((col, i) => (
                     <li key={i} className={styles.benefitsCol}>
@@ -40,7 +39,7 @@ export default function Nearshore() {
                             <span className={styles.benefitIcon}>
                               <img alt="" src={`/assets/icons/${b.icon}.svg`} width={20} height={20} />
                             </span>
-                            <span className={styles.benefitLabel}>{b.label}</span>
+                            <span className={styles.benefitLabel}><T>{b.label}</T></span>
                           </li>
                         ))}
                       </ul>

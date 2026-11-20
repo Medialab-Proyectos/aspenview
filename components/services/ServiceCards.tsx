@@ -5,6 +5,8 @@ import { MaskIcon, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./ServiceCards.module.css";
 
+import { T } from "@/components/i18n/T";
+
 // Figma component set "Cards solutions" — MOUSE_ENTER → variant, smart animate 0.3s ease-out
 const CARDS = [
   {
@@ -20,11 +22,7 @@ const CARDS = [
     n: "02",
     icon: "database",
     title: (
-      <>
-        Data Engineering,
-        <br />
-        BI &amp; AI
-      </>
+      <><T>{"Data Engineering,"}</T><br /><T>{"BI & AI"}</T></>
     ),
     subtitle: "Build the Data Foundation AI Actually Needs.",
     text: "Turn fragmented data into trusted intelligence by connecting data engineering, governance, BI, analytics and AI.",
@@ -87,19 +85,19 @@ export default function ServiceCards() {
             onClick={() => setActive(i)}
           >
             <div className={styles.top}>
-              <p className={styles.num}>{c.n}</p>
+              <p className={styles.num}><T>{c.n}</T></p>
               <span className={styles.ring}>
                 <Icon name={c.icon} />
               </span>
             </div>
             <div className={styles.copy}>
-              <h3 className={styles.title}>{c.title}</h3>
+              <h3 className={styles.title}><T>{c.title}</T></h3>
               <div className={styles.detail} aria-hidden={!open}>
                 <div className={styles.detailInner}>
-                  <h4 className={styles.subtitle}>{c.subtitle}</h4>
-                  <p className={styles.text}>{c.text}</p>
+                  <h4 className={styles.subtitle}><T>{c.subtitle}</T></h4>
+                  <p className={styles.text}><T>{c.text}</T></p>
                   <PrimaryButton href={c.href} arrow className={styles.btn}>
-                    {c.cta}
+                    <T>{c.cta}</T>
                   </PrimaryButton>
                 </div>
               </div>

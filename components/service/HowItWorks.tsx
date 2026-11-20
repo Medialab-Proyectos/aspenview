@@ -5,6 +5,8 @@ import SectionHeader from "./SectionHeader";
 import { MaskIcon } from "../ui";
 import styles from "./HowItWorks.module.css";
 
+import { T } from "@/components/i18n/T";
+
 export type HowItWorksData = {
   title: ReactNode;
   text: ReactNode;
@@ -45,11 +47,11 @@ export default function HowItWorks({ data }: { data: HowItWorksData }) {
                     <img alt="" src={line} className={styles.line} />
                   </div>
                   <div className={styles.stepBottom}>
-                    <h3 className={styles.stepTitle}>{s.title}</h3>
+                    <h3 className={styles.stepTitle}><T>{s.title}</T></h3>
                     <div className={styles.reveal} aria-hidden={!isOpen}>
                       <div className={styles.revealInner}>
-                        <p className={styles.stepBody}>{s.body}</p>
-                        <p className={styles.stepItems}>{s.items}</p>
+                        <p className={styles.stepBody}><T>{s.body}</T></p>
+                        <p className={styles.stepItems}><T>{s.items}</T></p>
                       </div>
                     </div>
                     <img alt="" src="/assets/how/arrow-right-down.svg" className={styles.arrow} />
@@ -63,9 +65,9 @@ export default function HowItWorks({ data }: { data: HowItWorksData }) {
             <div className={styles.note}>
               <div className={styles.noteLabel}>
                 <img alt="" src="/assets/how/shield-check-white.svg" width={40} height={40} />
-                <span>{data.note.label}</span>
+                <span><T>{data.note.label}</T></span>
               </div>
-              <p className={styles.noteText}>{data.note.text}</p>
+              <p className={styles.noteText}><T>{data.note.text}</T></p>
             </div>
           )}
         </div>

@@ -3,6 +3,8 @@
 import { useState, type CSSProperties } from "react";
 import styles from "./Careers.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const A = "/assets/careers";
 
 /* ---------- Employee value promise cards (card values 653:5107 → 653:5105, ON_CLICK SMART_ANIMATE 0.3s) ----------
@@ -56,12 +58,12 @@ export function EvpCards() {
             <span className={styles.evpIcon}>
               <img alt="" src={`${A}/${c.icon}.svg`} width={48} height={48} />
             </span>
-            <h3 className={styles.evpTitle}>{c.title}</h3>
+            <h3 className={styles.evpTitle}><T>{c.title}</T></h3>
             {expandable && (
               <span className={styles.evpReveal}>
                 <ul className={styles.evpList}>
                   {c.items.map((it) => (
-                    <li key={it}>{it}</li>
+                    <li key={it}><T>{it}</T></li>
                   ))}
                 </ul>
               </span>
@@ -158,11 +160,11 @@ export function ValueCards() {
         <div className={styles.valueBody}>
           <div className={styles.valueCopy}>
             <span className={styles.valueBar} />
-            <h3 className={styles.valueTitle}>{v.title}</h3>
+            <h3 className={styles.valueTitle}><T>{v.title}</T></h3>
             {expandable && (
               <div className={styles.valueText} aria-hidden={!isOpen}>
                 {v.text.map((p) => (
-                  <p key={p}>{p}</p>
+                  <p key={p}><T>{p}</T></p>
                 ))}
               </div>
             )}

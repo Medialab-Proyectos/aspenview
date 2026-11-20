@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { Eyebrow, MaskIcon } from "../ui";
 import styles from "./SalesforceMid.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const ease = [0, 0, 0.58, 1] as const;
 
 /* ---------- The platform (2156:30855) ---------- */
@@ -26,13 +28,10 @@ export function SfPlatform() {
             <img alt="" src="/assets/capabilities/glow.svg" />
           </span>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">The Platform</Eyebrow>
-            <span className={styles.titleLight}>Better Together</span>
+            <Eyebrow tone="white"><T>{"The Platform"}</T></Eyebrow>
+            <span className={styles.titleLight}><T>{"Better Together"}</T></span>
           </h2>
-          <p className={styles.leadLight}>
-            Data powers intelligence. Agentforce turns intelligence into action: one enterprise-ready pipeline from
-            system of record to measurable outcome.
-          </p>
+          <p className={styles.leadLight}><T>{"Data powers intelligence. Agentforce turns intelligence into action: one enterprise-ready pipeline from system of record to measurable outcome."}</T></p>
         </div>
         <div className={styles.steps}>
           {[STEPS.slice(0, 3), STEPS.slice(3)].map((row, r) => (
@@ -44,9 +43,9 @@ export function SfPlatform() {
                       <span>{String(r * 3 + i + 1).padStart(2, "0")}</span>
                       <img alt="" src="/assets/salesforce/platform-line.svg" />
                     </div>
-                    <h3 className={styles.stepTitle}>{s.title}</h3>
+                    <h3 className={styles.stepTitle}><T>{s.title}</T></h3>
                   </div>
-                  <p className={styles.stepText}>{s.text}</p>
+                  <p className={styles.stepText}><T>{s.text}</T></p>
                 </div>
               ))}
             </div>
@@ -152,17 +151,10 @@ export function SfIndustries() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.headerBlock}>
           <h2 className={styles.heading}>
-            <Eyebrow>Industries</Eyebrow>
-            <span className={styles.title}>
-              Enterprise Experience Where
-              <br />
-              AI Matters
-            </span>
+            <Eyebrow><T>{"Industries"}</T></Eyebrow>
+            <span className={styles.title}><T>{"Enterprise Experience Where"}</T><br /><T>{"AI Matters"}</T></span>
           </h2>
-          <p className={styles.lead}>
-            Our leadership and teams bring experience from complex enterprise environments, combining business
-            understanding with AI-native execution.
-          </p>
+          <p className={styles.lead}><T>{"Our leadership and teams bring experience from complex enterprise environments, combining business understanding with AI-native execution."}</T></p>
         </div>
 
         <AnimatePresence mode="wait" initial={false}>
@@ -185,13 +177,13 @@ export function SfIndustries() {
                   </span>
                   <span className={styles.industryBody}>
                     <span className={styles.industryCopy}>
-                      <span className={styles.industryAgents}>{it.agents.length} Agents</span>
-                      <span className={styles.industryName}>{it.name}</span>
-                      <span className={styles.industryTags}>{it.tags}</span>
+                      <span className={styles.industryAgents}>{it.agents.length}<T>{" Agents"}</T></span>
+                      <span className={styles.industryName}><T>{it.name}</T></span>
+                      <span className={styles.industryTags}><T>{it.tags}</T></span>
                     </span>
                     <img alt="" src="/assets/salesforce/ind-line.svg" className={styles.industryLine} />
                     <span className={styles.seeMore}>
-                      <span>See what it can do</span>
+                      <span><T>{"See what it can do"}</T></span>
                       <MaskIcon src="/assets/salesforce/ind-arrow.svg" size={20} />
                     </span>
                   </span>
@@ -211,11 +203,11 @@ export function SfIndustries() {
                 <div className={styles.openRow}>
                   <button type="button" className={styles.backBtn} onClick={() => setOpen(null)}>
                     <img alt="" src="/assets/salesforce/arrow-left-white.svg" width={24} height={24} />
-                    <span>All industries</span>
+                    <span><T>{"All industries"}</T></span>
                   </button>
                   <div className={styles.openTitle}>
-                    <h3>{ind.name}</h3>
-                    <p>{ind.agents.length} Agents Available</p>
+                    <h3><T>{ind.name}</T></h3>
+                    <p>{ind.agents.length}<T>{" Agents Available"}</T></p>
                   </div>
                 </div>
                 <img alt="" src="/assets/salesforce/ind-sep.svg" className={styles.openSep} />
@@ -226,14 +218,14 @@ export function SfIndustries() {
                     <div className={styles.agentTop}>
                       <div className={styles.agentMeta}>
                         <span className={styles.agentNum}>{String(i + 1).padStart(2, "0")}</span>
-                        <span className={styles.agentLabel}>{label}</span>
+                        <span className={styles.agentLabel}><T>{label}</T></span>
                       </div>
-                      <h4 className={styles.agentTitle}>{title}</h4>
+                      <h4 className={styles.agentTitle}><T>{title}</T></h4>
                     </div>
                     <div className={styles.agentFoot}>
                       <img alt="" src="/assets/salesforce/agent-line.svg" className={styles.industryLine} />
                       <a href="#use-cases" className={styles.seeMore}>
-                        <span>See what it can do</span>
+                        <span><T>{"See what it can do"}</T></span>
                         <MaskIcon src="/assets/salesforce/ind-arrow.svg" size={20} />
                       </a>
                     </div>

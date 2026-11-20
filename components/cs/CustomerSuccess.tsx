@@ -7,6 +7,8 @@ import { ROUTES } from "@/lib/routes";
 import SectionHeader from "../service/SectionHeader";
 import styles from "./CustomerSuccess.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const ease = [0, 0, 0.58, 1] as const;
 const fade = {
   initial: { opacity: 0 },
@@ -32,20 +34,15 @@ export function CsHero() {
         <div className={styles.heroCopy}>
           <span className={styles.heroEyebrow}>
             <span className={styles.heroLine} />
-            <span>Customer success</span>
+            <span><T>{"Customer success"}</T></span>
           </span>
           <h1 className={styles.heroTitle}>
-            <span>Retain More Customers.</span>
-            <strong>Grow Lasting Relationships.</strong>
+            <span><T>{"Retain More Customers."}</T></span>
+            <strong><T>{"Grow Lasting Relationships."}</T></strong>
           </h1>
-          <p className={styles.heroText}>
-            Scale your Customer Success capabilities with experienced nearshore professionals who help SaaS and
-            technology companies drive product adoption, strengthen retention, and grow customer accounts.
-          </p>
+          <p className={styles.heroText}><T>{"Scale your Customer Success capabilities with experienced nearshore professionals who help SaaS and technology companies drive product adoption, strengthen retention, and grow customer accounts."}</T></p>
         </div>
-        <PrimaryButton href={ROUTES.contact} arrow className={styles.heroBtn}>
-          Talk to our team
-        </PrimaryButton>
+        <PrimaryButton href={ROUTES.contact} arrow className={styles.heroBtn}><T>{"Talk to our team"}</T></PrimaryButton>
       </div>
     </section>
   );
@@ -61,10 +58,7 @@ const CHALLENGES = [
   {
     title: "Customer Retention",
     subtitle: (
-      <>
-        Turn Customer Relationships Into <br />
-        Lasting Loyalty.
-      </>
+      <><T>{"Turn Customer Relationships Into "}</T><br /><T>{"Lasting Loyalty."}</T></>
     ),
     body: "Limited engagement and inconsistent support can weaken adoption and increase churn. Proactive Customer Success professionals strengthen relationships, drive product adoption, and protect renewals.",
   },
@@ -82,13 +76,10 @@ export function CsChallenge() {
       <div className={`wrap ${styles.sectionInner} ${styles.center}`}>
         <SectionHeader
           eyebrow="The challenge"
-          title="Winning Customers Is Only the Beginning. Retaining Them Drives Growth."
+          title={<T>{"Winning Customers Is Only the Beginning. Retaining Them Drives Growth."}</T>}
           titleWidth={850}
           text={
-            <p>
-              For SaaS and technology companies, scaling Customer Success means overcoming three critical challenges:
-              talent costs, customer retention, and missed growth opportunities.
-            </p>
+            <p><T>{"For SaaS and technology companies, scaling Customer Success means overcoming three critical challenges: talent costs, customer retention, and missed growth opportunities."}</T></p>
           }
         />
         <div className={styles.challenge} onMouseLeave={() => setOpen(null)}>
@@ -102,13 +93,13 @@ export function CsChallenge() {
               >
                 <div className={styles.challengeHead}>
                   <div className={styles.challengeTitleRow}>
-                    <h3 className={styles.challengeTitle}>{c.title}</h3>
+                    <h3 className={styles.challengeTitle}><T>{c.title}</T></h3>
                     <img alt="" src="/assets/cs/add-dark.svg" width={24} height={24} />
                   </div>
-                  <p className={styles.challengeSubtitle}>{c.subtitle}</p>
+                  <p className={styles.challengeSubtitle}><T>{c.subtitle}</T></p>
                 </div>
                 <div className={styles.reveal} aria-hidden={open !== i}>
-                  <p className={styles.challengeBody}>{c.body}</p>
+                  <p className={styles.challengeBody}><T>{c.body}</T></p>
                 </div>
               </article>
             </div>
@@ -148,18 +139,15 @@ export function CsWhatWeDo() {
         <div className={styles.headerBlock}>
           <SectionHeader
             eyebrow="What we do"
-            title="The Right People. The Expertise to Make Them Successful."
+            title={<T>{"The Right People. The Expertise to Make Them Successful."}</T>}
             titleWidth={700}
             text={
-              <p>
-                AspenView helps technology companies build, strengthen, and scale their Customer Success capabilities
-                through experienced nearshore professionals and structured service management.
-              </p>
+              <p><T>{"AspenView helps technology companies build, strengthen, and scale their Customer Success capabilities through experienced nearshore professionals and structured service management."}</T></p>
             }
           />
           <div className={styles.expand}>
             <button type="button" className={styles.expandBtn} aria-expanded={expanded} onClick={() => setExpanded((e) => !e)}>
-              <span>Support tailored to your team</span>
+              <span><T>{"Support tailored to your team"}</T></span>
               <img alt="" src="/assets/cs/add-blue.svg" width={24} height={24} className={expanded ? styles.rotated : ""} />
             </button>
             <AnimatePresence initial={false}>
@@ -170,10 +158,7 @@ export function CsWhatWeDo() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease }}
-                >
-                  Whether you need to expand an existing team or establish an entire Customer Success function, we
-                  provide the talent, expertise, and operational support to meet your business objectives.
-                </motion.p>
+                ><T>{"Whether you need to expand an existing team or establish an entire Customer Success function, we provide the talent, expertise, and operational support to meet your business objectives."}</T></motion.p>
               )}
             </AnimatePresence>
           </div>
@@ -191,7 +176,7 @@ export function CsWhatWeDo() {
                   onClick={() => setActive(i)}
                 >
                   <span aria-hidden>{String(i + 1).padStart(2, "0")}</span>
-                  <span className={styles.modelLabel}>{mm.label}</span>
+                  <span className={styles.modelLabel}><T>{mm.label}</T></span>
                 </button>
               </h3>
             ))}
@@ -212,8 +197,8 @@ export function CsWhatWeDo() {
             />
             <AnimatePresence mode="wait" initial={false}>
               <motion.div key={active} className={styles.modelCopy} {...fade}>
-                <h4 className={styles.modelTitle}>{m.title}</h4>
-                <p className={styles.modelText}>{m.text}</p>
+                <h4 className={styles.modelTitle}><T>{m.title}</T></h4>
+                <p className={styles.modelText}><T>{m.text}</T></p>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -240,13 +225,10 @@ export function CsHowItWorks() {
       <div className={`wrap ${styles.sectionInner} ${styles.center}`}>
         <SectionHeader
           eyebrow="How it works"
-          title="Supporting Every Stage of the Customer Relationship."
+          title={<T>{"Supporting Every Stage of the Customer Relationship."}</T>}
           titleWidth={556}
           text={
-            <p>
-              Customer Success requires more than responding to customer needs. It takes proactive engagement throughout
-              the customer lifecycle to build lasting relationships and deliver measurable value.
-            </p>
+            <p><T>{"Customer Success requires more than responding to customer needs. It takes proactive engagement throughout the customer lifecycle to build lasting relationships and deliver measurable value."}</T></p>
           }
         />
         <div className={styles.stages}>
@@ -261,7 +243,7 @@ export function CsHowItWorks() {
                   onClick={() => setActive(i)}
                 >
                   <span className={styles.stageNum}>{String(i + 1).padStart(2, "0")}</span>
-                  <span className={styles.stageLabel}>{st.label}</span>
+                  <span className={styles.stageLabel}><T>{st.label}</T></span>
                 </button>
               </h3>
             ))}
@@ -281,9 +263,9 @@ export function CsHowItWorks() {
               <motion.div key={active} className={styles.stageCopy} {...fade}>
                 <div className={styles.stageHead}>
                   <p className={styles.stageIndex}>{String(active + 1).padStart(2, "0")}</p>
-                  <p className={styles.stageTitle}>{s.title}</p>
+                  <p className={styles.stageTitle}><T>{s.title}</T></p>
                 </div>
-                <p className={styles.stageText}>{s.text}</p>
+                <p className={styles.stageText}><T>{s.text}</T></p>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -314,16 +296,12 @@ export function CsCapabilities() {
             <img alt="" src="/assets/capabilities/glow.svg" />
           </span>
           <h2 className={styles.capsHeading}>
-            <Eyebrow tone="white">Capabilities</Eyebrow>
-            <span className={styles.capsTitle}>Experienced Professionals. Built for Customer Success</span>
+            <Eyebrow tone="white"><T>{"Capabilities"}</T></Eyebrow>
+            <span className={styles.capsTitle}><T>{"Experienced Professionals. Built for Customer Success"}</T></span>
           </h2>
           <div className={styles.capsSub}>
-            <h3 className={styles.capsSubtitle}>Our Customer Success Expertise</h3>
-            <p className={styles.capsText}>
-              Our nearshore Customer Success professionals combine industry experience, proven processes, and a deep
-              understanding of the customer lifecycle to help SaaS and technology companies strengthen relationships,
-              improve retention, and support sustainable growth.
-            </p>
+            <h3 className={styles.capsSubtitle}><T>{"Our Customer Success Expertise"}</T></h3>
+            <p className={styles.capsText}><T>{"Our nearshore Customer Success professionals combine industry experience, proven processes, and a deep understanding of the customer lifecycle to help SaaS and technology companies strengthen relationships, improve retention, and support sustainable growth."}</T></p>
           </div>
         </div>
         <div className={styles.capsBody}>
@@ -338,7 +316,7 @@ export function CsCapabilities() {
                   onClick={() => setActive(i)}
                 >
                   <span>{String(i + 1).padStart(2, "0")}</span>
-                  <span className={styles.pillLabel}>{cc.label}</span>
+                  <span className={styles.pillLabel}><T>{cc.label}</T></span>
                   <img alt="" src="/assets/icons/arrow-right-white.svg" width={32} height={32} />
                 </button>
               </h4>
@@ -349,8 +327,8 @@ export function CsCapabilities() {
               <motion.div key={active} className={styles.capCardInner} {...fade}>
                 <img alt="" src={`/assets/cs/capability-${active + 1}.png`} className={styles.capImage} />
                 <div className={styles.capCopy}>
-                  <h5 className={styles.capTitle}>{c.title}</h5>
-                  <p className={styles.capText}>{c.text}</p>
+                  <h5 className={styles.capTitle}><T>{c.title}</T></h5>
+                  <p className={styles.capText}><T>{c.text}</T></p>
                 </div>
               </motion.div>
             </AnimatePresence>

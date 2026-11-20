@@ -4,6 +4,8 @@ import { useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import styles from "./Transformation.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const ease = [0, 0, 0.58, 1] as const;
 
 /* ---------- Componente - how we enable AI (2218:39135) — MOUSE_ENTER swaps the card ---------- */
@@ -34,7 +36,7 @@ export function EnableDimensions({ children }: { children: ReactNode }) {
             onFocus={() => setActive(i)}
             onClick={() => setActive(i)}
           >
-            {dim.label}
+            <T>{dim.label}</T>
           </button>
         ))}
         </div>
@@ -43,11 +45,11 @@ export function EnableDimensions({ children }: { children: ReactNode }) {
         <div className={styles.dimHead}>
           <img alt="" src={`/assets/ai/${d.icon}.svg`} width={36} height={36} />
           <div className={styles.dimCopy}>
-            <h3 className={styles.dimTitle}>{d.label}</h3>
+            <h3 className={styles.dimTitle}><T>{d.label}</T></h3>
             <p className={styles.dimText}>
-              {d.lead}
+              <T>{d.lead}</T>
               <br />
-              <span>{d.accent}</span>
+              <span><T>{d.accent}</T></span>
             </p>
           </div>
         </div>
@@ -98,7 +100,7 @@ export function ResponsibleAi() {
               onFocus={() => setActive(i)}
               onClick={() => setActive(i)}
             >
-              <span>{p.title}</span>
+              <span><T>{p.title}</T></span>
               <img alt="" src="/assets/icons/arrow-right-light.svg" width={24} height={24} />
             </button>
           </h3>
@@ -114,7 +116,7 @@ export function ResponsibleAi() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease }}
           >
-            {PRINCIPLES[active].text}
+            <T>{PRINCIPLES[active].text}</T>
           </motion.p>
         </AnimatePresence>
         <div className={styles.respMedia}>

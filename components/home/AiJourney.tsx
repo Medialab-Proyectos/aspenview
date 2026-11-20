@@ -6,6 +6,8 @@ import { Eyebrow, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./AiJourney.module.css";
 
+import { T } from "@/components/i18n/T";
+
 // Figma component set "Selector ai native" (1345:8324) — 4 variants
 const ITEMS = [
   {
@@ -50,11 +52,11 @@ function Panel({ item, compact }: { item: (typeof ITEMS)[number]; compact?: bool
     <div className={compact ? styles.panelCompact : styles.panelInner}>
       <div className={styles.panelTop}>
         <img alt="" src={item.bigIcon} width={48} height={48} />
-        <p className={styles.panelTag}>{item.tag}</p>
+        <p className={styles.panelTag}><T>{item.tag}</T></p>
       </div>
       <div className={styles.panelBody}>
-        <h5 className={styles.panelTitle}>{item.label}</h5>
-        <p className={styles.panelText}>{item.text}</p>
+        <h5 className={styles.panelTitle}><T>{item.label}</T></h5>
+        <p className={styles.panelText}><T>{item.text}</T></p>
       </div>
     </div>
   );
@@ -69,21 +71,13 @@ export default function AiJourney() {
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">AI Native</Eyebrow>
-            <span className={styles.title}>
-              Enterprise <br className={styles.br} />
-              AI Journey
-            </span>
+            <Eyebrow tone="white"><T>{"AI Native"}</T></Eyebrow>
+            <span className={styles.title}><T>{"Enterprise "}</T><br className={styles.br} /><T>{"AI Journey"}</T></span>
           </h2>
           <div className={styles.sub}>
-            <h3 className={styles.subtitle}>AI-Native by Design</h3>
-            <p className={styles.lead}>
-              We help organizations move from AI ambition to operational impact connecting transformation, data,
-              engineering and intelligent automation.
-            </p>
-            <PrimaryButton href={ROUTES.aiTransformation} arrow className={styles.cta}>
-              Put AI to Work
-            </PrimaryButton>
+            <h3 className={styles.subtitle}><T>{"AI-Native by Design"}</T></h3>
+            <p className={styles.lead}><T>{"We help organizations move from AI ambition to operational impact connecting transformation, data, engineering and intelligent automation."}</T></p>
+            <PrimaryButton href={ROUTES.aiTransformation} arrow className={styles.cta}><T>{"Put AI to Work"}</T></PrimaryButton>
           </div>
         </div>
 
@@ -99,7 +93,7 @@ export default function AiJourney() {
                   onClick={() => setActive(i)}
                 >
                   <img alt="" src={it.icon} width={32} height={32} />
-                  <span className={styles.itemLabel}>{it.label}</span>
+                  <span className={styles.itemLabel}><T>{it.label}</T></span>
                   <img alt="" src="/assets/icons/arrow-right-white.svg" width={32} height={32} />
                 </button>
               </h4>
@@ -128,7 +122,7 @@ export default function AiJourney() {
                     onClick={() => setOpenMobile(open ? null : i)}
                   >
                     <img alt="" src={it.icon} width={28} height={28} />
-                    <span className={styles.itemLabel}>{it.label}</span>
+                    <span className={styles.itemLabel}><T>{it.label}</T></span>
                     <img
                       alt=""
                       src={open ? "/assets/icons/arrow-up-white.svg" : "/assets/icons/arrow-down-white.svg"}

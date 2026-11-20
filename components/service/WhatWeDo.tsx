@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import SectionHeader from "./SectionHeader";
 import styles from "./WhatWeDo.module.css";
 
+import { T } from "@/components/i18n/T";
+
 export type WhatWeDoData = {
   title: ReactNode;
   text: ReactNode;
@@ -19,7 +21,7 @@ export default function WhatWeDo({ data }: { data: WhatWeDoData }) {
       <img alt="" src={data.photo.src} />
       <span className={styles.photoTag} style={grid ? { width: 300 } : undefined}>
         <img alt="" src="/assets/icons/dot-bright.svg" width={6} height={6} />
-        {data.photo.label}
+        <T>{data.photo.label}</T>
       </span>
     </div>
   );
@@ -40,8 +42,8 @@ export default function WhatWeDo({ data }: { data: WhatWeDoData }) {
                         <img alt="" src={c.icon} width={32} height={32} />
                       </span>
                       <div className={styles.cardCopy}>
-                        <h3 className={styles.gridTitle}>{c.title}</h3>
-                        <p className={styles.cardText}>{c.text}</p>
+                        <h3 className={styles.gridTitle}><T>{c.title}</T></h3>
+                        <p className={styles.cardText}><T>{c.text}</T></p>
                       </div>
                     </article>
                   ))}
@@ -62,8 +64,8 @@ export default function WhatWeDo({ data }: { data: WhatWeDoData }) {
                     </span>
                   </div>
                   <div className={styles.cardCopy}>
-                    <h3 className={styles.cardTitle}>{c.title}</h3>
-                    <p className={styles.cardText}>{c.text}</p>
+                    <h3 className={styles.cardTitle}><T>{c.title}</T></h3>
+                    <p className={styles.cardText}><T>{c.text}</T></p>
                   </div>
                 </article>
               ))}

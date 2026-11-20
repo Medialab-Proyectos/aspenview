@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n/LocaleLink";
 import type { CSSProperties, ReactNode } from "react";
 import styles from "./ui.module.css";
 

@@ -3,6 +3,8 @@ import { Eyebrow, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Salesforce.module.css";
 
+import { T } from "@/components/i18n/T";
+
 /* ---------- Hero (Figma 2156:30779) ---------- */
 export function SfHero() {
   return (
@@ -16,19 +18,13 @@ export function SfHero() {
       </span>
       <div className={styles.heroInner}>
         <div className={styles.heroCopy}>
-          <h1 className={styles.heroTitle}>
-            From Connected
-            <br />
-            Data to Intelligent Agents
-          </h1>
+          <h1 className={styles.heroTitle}><T>{"From Connected"}</T><br /><T>{"Data to Intelligent Agents"}</T></h1>
           <div className={styles.heroDays}>
-            <p className={styles.heroSmall}>in as little as:</p>
-            <p className={styles.heroBig}>10 days</p>
+            <p className={styles.heroSmall}><T>{"in as little as:"}</T></p>
+            <p className={styles.heroBig}><T>{"10 days"}</T></p>
           </div>
         </div>
-        <PrimaryButton href="#quick-starts" arrow>
-          Let&apos;s get started
-        </PrimaryButton>
+        <PrimaryButton href="#quick-starts" arrow><T>{"Let's get started"}</T></PrimaryButton>
         <div className={styles.heroLogos}>
           <Logo variant="white" className={styles.heroLogo} />
           <img alt="" src="/assets/salesforce/divider.svg" className={styles.heroDivider} />
@@ -54,18 +50,14 @@ export function SfBuilt() {
     <section className={styles.white}>
       <div className={`wrap ${styles.section} ${styles.center}`}>
         <h2 className={styles.heading}>
-          <Eyebrow>Built on Salesforce</Eyebrow>
-          <span className={styles.title}>
-            Enterprise Ambition.
-            <br />
-            Production-Ready Execution.
-          </span>
+          <Eyebrow><T>{"Built on Salesforce"}</T></Eyebrow>
+          <span className={styles.title}><T>{"Enterprise Ambition."}</T><br /><T>{"Production-Ready Execution."}</T></span>
         </h2>
         <div className={styles.stats}>
           {STATS.map((s) => (
             <div key={s.title} className={styles.stat}>
-              <p className={styles.statTitle}>{s.title}</p>
-              <p className={styles.statText}>{s.text}</p>
+              <p className={styles.statTitle}><T>{s.title}</T></p>
+              <p className={styles.statText}><T>{s.text}</T></p>
             </div>
           ))}
         </div>
@@ -91,14 +83,14 @@ export function SfWhy() {
               <span className={styles.ringLg}>
                 <img alt="" src={`/assets/salesforce/${w.icon}.svg`} width={32} height={32} />
               </span>
-              <p className={styles.whyTag}>{w.tag}</p>
+              <p className={styles.whyTag}><T>{w.tag}</T></p>
             </div>
             <div className={styles.whyCopy}>
               <h3 className={styles.whyTitle}>
-                {w.a}
-                <span>{w.b}</span>
+                <T>{w.a}</T>
+                <span><T>{w.b}</T></span>
               </h3>
-              <p className={styles.whyText}>{w.text}</p>
+              <p className={styles.whyText}><T>{w.text}</T></p>
             </div>
           </article>
         ))}
@@ -175,17 +167,17 @@ export function SfProducts() {
                   <article key={p.cta} className={styles.product}>
                     <div className={styles.productMain}>
                       <div className={styles.productHead}>
-                        {p.logo}
+                        <T>{p.logo}</T>
                         <div className={styles.productCopy}>
-                          <h3 className={styles.productTitle}>{p.title}</h3>
+                          <h3 className={styles.productTitle}><T>{p.title}</T></h3>
                           <img alt="" src="/assets/salesforce/card-line.svg" className={styles.productLine} />
-                          <p className={styles.productText}>{p.text}</p>
+                          <p className={styles.productText}><T>{p.text}</T></p>
                         </div>
                       </div>
                       {/* Excel 53: capabilities open on demand instead of all being shown at once */}
                       <details className={styles.productCaps}>
                         <summary className={styles.productCapsTitle}>
-                          <h4>Capabilities</h4>
+                          <h4><T>{"Capabilities"}</T></h4>
                           <span className={styles.capsToggle} aria-hidden />
                         </summary>
                         <ul className={styles.capList}>
@@ -194,7 +186,7 @@ export function SfProducts() {
                               <span className={styles.check} aria-hidden>
                                 <span />
                               </span>
-                              {c}
+                              <T>{c}</T>
                             </li>
                           ))}
                         </ul>
@@ -203,7 +195,7 @@ export function SfProducts() {
                     <div className={styles.productFoot}>
                       <img alt="" src="/assets/salesforce/card-line.svg" className={styles.productLine} />
                       <PrimaryButton href={`${ROUTES.contact}?topic=salesforce`} className={styles.productBtn}>
-                        {p.cta}
+                        <T>{p.cta}</T>
                       </PrimaryButton>
                     </div>
                   </article>

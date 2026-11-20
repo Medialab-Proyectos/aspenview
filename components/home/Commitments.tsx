@@ -1,6 +1,8 @@
 import { Eyebrow } from "../ui";
 import styles from "./Commitments.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const COMMITMENTS = [
   { title: "Proven Excellence", text: "Customer satisfaction across delivery engagements.", value: "8.8/10" },
   { title: "Performance at Speed", text: "From need to deployment.", value: "2 Weeks" },
@@ -40,27 +42,24 @@ export default function Commitments() {
         <div className={`wrap ${styles.inner}`}>
           <div className={styles.header}>
             <h2 className={styles.heading}>
-              <Eyebrow>Our Approach</Eyebrow>
+              <Eyebrow><T>{"Our Approach"}</T></Eyebrow>
               <span className={styles.title}>
-                <span className={styles.titleDark}>Our Four</span>
+                <span className={styles.titleDark}><T>{"Our Four"}</T></span>
                 <br />
-                <span className={styles.titleBlue}>Commitments</span>
+                <span className={styles.titleBlue}><T>{"Commitments"}</T></span>
               </span>
             </h2>
-            <p className={styles.lead}>
-              Every technology engagement is shaped by what matters most: delivering measurable results and lasting
-              value.
-            </p>
+            <p className={styles.lead}><T>{"Every technology engagement is shaped by what matters most: delivering measurable results and lasting value."}</T></p>
           </div>
 
           <ul className={styles.cards}>
             {COMMITMENTS.map((c) => (
               <li key={c.title} className={styles.card}>
                 <div className={styles.cardTop}>
-                  <h3 className={styles.cardTitle}>{c.title}</h3>
-                  <p className={styles.cardText}>{c.text}</p>
+                  <h3 className={styles.cardTitle}><T>{c.title}</T></h3>
+                  <p className={styles.cardText}><T>{c.text}</T></p>
                 </div>
-                <p className={styles.cardValue}>{c.value}</p>
+                <p className={styles.cardValue}><T>{c.value}</T></p>
               </li>
             ))}
           </ul>
@@ -72,7 +71,7 @@ export default function Commitments() {
           <img alt="" src="/assets/home/wave.png" />
         </div>
         <div className={`wrap ${styles.partnersInner}`}>
-          <h2 className={styles.partnersTitle}>Building Great Technology With Great Partners</h2>
+          <h2 className={styles.partnersTitle}><T>{"Building Great Technology With Great Partners"}</T></h2>
           <div className={styles.marquee}>
             <div className={styles.track}>
               <LogoSet />

@@ -2,6 +2,8 @@ import { Eyebrow, PrimaryButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Talent.module.css";
 
+import { T } from "@/components/i18n/T";
+
 /* Strategy → Talent Enablement. Figma frames 3057:26901 (desktop), 3068:53746 (tablet), 3071:54375 (mobile);
    closing CTA 3057:27124. The frames are named "How we deliver" in Figma. */
 
@@ -20,8 +22,8 @@ function Loop({ src, className }: { src: string; className?: string }) {
 function StepLabel({ num, label, tone = "blue" }: { num: string; label: string; tone?: "blue" | "dark" }) {
   return (
     <p className={`${styles.step} ${tone === "dark" ? styles.stepDark : ""}`}>
-      <span className={styles.stepNum}>{num}</span>
-      <span>{label}</span>
+      <span className={styles.stepNum}><T>{num}</T></span>
+      <span><T>{label}</T></span>
     </p>
   );
 }
@@ -41,22 +43,14 @@ export function TeHero() {
       </span>
       <div className={`wrap ${styles.heroTop}`}>
         <div className={styles.heroCopy}>
-          <Eyebrow tone="soft">Talent Enablement</Eyebrow>
+          <Eyebrow tone="soft"><T>{"Talent Enablement"}</T></Eyebrow>
           <div className={styles.heroBody}>
-            <h1 className={styles.heroTitle}>
-              Engineering Talent.
-              <br />
-              <strong>Built for What’s Next.</strong>
+            <h1 className={styles.heroTitle}><T>{"Engineering Talent."}</T><br />
+              <strong><T>{"Built for What’s Next."}</T></strong>
             </h1>
-            <p className={styles.heroText}>
-              Great engineering starts long before deployment. We combine proactive talent planning, proprietary AI
-              technology, and experienced specialists to help you access, validate, and sustain the expertise your
-              business needs.
-            </p>
+            <p className={styles.heroText}><T>{"Great engineering starts long before deployment. We combine proactive talent planning, proprietary AI technology, and experienced specialists to help you access, validate, and sustain the expertise your business needs."}</T></p>
           </div>
-          <PrimaryButton href={TALENT_CONTACT} arrow className={styles.heroBtn}>
-            Let’s Talk Talent
-          </PrimaryButton>
+          <PrimaryButton href={TALENT_CONTACT} arrow className={styles.heroBtn}><T>{"Let’s Talk Talent"}</T></PrimaryButton>
         </div>
         <div className={styles.heroMedia}>
           <Loop src="te-hero.webm" className={styles.fill} />
@@ -65,8 +59,8 @@ export function TeHero() {
       <ul className={`wrap ${styles.stats}`}>
         {STATS.map((s) => (
           <li key={s.value} className={styles.stat}>
-            <span className={styles.statValue}>{s.value}</span>
-            <span className={styles.statText}>{s.text}</span>
+            <span className={styles.statValue}><T>{s.value}</T></span>
+            <span className={styles.statText}><T>{s.text}</T></span>
           </li>
         ))}
       </ul>
@@ -87,24 +81,18 @@ export function TeAdvantage() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepLabel num="01" label="The Advantage" />
-          <h2 className={styles.title}>Talent That Moves Business Forward.</h2>
-          <p className={styles.lead}>
-            The right engineering talent takes more than a great match. Our approach connects four strengths: Aureum’s
-            proactive planning, Vantage’s intelligent matching, RevMax’s agile execution, and experienced talent
-            specialists, to turn engineering requirements into sustained delivery performance.
-            <br />
-            <br />
-            Three connected stages. One talent advantage.
-          </p>
+          <h2 className={styles.title}><T>{"Talent That Moves Business Forward."}</T></h2>
+          <p className={styles.lead}><T>{"The right engineering talent takes more than a great match. Our approach connects four strengths: Aureum’s proactive planning, Vantage’s intelligent matching, RevMax’s agile execution, and experienced talent specialists, to turn engineering requirements into sustained delivery performance."}</T><br />
+            <br /><T>{"Three connected stages. One talent advantage."}</T></p>
         </div>
         <div className={styles.advScroll}>
           <ul className={styles.advCards}>
             {ADVANTAGE.map((c) => (
               <li key={c.label} className={`${styles.advCard} reveal-card`} tabIndex={0}>
                 <div className={styles.advHead}>
-                  <span className={styles.advLabel}>{c.label}</span>
+                  <span className={styles.advLabel}><T>{c.label}</T></span>
                   <div className={styles.advTitleRow}>
-                    <h3 className={styles.advTitle}>{c.title}</h3>
+                    <h3 className={styles.advTitle}><T>{c.title}</T></h3>
                     <span className={styles.advIcon} aria-hidden>
                       <img alt="" src={`${A}/add.svg`} width={24} height={24} className={styles.iconAdd} />
                       <img alt="" src={`${A}/minus.svg`} width={24} height={24} className={styles.iconMinus} />
@@ -118,9 +106,9 @@ export function TeAdvantage() {
                   <div>
                     <div className={styles.advMore}>
                       <img alt="" src={`${A}/card-line.svg`} className={styles.rule} />
-                      <p className={styles.advLower}>{c.lower}</p>
+                      <p className={styles.advLower}><T>{c.lower}</T></p>
                       <a href={c.href} className={styles.advLink}>
-                        <span>{c.cta}</span>
+                        <span><T>{c.cta}</T></span>
                         <img alt="" src={`${A}/arrow-right-20.svg`} width={20} height={20} />
                       </a>
                     </div>
@@ -143,22 +131,15 @@ export function TeBuildAhead() {
         <div className={styles.header}>
           <StepLabel num="02" label="Build Ahead" />
           <h2 className={styles.title}>
-            <strong>Aureum:</strong> Role Ready, Offer Ready.
-            <br />
-            Ahead of Your Need.
-          </h2>
+            <strong><T>{"Aureum:"}</T></strong><T>{" Role Ready, Offer Ready."}</T><br /><T>{"Ahead of Your Need."}</T></h2>
         </div>
         <div className={styles.aureum}>
-          <p className={styles.aureumText}>
-            AspenView invests ahead of anticipated demand, forecasting talent needs up to 18 months into the future.
-          </p>
+          <p className={styles.aureumText}><T>{"AspenView invests ahead of anticipated demand, forecasting talent needs up to 18 months into the future."}</T></p>
           <div className={styles.aureumRow}>
             <div className={styles.aureumMedia}>
               <Loop src="te-aureum.webm" className={styles.fill} />
             </div>
-            <p className={`${styles.aureumText} ${styles.aureumNote}`}>
-              Delivering the right talent exactly when you need it.
-            </p>
+            <p className={`${styles.aureumText} ${styles.aureumNote}`}><T>{"Delivering the right talent exactly when you need it."}</T></p>
           </div>
         </div>
       </div>
@@ -184,29 +165,21 @@ export function TeProve() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepLabel num="03" label="Prove" tone="dark" />
-          <h2 className={`${styles.title} ${styles.titleLight}`}>
-            Precision Behind
-            <br />
-            Every Match.
-          </h2>
+          <h2 className={`${styles.title} ${styles.titleLight}`}><T>{"Precision Behind"}</T><br /><T>{"Every Match."}</T></h2>
           <div className={`${styles.lead} ${styles.leadPale}`}>
-            <p>
-              Vantage, our proprietary AI-powered talent intelligence platform, combines intelligent matching with
-              rigorous validation to help you move from identifying relevant expertise to making confident talent
-              decisions.
-            </p>
-            <p className={styles.leadStrong}>From Requirements to Confidence.</p>
+            <p><T>{"Vantage, our proprietary AI-powered talent intelligence platform, combines intelligent matching with rigorous validation to help you move from identifying relevant expertise to making confident talent decisions."}</T></p>
+            <p className={styles.leadStrong}><T>{"From Requirements to Confidence."}</T></p>
           </div>
         </div>
         <div className={styles.proveScroll}>
           <ol className={styles.proveCards}>
             {PROVE.map((p) => (
               <li key={p.step} className={`${styles.proveCard} hover-blue`}>
-                <span className={styles.proveStep}>{p.step}</span>
+                <span className={styles.proveStep}><T>{p.step}</T></span>
                 <div className={styles.proveMedia}>
                   <Loop src={p.video} className={styles.fill} />
                 </div>
-                <h3 className={styles.proveTitle}>{p.title}</h3>
+                <h3 className={styles.proveTitle}><T>{p.title}</T></h3>
               </li>
             ))}
           </ol>
@@ -215,10 +188,10 @@ export function TeProve() {
           {PROOF.map((p) => (
             <li key={p.unit} className={styles.proofItem}>
               <span className={styles.proofFigure}>
-                <span className={styles.proofValue}>{p.value}</span>
-                <span className={styles.proofUnit}>{p.unit}</span>
+                <span className={styles.proofValue}><T>{p.value}</T></span>
+                <span className={styles.proofUnit}><T>{p.unit}</T></span>
               </span>
-              <span className={styles.proofText}>{p.text}</span>
+              <span className={styles.proofText}><T>{p.text}</T></span>
             </li>
           ))}
         </ul>
@@ -240,12 +213,8 @@ export function TeLead() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepLabel num="04" label="Lead" />
-          <h2 className={styles.title}>Excellence Beyond Day One</h2>
-          <p className={styles.lead}>
-            Our commitment continues beyond placement. Experienced talent specialists and engineering managers provide
-            the human expertise, accountability, and ongoing performance oversight needed to sustain engineering quality
-            throughout the engagement.
-          </p>
+          <h2 className={styles.title}><T>{"Excellence Beyond Day One"}</T></h2>
+          <p className={styles.lead}><T>{"Our commitment continues beyond placement. Experienced talent specialists and engineering managers provide the human expertise, accountability, and ongoing performance oversight needed to sustain engineering quality throughout the engagement."}</T></p>
         </div>
         <div className={styles.leadScroll}>
           <ul className={styles.leadCards}>
@@ -255,8 +224,8 @@ export function TeLead() {
                   <Loop src={c.video} className={styles.fill} />
                 </div>
                 <div className={styles.leadCopy}>
-                  <h3 className={styles.leadTitle}>{c.title}</h3>
-                  <p className={styles.leadText}>{c.text}</p>
+                  <h3 className={styles.leadTitle}><T>{c.title}</T></h3>
+                  <p className={styles.leadText}><T>{c.text}</T></p>
                 </div>
               </li>
             ))}
@@ -274,13 +243,11 @@ export function TeGuarantee() {
       <div className={styles.guaranteeInner}>
         <div className={styles.badge}>
           <span className={styles.badgeValue}>60</span>
-          <span className={styles.badgeText}>DAY GUARANTEE</span>
+          <span className={styles.badgeText}><T>{"DAY GUARANTEE"}</T></span>
         </div>
         <div className={styles.guaranteeCopy}>
-          <h2 className={styles.guaranteeTitle}>Our Quality Commitment</h2>
-          <p className={styles.guaranteeText}>
-            If an engineer doesn’t meet A+ Standards within the first 60 days, we provide a vetted replacement.
-          </p>
+          <h2 className={styles.guaranteeTitle}><T>{"Our Quality Commitment"}</T></h2>
+          <p className={styles.guaranteeText}><T>{"If an engineer doesn’t meet A+ Standards within the first 60 days, we provide a vetted replacement."}</T></p>
         </div>
       </div>
     </section>
@@ -303,7 +270,7 @@ export function TeImpact() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepLabel num="05" label="The Impact" />
-          <h2 className={styles.title}>Built for Results That Last.</h2>
+          <h2 className={styles.title}><T>{"Built for Results That Last."}</T></h2>
         </div>
         <div className={styles.impact}>
           <div className={styles.impactMedia}>
@@ -311,8 +278,8 @@ export function TeImpact() {
           </div>
           <div className={styles.impactCol}>
             <div className={styles.helpHead}>
-              <h3 className={styles.helpTitle}>Where We Help</h3>
-              <p className={styles.helpIntro}>If one of these describes your team, a slow hire is already costing you.</p>
+              <h3 className={styles.helpTitle}><T>{"Where We Help"}</T></h3>
+              <p className={styles.helpIntro}><T>{"If one of these describes your team, a slow hire is already costing you."}</T></p>
             </div>
             <ul className={styles.help}>
               {HELP.map((h, i) => (
@@ -323,8 +290,8 @@ export function TeImpact() {
                       <img alt="" src={`${A}/dot.svg`} width={24} height={24} />
                     </span>
                     <div className={styles.helpCopy}>
-                      <h4 className={styles.helpItemTitle}>{h.title}</h4>
-                      <p className={styles.helpItemText}>{h.text}</p>
+                      <h4 className={styles.helpItemTitle}><T>{h.title}</T></h4>
+                      <p className={styles.helpItemText}><T>{h.text}</T></p>
                     </div>
                   </div>
                 </li>
@@ -346,14 +313,10 @@ export function TeCta() {
           <img alt="" src={`${A}/cta-glow.svg`} />
         </span>
         <div className={styles.ctaCopy}>
-          <h2 className={styles.ctaTitle}>Your Next Priority. Our Expertise.</h2>
-          <p className={styles.ctaText}>
-            From planning ahead to building high-performing engineering teams, we’re ready to help you move forward.
-          </p>
+          <h2 className={styles.ctaTitle}><T>{"Your Next Priority. Our Expertise."}</T></h2>
+          <p className={styles.ctaText}><T>{"From planning ahead to building high-performing engineering teams, we’re ready to help you move forward."}</T></p>
         </div>
-        <PrimaryButton href={TALENT_CONTACT} arrow className={styles.ctaBtn}>
-          Discuss Your Talent Needs
-        </PrimaryButton>
+        <PrimaryButton href={TALENT_CONTACT} arrow className={styles.ctaBtn}><T>{"Discuss Your Talent Needs"}</T></PrimaryButton>
       </div>
     </section>
   );

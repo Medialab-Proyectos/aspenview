@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { MaskIcon } from "../ui";
 import styles from "./Agentic.module.css";
 
+import { T } from "@/components/i18n/T";
+
 const ease = [0, 0, 0.58, 1] as const;
 
 /* Componente - The road to agentic (2081:32355): MOUSE_ENTER on a bar, SMART_ANIMATE 0.3s.
@@ -34,7 +36,7 @@ export default function RoadToAgentic() {
             onFocus={() => setActive(i)}
             onClick={() => setActive(i)}
           >
-            <span className={styles.barLabel}>{st.label}</span>
+            <span className={styles.barLabel}><T>{st.label}</T></span>
             <span className={styles.bar} style={{ height: st.height }}>
               <MaskIcon src={`/assets/ai/${st.icon}.svg`} size={40} className={styles.barIcon} />
             </span>
@@ -43,7 +45,7 @@ export default function RoadToAgentic() {
       </div>
       <img alt="" src="/assets/ai/road-line.svg" className={styles.roadLine} />
       <div className={styles.roadFoot}>
-        <span className={styles.roadMeta}>{s.label}</span>
+        <span className={styles.roadMeta}><T>{s.label}</T></span>
         <AnimatePresence mode="wait" initial={false}>
           <motion.h3
             key={s.headline}
@@ -53,10 +55,10 @@ export default function RoadToAgentic() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease }}
           >
-            {s.headline}
+            <T>{s.headline}</T>
           </motion.h3>
         </AnimatePresence>
-        <span className={styles.roadMeta}>Explore each stage</span>
+        <span className={styles.roadMeta}><T>{"Explore each stage"}</T></span>
       </div>
     </div>
   );

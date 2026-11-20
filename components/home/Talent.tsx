@@ -5,6 +5,8 @@ import { Eyebrow, LinkButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Talent.module.css";
 
+import { T } from "@/components/i18n/T";
+
 // Figma "Card talent enablement" (2866:49107): Closed → Opened on hover, smart animate 0.3s ease-out
 const CARDS = [
   {
@@ -64,12 +66,12 @@ function TalentCard({ card }: { card: (typeof CARDS)[number] }) {
           />
         </div>
         <div className={styles.labels}>
-          <p className={styles.label}>{card.label}</p>
-          <h3 className={`${styles.name} ${card.highlight ? styles.nameHighlight : ""}`}>{card.name}</h3>
+          <p className={styles.label}><T>{card.label}</T></p>
+          <h3 className={`${styles.name} ${card.highlight ? styles.nameHighlight : ""}`}><T>{card.name}</T></h3>
         </div>
       </div>
       <div className={styles.titleRow}>
-        <h4 className={styles.cardTitle}>{card.title}</h4>
+        <h4 className={styles.cardTitle}><T>{card.title}</T></h4>
         <button
           type="button"
           className={styles.toggle}
@@ -85,7 +87,7 @@ function TalentCard({ card }: { card: (typeof CARDS)[number] }) {
         </button>
       </div>
       <div className={styles.bodyWrap}>
-        <p className={styles.body}>{card.body}</p>
+        <p className={styles.body}><T>{card.body}</T></p>
       </div>
     </article>
   );
@@ -101,25 +103,20 @@ export default function Talent() {
         <span className={`${styles.patron} ${styles.patronLeft}`} aria-hidden>
           <img alt="" src="/assets/home/patron-dots.svg" />
         </span>
-        <p className={styles.bannerText}>
-          We <strong>accelerate success</strong> by connecting clients, talent and technology.
-        </p>
+        <p className={styles.bannerText}><T>{"We "}</T><strong><T>{"accelerate success"}</T></strong><T>{" by connecting clients, talent and technology."}</T></p>
       </section>
 
       <section className={styles.talent}>
         <div className={`wrap ${styles.inner}`}>
           <div className={styles.header}>
             <h2 className={styles.heading}>
-              <Eyebrow>Talent Enablement</Eyebrow>
-              <span className={styles.title}>The Right Team, Ready Before You Ask.</span>
+              <Eyebrow><T>{"Talent Enablement"}</T></Eyebrow>
+              <span className={styles.title}><T>{"The Right Team, Ready Before You Ask."}</T></span>
             </h2>
             <div className={styles.side}>
-              <h3 className={styles.subtitle}>Four Strengths. One Delivery Advantage.</h3>
-              <p className={styles.lead}>
-                We combine proactive talent planning, AI-powered technology, agile execution, and expert oversight to
-                deliver the engineering talent and technology teams your business needs, faster and with confidence.
-              </p>
-              <LinkButton href={ROUTES.talentEnablement}>Explore Our Talent Enablement</LinkButton>
+              <h3 className={styles.subtitle}><T>{"Four Strengths. One Delivery Advantage."}</T></h3>
+              <p className={styles.lead}><T>{"We combine proactive talent planning, AI-powered technology, agile execution, and expert oversight to deliver the engineering talent and technology teams your business needs, faster and with confidence."}</T></p>
+              <LinkButton href={ROUTES.talentEnablement}><T>{"Explore Our Talent Enablement"}</T></LinkButton>
             </div>
           </div>
 
@@ -150,11 +147,8 @@ export default function Talent() {
             />
           </div>
           <div className={styles.qualityCopy}>
-            <h3 className={styles.qualityTitle}>Quality Continues Beyond Deployment.</h3>
-            <p className={styles.qualityText}>
-              Dedicated Engineering Managers, structured onboarding, and A+ Standards ensure continuous performance,
-              accountability, and improvement throughout every engagement.
-            </p>
+            <h3 className={styles.qualityTitle}><T>{"Quality Continues Beyond Deployment."}</T></h3>
+            <p className={styles.qualityText}><T>{"Dedicated Engineering Managers, structured onboarding, and A+ Standards ensure continuous performance, accountability, and improvement throughout every engagement."}</T></p>
           </div>
         </div>
       </section>
