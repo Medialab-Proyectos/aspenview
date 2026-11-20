@@ -13,9 +13,9 @@ export function AeShift() {
       <div className={`wrap ${t.section}`}>
         <div className={`${t.header} ${n.meaningHeader}`}>
           <h2 className={t.heading}>
-            <Eyebrow size="sm">The shift</Eyebrow>
+            <Eyebrow size="sm">The Shift</Eyebrow>
             <span className={t.title}>
-              Beyond <strong>the coding assistant</strong>
+              Beyond <strong>the Coding Assistant</strong>
             </span>
           </h2>
           <p className={n.lead}>Human in control. Always. An iterative loop, from plan to ship and back.</p>
@@ -28,7 +28,7 @@ export function AeShift() {
             </div>
             <div className={styles.shiftBody}>
               <div className={n.meaningCopy}>
-                <h3 className={n.meaningTitle}>One developer. A faster workflow.</h3>
+                <h3 className={n.meaningTitle}>One Developer. A Faster Workflow.</h3>
                 <p className={n.meaningText}>AI helps a developer write, understand and improve code.</p>
               </div>
               <div className={styles.flow}>
@@ -48,7 +48,7 @@ export function AeShift() {
             </div>
             <div className={styles.shiftBody}>
               <div className={n.meaningCopy}>
-                <h3 className={n.meaningTitle}>People and agents. A new lifecycle.</h3>
+                <h3 className={n.meaningTitle}>People and Agents. A New Lifecycle.</h3>
                 <p className={n.meaningText}>
                   Redesign the engineering lifecycle around people and agents working together.
                 </p>
@@ -76,10 +76,10 @@ export function AeRoad() {
       <div className={`wrap ${t.section}`}>
         <h2 className={t.heading}>
           <Eyebrow tone="white" size="sm">
-            The road to Agentic Engineering
+            The Road to Agentic Engineering
           </Eyebrow>
           <span className={`${t.title} ${t.titleLight} ${n.wideTitle}`}>
-            Transform at the pace <strong>you’re ready for</strong>
+            Transform at the Pace <strong>You’re Ready For</strong>
           </span>
         </h2>
         <RoadToAgentic />
@@ -90,10 +90,10 @@ export function AeRoad() {
 
 /* ---------- Where it creates value (2113:36177) ---------- */
 const VALUE = [
-  { icon: "value-pc", title: "Software Engineering" },
-  { icon: "value-course-up", title: "Data Engineering, Bi & AI" },
-  { icon: "value-routing", title: "Agentic Process Automation" },
-  { icon: "value-check", title: "Customer Success" },
+  { icon: "value-pc", title: "Software Engineering", body: "Accelerate feature delivery." },
+  { icon: "value-course-up", title: "Data Engineering, BI & AI", body: "Move from idea to working software faster." },
+  { icon: "value-routing", title: "Agentic Process Automation", body: "Understand and transform legacy systems." },
+  { icon: "value-check", title: "Customer Success", body: "Increase coverage and identify defects earlier." },
 ];
 
 export function AeValue() {
@@ -101,16 +101,21 @@ export function AeValue() {
     <section className={`${t.white} ${t.gap}`}>
       <div className={`wrap ${t.section}`}>
         <h2 className={t.heading}>
-          <Eyebrow size="sm">Where it creates value</Eyebrow>
+          <Eyebrow size="sm">Where It Creates Value</Eyebrow>
           <span className={`${t.title} ${styles.valueTitle}`}>
-            Built for real <strong>engineering challenges</strong>
+            Built for Real <strong>Engineering Challenges</strong>
           </span>
         </h2>
         <div className={t.outcomes}>
           {VALUE.map((v) => (
-            <article key={v.title} className={`${t.outcome} ${styles.valueCard}`}>
+            <article key={v.title} className={`${t.outcome} ${styles.valueCard} reveal-card hover-blue-text`} tabIndex={0}>
               <img alt="" src={`${A}/${v.icon}.svg`} width={36} height={36} />
-              <h3 className={t.outcomeTitle}>{v.title}</h3>
+              <div className={t.outcomeCopy}>
+                <h3 className={t.outcomeTitle}>{v.title}</h3>
+                <div className="reveal-body">
+                  <p className={t.outcomeBody}>{v.body}</p>
+                </div>
+              </div>
             </article>
           ))}
         </div>
@@ -124,19 +129,19 @@ const ADVANTAGE = [
   {
     icon: "adv-chip",
     tag: "AGENT-DRIVEN",
-    title: "Work that moves together",
+    title: "Work That Moves Together",
     text: "Connect people, process, context and technology across delivery.",
   },
   {
     icon: "adv-user",
     tag: "HUMAN-GOVERNED",
-    title: "Direction stays with people",
+    title: "Direction Stays With People",
     text: "Keep quality, security and outcomes under human control.",
   },
   {
     icon: "adv-routing",
     tag: "BUILT AROUND YOU",
-    title: "Grounded in your environment",
+    title: "Grounded in Your Environment",
     text: "Bring your processes, context and technology into the way agents work.",
   },
 ];
@@ -151,12 +156,12 @@ export function AeAdvantage() {
         <div className={`${t.header} ${n.meaningHeader}`}>
           <h2 className={t.heading}>
             <Eyebrow tone="white" size="sm">
-              The AspenView advantage
+              The AspenView Advantage
             </Eyebrow>
             <span className={`${t.title} ${t.titleLight}`}>
-              We know how to use
+              We Know How to Use
               <br />
-              agents, <strong>not just tools</strong>
+              Agents, <strong>Not Just Tools</strong>
             </span>
           </h2>
           <p className={styles.advLead}>
@@ -167,7 +172,7 @@ export function AeAdvantage() {
         </div>
         <div className={styles.advCards}>
           {ADVANTAGE.map((a) => (
-            <article key={a.title} className={styles.advCard}>
+            <article key={a.title} className={`${styles.advCard} hover-blue`}>
               <span className={styles.advCardGlow} aria-hidden>
                 <img alt="" src={`${A}/adv-card-glow.svg`} />
               </span>

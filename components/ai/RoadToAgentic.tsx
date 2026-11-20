@@ -10,11 +10,11 @@ const ease = [0, 0, 0.58, 1] as const;
 /* Componente - The road to agentic (2081:32355): MOUSE_ENTER on a bar, SMART_ANIMATE 0.3s.
    Bar labels follow the page instance; the panel headline is the matching stage from the component variants. */
 const STAGES = [
-  { label: "Tools & Approach", headline: "Build the foundation", icon: "road-chip", height: 120 },
-  { label: "Governance and Security Protocols", headline: "Govern usage, cost and performance", icon: "road-code", height: 150 },
-  { label: "Assisted Coding", headline: "Pilot AI-enabled engineering", icon: "road-routing", height: 200 },
-  { label: "Agentic Delivery Lifecycle (ADLC)", headline: "Orchestrate agents across the SDLC", icon: "road-bulb", height: 250 },
-  { label: "Scaled Adoption", headline: "Expand across teams and workflows", icon: "road-widget", height: 300 },
+  { label: "Tools & Approach", headline: "Build the Foundation", icon: "road-chip", height: 120 },
+  { label: "Governance and Security Protocols", headline: "Govern Usage, Cost and Performance", icon: "road-code", height: 150 },
+  { label: "Assisted Coding", headline: "Pilot AI-Enabled Engineering", icon: "road-routing", height: 200 },
+  { label: "Agentic Delivery Lifecycle (ADLC)", headline: "Orchestrate Agents Across the SDLC", icon: "road-bulb", height: 250 },
+  { label: "Scaled Adoption", headline: "Expand Across Teams and Workflows", icon: "road-widget", height: 300 },
 ];
 
 export default function RoadToAgentic() {

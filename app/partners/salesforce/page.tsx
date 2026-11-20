@@ -5,12 +5,12 @@ import { SfDeliver, SfUseCases, SfQuickStarts, SfCta } from "@/components/salesf
 
 export const metadata: Metadata = {
   title: "Salesforce Partner | AspenView",
-  description: "From connected data to intelligent agents — Agentforce and Data 360 in as little as 10 days.",
+  description: "From connected data to intelligent agents: Agentforce and Data 360 in as little as 10 days.",
 };
 
 export default function SalesforcePage() {
   return (
-    <>
+    <div className="sf-page">
       <SfHero />
       <SfBuilt />
       <SfWhy />
@@ -21,6 +21,6 @@ export default function SalesforcePage() {
       <SfUseCases />
       <SfQuickStarts />
       <SfCta />
-    </>
+    </div>
   );
 }

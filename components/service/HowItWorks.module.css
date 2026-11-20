@@ -141,7 +141,7 @@
 .stepItems {
   color: #fff;
   font-size: var(--text-body-small);
-  line-height: normal;
+  line-height: 1.4;
 }
 
 .arrow {

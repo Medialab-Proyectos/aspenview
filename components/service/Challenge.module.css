@@ -10,6 +10,7 @@
   padding-block: var(--pad-section-y);
 }
 
+/* Figma set 1748:10350: open card 520 / closed cards 366 (max), smart-animate ease-out 0.3s */
 .cards {
   display: flex;
   align-items: flex-start;
@@ -18,32 +19,54 @@
   min-height: 555px;
 }
 
-.mainCard {
+.card {
   display: flex;
-  flex: 1 0 0;
+  flex: 342 1 0;
   flex-direction: column;
-  min-width: 500px;
+  min-width: 0;
+  max-width: 366px;
+  border-radius: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: flex-grow 0.3s var(--ease-out), max-width 0.3s var(--ease-out);
 }
 
-.mainMedia,
-.sideMedia {
+.card.open {
+  flex-grow: 500;
+  max-width: 600px;
+  cursor: default;
+}
+
+.card:focus-visible {
+  box-shadow: 0 0 0 2px var(--aspen-color-brand-bright);
+}
+
+.media {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 236px;
   border: 0.5px solid var(--aspen-color-border-subtle);
   border-radius: 16px 16px 0 0;
   background: var(--aspen-color-ink-strong);
+  transition: height 0.3s var(--ease-out);
 }
 
-.mainMedia {
+.open .media {
   height: 303px;
-  padding: 64px;
 }
 
-.mainGraphic {
+.graphic {
   position: relative;
+  width: 140px;
+  height: 140px;
+  opacity: 0.5;
+  transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out);
+}
+
+.open .graphic {
   width: 189px;
   height: 190px;
 }
@@ -58,33 +81,58 @@
   object-fit: cover;
 }
 
-.mainBody,
-.sideBody {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.label {
+  position: absolute;
+  left: 17.5px;
+  top: 12.5px;
+  color: var(--aspen-color-ink-muted);
+  font-size: var(--text-body);
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  white-space: nowrap;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.open .label {
+  opacity: 0;
+}
+
+.body {
   padding: var(--card-m-y) var(--card-s-x);
   border: 0.5px solid var(--aspen-color-border-subtle);
+  border-top: 0;
   border-radius: 0 0 16px 16px;
   background: #fff;
 }
 
-.mainTitle {
+.bodyIn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 0.3s var(--ease-out);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.openTitle {
   color: var(--aspen-color-ink-strong);
   font-size: var(--text-subtitle-large);
   font-weight: 300;
-  line-height: normal;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
-.mainTitle strong {
+.openTitle strong {
   font-weight: 700;
 }
 
-.mainText {
+.openText {
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-variable-2);
-  line-height: 1.1094;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
@@ -108,51 +156,25 @@
   white-space: nowrap;
 }
 
-.sideCard {
-  display: flex;
-  flex: 1 0 0;
-  flex-direction: column;
-  max-width: 366px;
-  min-width: 320px;
-}
-
-.sideMedia {
-  height: 236px;
-  padding: 48px 64px;
-}
-
-.sideGraphic {
-  position: relative;
-  width: 140px;
-  height: 140px;
-}
-
-.sideLabel {
-  position: absolute;
-  left: 17.5px;
-  top: 12.5px;
-  color: var(--aspen-color-ink-muted);
-  font-size: var(--text-body);
-  line-height: 1.4;
-  letter-spacing: -0.32px;
-  white-space: nowrap;
-}
-
-.sideTitle {
+.shortTitle {
   color: var(--aspen-color-ink-strong);
   font-size: var(--text-body-large);
   font-weight: 700;
-  line-height: normal;
+  line-height: 1.25;
   letter-spacing: -0.4px;
 }
 
-.sideText {
+.shortText {
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-small);
-  line-height: normal;
+  line-height: 1.5;
 }
 
-/* Tablet (Figma 1811:14295): same desktop row inside the 720 column, overflowing to the right as a swipeable strip */
+.card:not(.open):hover .shortTitle {
+  color: var(--aspen-color-brand-primary);
+}
+
+/* Tablet (Figma 1811:14305): desktop row inside the 720 column, swipeable; tap opens a card */
 @media (max-width: 1199px) {
   .cards {
     min-height: 0;
@@ -165,11 +187,17 @@
 
   .cards::-webkit-scrollbar { display: none; }
 
-  .mainCard { flex: 0 0 500px; scroll-snap-align: start; }
-  .sideCard { flex: 0 0 320px; scroll-snap-align: start; }
+  .card {
+    flex: 0 0 320px;
+    max-width: none;
+    scroll-snap-align: start;
+    transition: flex-basis 0.3s var(--ease-out);
+  }
+
+  .card.open { flex-basis: 500px; }
 }
 
-/* Mobile (Figma 1811:14394): cards stack full width */
+/* Mobile (Figma set 1793:10760): cards stack full width, ON_CLICK opens one */
 @media (max-width: 767px) {
   .cards {
     flex-direction: column;
@@ -179,11 +207,10 @@
     overflow: visible;
   }
 
-  .mainCard,
-  .sideCard {
+  .card,
+  .card.open {
     flex: none;
     width: 100%;
-    min-width: 0;
     max-width: none;
   }
 }

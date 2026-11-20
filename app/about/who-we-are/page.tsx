@@ -15,9 +15,9 @@ export default function WhoWeArePage() {
         eyebrow="WHO WE ARE"
         title={
           <>
-            Connected by belief.
+            Connected by Belief.
             <br />
-            Built for more.
+            Built for More.
           </>
         }
         text="AspenView was built around a belief that technology delivers more when the right people, expertise and ideas come together."
@@ -30,7 +30,7 @@ export default function WhoWeArePage() {
       <WhoValues />
       <AboutCta
         large
-        title="Let's build more, together"
+        title="Let's Build More, Together"
         text="Discover why organizations across North America choose AspenView, and meet the people behind the grove."
         textWidth={562}
         cta="Talk to AspenView"

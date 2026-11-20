@@ -6,8 +6,9 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
-  align-items: flex-start;
+  /* Devs comment: copy + media centred on the Y axis of the hero */
+  align-content: center;
+  align-items: center;
   gap: var(--gutter);
   max-width: 1440px;
   min-height: 800px;
@@ -131,6 +132,8 @@
   .inner {
     min-height: 900px;
     flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
     gap: 24px;
     padding-block: 48px;
   }

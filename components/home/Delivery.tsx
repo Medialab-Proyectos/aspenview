@@ -30,7 +30,7 @@ export default function Delivery() {
         <div className={styles.copyCol}>
           <div className={styles.copy}>
             <h2 className={styles.heading}>
-              <Eyebrow>How we deliver</Eyebrow>
+              <Eyebrow>How We Deliver</Eyebrow>
               <span className={styles.title}>Your Priorities. Our Delivery Commitment.</span>
             </h2>
             <div className={styles.textGroup}>

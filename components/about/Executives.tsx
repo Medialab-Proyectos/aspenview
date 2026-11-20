@@ -47,7 +47,7 @@ const LEADERS: Leader[] = [
     linkedin: "https://www.linkedin.com/in/john-l-jacobs",
     bio: [
       "John delivers results for AspenView clients, drawing from his 30-year career including senior leadership roles ranging from the Fortune 500 to the U.S. Marines. Specializing in operations and service delivery, John brings a results-oriented approach to build high-performing teams that consistently deliver exceptional outcomes. AspenView clients benefit from his perspective and judgment earned as a global project manager, application developer, and service delivery executive who managed a global workforce of 750 employees at Genworth Financial. John served with distinction in the U.S. Marines for 22 years.",
-      "John holds an MBA from William & Mary – Raymond A. Mason School of Business, an MA in Crisis/Emergency/Disaster Management from the American Military University, and a BA in political Science from Oregon State University.",
+      "John holds an MBA from William & Mary, Raymond A. Mason School of Business, an MA in Crisis/Emergency/Disaster Management from the American Military University, and a BA in political Science from Oregon State University.",
     ],
   },
   {
@@ -62,7 +62,7 @@ const LEADERS: Leader[] = [
   },
   {
     name: "Matthijs Baaten",
-    role: "Country President - Colombia",
+    role: "Country President, Colombia",
     img: "leader-matthijs.jpg",
     linkedin: "https://co.linkedin.com/in/matthijsbaaten",
     bio: [
@@ -72,7 +72,7 @@ const LEADERS: Leader[] = [
   },
   {
     name: "Joe Kishkill",
-    role: "Country President - Argentina",
+    role: "Country President, Argentina",
     img: "leader-joe.jpg",
     linkedin: "https://ar.linkedin.com/in/joe-kishkill-9829aa7",
     bio: [

@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "AI Transformation | AspenView",
   description:
-    "Move beyond isolated AI tools to AI-native ways of working — combining people, processes, data and agentic technology.",
+    "Move beyond isolated AI tools to AI-native ways of working, combining people, processes, data and agentic technology.",
 };
 
 export default function AiTransformationPage() {
@@ -20,9 +20,9 @@ export default function AiTransformationPage() {
     <>
       <AiHero
         eyebrow="AI TRANSFORMATION"
-        title="Don't just adopt AI."
-        accent="Redesign what's possible with it."
-        text="Move beyond isolated AI tools to AI-native ways of working — combining people, processes, data and agentic technology to create measurable business advantage."
+        title="Don't Just Adopt AI."
+        accent="Redesign What's Possible With It."
+        text="Move beyond isolated AI tools to AI-native ways of working; combining people, processes, data and agentic technology to create measurable business advantage."
         cta="Explore AI transformation"
         ctaHref="#how-we-enable"
         video="/videos/ai-capabilities-hero.webm"
@@ -33,7 +33,7 @@ export default function AiTransformationPage() {
       <AitOutcomes />
       <AitAdvantage />
       <AiGridCta
-        title="What could AI change for your business?"
+        title="What Could AI Change for Your Business?"
         text={
           <>
             Let&apos;s identify where AI can create meaningful advantage

@@ -42,7 +42,7 @@ export function LeadershipExecutives() {
         <div className={a.headerTight}>
           <h2 className={a.heading}>
             <Eyebrow>EXECUTIVE LEADERSHIP</Eyebrow>
-            <span className={`${a.title} ${a.max700}`}>The people accountable for how AspenView delivers</span>
+            <span className={`${a.title} ${a.max700}`}>The People Accountable for How AspenView Delivers</span>
           </h2>
           <p className={`${a.muted16} ${a.max700}`}>
             Leaders who have built businesses and led technology at scale, now bringing that experience to every client
@@ -77,9 +77,9 @@ export function LeadershipAdvisors() {
           <h2 className={a.heading}>
             <Eyebrow>ADVISORY BOARD</Eyebrow>
             <span className={`${a.title} ${a.max700}`}>
-              Perspective that keeps us
+              Perspective That Keeps Us
               <br />
-              looking forward
+              Looking Forward
             </span>
           </h2>
           <div className={`${a.muted16} ${a.paras} ${a.max700}`}>

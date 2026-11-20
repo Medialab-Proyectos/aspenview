@@ -77,10 +77,10 @@ export function AitEnable() {
           <div className={styles.header}>
               <h2 className={styles.heading}>
                 <Eyebrow tone="white" size="sm">
-                  How we enable AI transformation
+                  How We Enable AI Transformation
                 </Eyebrow>
                 <span className={`${styles.title} ${styles.titleLight}`}>
-                  Transformation goes <strong>beyond technology.</strong>
+                  Transformation Goes <strong>Beyond Technology.</strong>
                 </span>
               </h2>
             <p className={styles.leadLarge}>
@@ -100,8 +100,8 @@ const ACTION = [
     video: "/videos/ait-action-1.webm",
     ratio: "1514 / 486",
     maxW: 514,
-    title: "Rethink how software gets built.",
-    text: "Integrate agents across the engineering lifecycle to accelerate planning, development, testing and delivery — with engineers governing the outcomes.",
+    title: "Rethink How Software Gets Built.",
+    text: "Integrate agents across the engineering lifecycle to accelerate planning, development, testing and delivery, with engineers governing the outcomes.",
     cta: "Explore Agentic engineering",
     href: ROUTES.agenticEngineering,
   },
@@ -110,7 +110,7 @@ const ACTION = [
     video: "/videos/ait-action-2.webm",
     ratio: "1490 / 548",
     maxW: 449,
-    title: "Rethink how work gets done.",
+    title: "Rethink How Work Gets Done.",
     text: "Extend automation beyond fixed rules with intelligent agents that can reason, adapt and act across complex business processes.",
     cta: "Explore Agentic process automation",
     href: ROUTES.agenticAutomation,
@@ -122,11 +122,11 @@ export function AitAction() {
     <section className={`${styles.white} ${styles.gap}`}>
       <div className={`wrap ${styles.section}`}>
         <h2 className={styles.heading}>
-          <Eyebrow size="sm">AI transformation in action</Eyebrow>
+          <Eyebrow size="sm">AI Transformation in Action</Eyebrow>
           <span className={styles.title}>
-            Transform how you build.
+            Transform How You Build.
             <br />
-            <strong>Transform how you operate.</strong>
+            <strong>Transform How You Operate.</strong>
           </span>
         </h2>
         <div className={styles.actions}>
@@ -162,9 +162,9 @@ export function AitResponsible() {
               Responsible AI
             </Eyebrow>
             <span className={`${styles.title} ${styles.titleLight}`}>
-              Move faster.
+              Move Faster.
               <br />
-              <strong>Keep people in control.</strong>
+              <strong>Keep People in Control.</strong>
             </span>
           </h2>
           <p className={styles.leadLarge}>
@@ -182,11 +182,11 @@ export function AitResponsible() {
 
 /* ---------- Business outcomes (2058:33078) ---------- */
 const OUTCOMES = [
-  { title: "Faster execution", ratio: "928 / 180" },
-  { title: "Greater productivity", ratio: "492 / 214" },
-  { title: "Lower cost to deliver", ratio: "428 / 296" },
-  { title: "Better quality", ratio: "404 / 136" },
-  { title: "Greater adaptability", ratio: "474 / 194" },
+  { title: "Faster Execution", ratio: "928 / 180", body: "Move from idea to outcome faster." },
+  { title: "Greater Productivity", ratio: "492 / 214", body: "Shift people toward higher-value work." },
+  { title: "Lower Cost to Deliver", ratio: "428 / 296", body: "Create more without scaling at the same rate." },
+  { title: "Better Quality", ratio: "404 / 136", body: "Build consistency and governance into execution." },
+  { title: "Greater Adaptability", ratio: "474 / 194", body: "Respond faster as priorities change." },
 ];
 
 export function AitOutcomes() {
@@ -196,9 +196,9 @@ export function AitOutcomes() {
         <Eyebrow size="sm">Business outcomes</Eyebrow>
         <div className={styles.header}>
           <h2 className={styles.title}>
-            Beyond efficiency.
+            Beyond Efficiency.
             <br />
-            <strong>Unlocking new value.</strong>
+            <strong>Unlocking New Value.</strong>
           </h2>
           <p className={`${styles.leadLarge} ${styles.leadMuted}`}>
             When AI is embedded into how a business operates, the opportunity goes beyond incremental improvements to
@@ -207,7 +207,7 @@ export function AitOutcomes() {
         </div>
         <div className={styles.outcomes}>
           {OUTCOMES.map((o, i) => (
-            <article key={o.title} className={styles.outcome}>
+            <article key={o.title} className={`${styles.outcome} reveal-card`} tabIndex={0}>
               <div className={styles.outcomeMedia} style={{ aspectRatio: o.ratio }}>
                 <video
                   src={`/videos/ait-results-${i + 1}.webm`}
@@ -219,7 +219,12 @@ export function AitOutcomes() {
                   aria-hidden
                 />
               </div>
-              <h3 className={styles.outcomeTitle}>{o.title}</h3>
+              <div className={styles.outcomeCopy}>
+                <h3 className={styles.outcomeTitle}>{o.title}</h3>
+                <div className="reveal-body">
+                  <p className={styles.outcomeBody}>{o.body}</p>
+                </div>
+              </div>
             </article>
           ))}
         </div>
@@ -238,17 +243,17 @@ export function AitAdvantage() {
           <div className={styles.header}>
             <h2 className={styles.heading}>
               <Eyebrow tone="white" size="sm">
-                AspenView AI advantage
+                AspenView AI Advantage
               </Eyebrow>
               <span className={`${styles.title} ${styles.titleLight}`}>
-                We don&apos;t just advise on AI.
+                We Don&apos;t Just Advise on AI.
                 <br />
-                <strong>We&apos;re living it.</strong>
+                <strong>We&apos;re Living It.</strong>
               </span>
             </h2>
             <div className={styles.advantageText}>
               <p>
-                We&apos;re applying AI-native thinking across our own business — combining people, processes and agentic
+                We&apos;re applying AI-native thinking across our own business, combining people, processes and agentic
                 technology to change how we engineer, deliver and operate.
               </p>
               <p>That experience shapes how we help our clients do the same.</p>

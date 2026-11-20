@@ -255,3 +255,85 @@ svg {
     margin-top: 0;
   }
 }
+
+/* ---------- Standard blue hover (Excel 4 / 37: "interactive elements turn blue on hover") ----------
+   .hover-blue      → surface fills with brand blue, copy turns white (cards, rows, tiles)
+   .hover-blue-text → headings inside turn brand blue (text-only items)
+   Touch devices get the same treatment while the element is pressed (:active). */
+.hover-blue {
+  transition:
+    background-color 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out),
+    color 0.3s var(--ease-out);
+}
+
+.hover-blue :is(h2, h3, h4, h5, p, span, strong, b, li, small) {
+  transition: color 0.3s var(--ease-out);
+}
+
+@media (hover: hover) {
+  .hover-blue:hover {
+    background: var(--aspen-color-brand-primary) !important;
+    border-color: var(--aspen-color-brand-primary) !important;
+    color: #fff !important;
+  }
+
+  .hover-blue:hover :is(h2, h3, h4, h5, p, span, strong, b, li, small) {
+    color: #fff !important;
+  }
+
+  .hover-blue-text:hover :is(h2, h3, h4, h5, strong) {
+    color: var(--aspen-color-brand-primary) !important;
+  }
+}
+
+@media (hover: none) {
+  .hover-blue:active {
+    background: var(--aspen-color-brand-primary) !important;
+    border-color: var(--aspen-color-brand-primary) !important;
+  }
+
+  .hover-blue:active :is(h2, h3, h4, h5, p, span, strong, b, li, small) {
+    color: #fff !important;
+  }
+}
+
+.hover-blue-text :is(h2, h3, h4, h5, strong) {
+  transition: color 0.3s var(--ease-out);
+}
+
+/* ---------- Hover-reveal cards (Figma "Closed → Opened" on MOUSE_ENTER, smart animate 0.3s) ----------
+   On touch screens there is no hover, so the hidden copy is simply shown. */
+.reveal-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.3s var(--ease-out),
+    opacity 0.3s var(--ease-out);
+}
+
+.reveal-body > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  .reveal-card:hover .reveal-body,
+  .reveal-card:focus-within .reveal-body {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .reveal-body {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+/* Salesforce page (Excel 55): grey supporting copy one step darker for contrast on light surfaces */
+.sf-page {
+  --aspen-color-ink-muted: #3b566f;
+}

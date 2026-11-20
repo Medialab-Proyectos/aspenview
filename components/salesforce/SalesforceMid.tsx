@@ -26,11 +26,11 @@ export function SfPlatform() {
             <img alt="" src="/assets/capabilities/glow.svg" />
           </span>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">The platform</Eyebrow>
-            <span className={styles.titleLight}>Better together</span>
+            <Eyebrow tone="white">The Platform</Eyebrow>
+            <span className={styles.titleLight}>Better Together</span>
           </h2>
           <p className={styles.leadLight}>
-            Data powers intelligence. Agentforce turns intelligence into action — one enterprise-ready pipeline from
+            Data powers intelligence. Agentforce turns intelligence into action: one enterprise-ready pipeline from
             system of record to measurable outcome.
           </p>
         </div>
@@ -38,7 +38,7 @@ export function SfPlatform() {
           {[STEPS.slice(0, 3), STEPS.slice(3)].map((row, r) => (
             <div key={r} className={styles.stepRow}>
               {row.map((s, i) => (
-                <div key={s.title} className={styles.step}>
+                <div key={s.title} className={`${styles.step} hover-blue`}>
                   <div className={styles.stepHead}>
                     <div className={styles.stepNum}>
                       <span>{String(r * 3 + i + 1).padStart(2, "0")}</span>
@@ -154,13 +154,13 @@ export function SfIndustries() {
           <h2 className={styles.heading}>
             <Eyebrow>Industries</Eyebrow>
             <span className={styles.title}>
-              Enterprise experience where
+              Enterprise Experience Where
               <br />
-              AI matters
+              AI Matters
             </span>
           </h2>
           <p className={styles.lead}>
-            Our leadership and teams bring experience from complex enterprise environments — combining business
+            Our leadership and teams bring experience from complex enterprise environments, combining business
             understanding with AI-native execution.
           </p>
         </div>
@@ -215,7 +215,7 @@ export function SfIndustries() {
                   </button>
                   <div className={styles.openTitle}>
                     <h3>{ind.name}</h3>
-                    <p>{ind.agents.length} agents available</p>
+                    <p>{ind.agents.length} Agents Available</p>
                   </div>
                 </div>
                 <img alt="" src="/assets/salesforce/ind-sep.svg" className={styles.openSep} />

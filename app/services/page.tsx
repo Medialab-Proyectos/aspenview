@@ -17,16 +17,11 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our services"
-        title="Technology services, re‑engineered for"
-        highlight="the agentic era."
+        title="Technology Services, Re‑engineered for"
+        highlight="the Agentic Era."
         cta={{ label: "Schedule your assessment", href: ROUTES.contact }}
         media={{ video: "/videos/01-service-offerings.webm", label: "Service offerings animation" }}
-      >
-        <p>
-          <b>AspenView</b> combines specialized expertise, nearshore execution and agentic AI to help organizations
-          build, modernize and operate faster — without compromising quality, control or accountability.
-        </p>
-      </PageHero>
+      />
 
       <AiBand />
 
@@ -38,7 +33,7 @@ export default function ServicesPage() {
                 <span className={styles.tagLine} />
                 <span className={styles.tagText}>Services</span>
               </span>
-              <span className={styles.title}>Built around the priorities businesses are facing now.</span>
+              <span className={styles.title}>Built Around the Priorities Businesses Are Facing Now.</span>
             </h2>
             <p className={styles.lead}>
               Specialized expertise and agentic AI applied where each business is under the most pressure.
@@ -49,9 +44,9 @@ export default function ServicesPage() {
       </section>
 
       <ShaderCta
-        title="Talk to our team about an AI assessment for your next initiative"
+        title="Your Next Technology Initiative Deserves the Right Execution."
         text="Delivering client service excellence is our singular obsession. Talk to our team about an engineering assessment for your next initiative."
-        cta={{ label: "Schedule your assessment", href: ROUTES.contact }}
+        cta={{ label: "Talk to Our Team", href: ROUTES.contact }}
       />
     </>
   );

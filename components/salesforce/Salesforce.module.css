@@ -285,7 +285,7 @@
 .whyText {
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-variable-2);
-  line-height: 1.3;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
@@ -439,7 +439,7 @@
 .productText {
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-variable-2);
-  line-height: 1.1094;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
@@ -449,12 +449,60 @@
   gap: var(--gap-subtitle-to-texts);
 }
 
+.productCaps .capList { margin-top: var(--gap-subtitle-to-texts); }
+
 .productCapsTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 8px;
   color: var(--aspen-color-ink-strong);
   font-size: var(--text-body-large);
   font-weight: 300;
   line-height: 1.4;
   letter-spacing: -0.5px;
+  list-style: none;
+  cursor: pointer;
+  transition: color 0.3s var(--ease-out);
+}
+
+.productCapsTitle::-webkit-details-marker { display: none; }
+
+.productCapsTitle:hover { color: var(--aspen-color-brand-primary); }
+
+/* + that turns into − when the list is open */
+.capsToggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid currentColor;
+  border-radius: 99px;
+}
+
+.capsToggle::before,
+.capsToggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 1.5px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.capsToggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+.productCaps[open] .capsToggle::after { transform: translate(-50%, -50%) rotate(0deg); }
+
+.productCaps[open] .capList { animation: capsIn 0.3s var(--ease-out); }
+
+@keyframes capsIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
 }
 
 .capList {
@@ -469,7 +517,7 @@
   gap: 8px;
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-variable-2);
-  line-height: 1.1094;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 

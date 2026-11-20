@@ -23,10 +23,10 @@ export default function Nearshore() {
             <Eyebrow>How we deliver</Eyebrow>
             <div className={styles.body}>
               <div className={styles.titleGroup}>
-                <h2 className={styles.title}>Nearshore talent. Fully integrated with your team.</h2>
+                <h2 className={styles.title}>Nearshore Talent. Fully Integrated With Your Team.</h2>
                 <p className={styles.lead}>
-                  Our engineers work across Colombia, Argentina, Mexico, Brazil, Peru, and Puerto Rico—led in-country,
-                  aligned to your working hours, and integrated into your teams.
+                  Our engineers work across Colombia, Argentina, Mexico, Brazil, Peru, and Puerto Rico, aligned to
+                  your working hours and integrated into your teams.
                 </p>
               </div>
               <div className={styles.benefits}>

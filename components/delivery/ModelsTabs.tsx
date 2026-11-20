@@ -82,7 +82,7 @@ export default function ModelsTabs() {
             type="button"
             role="tab"
             aria-selected={i === active}
-            className={`${styles.tab} ${i === active ? styles.tabActive : ""}`}
+            className={`${styles.tab} ${i === active ? styles.tabActive : "hover-blue"}`}
             onClick={() => setActive(i)}
           >
             <span className={styles.tabName}>{t.name}</span>

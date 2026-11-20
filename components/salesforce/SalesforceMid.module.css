@@ -114,7 +114,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--aspen-color-ink-muted);
+  /* Excel 54: grey-on-navy was hard to read on the dark platform band */
+  color: var(--aspen-color-brand-soft);
   font-size: var(--text-body-variable-2);
   line-height: 1.1094;
   letter-spacing: -0.4px;
@@ -134,9 +135,9 @@
 }
 
 .stepText {
-  color: var(--aspen-color-ink-muted);
+  color: var(--aspen-color-brand-pale);
   font-size: var(--text-body-variable-2);
-  line-height: 1.1094;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
@@ -335,20 +336,18 @@
   height: 1px;
 }
 
+/* Devs comment 2014353403: every agent card keeps the same width (the last row no longer stretches) */
 .agents {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
 }
 
 .agent {
   display: flex;
-  flex: 1 0 0;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 320px;
-  min-width: 280px;
+  min-width: 0;
   min-height: 290px;
   padding: var(--card-s-y) var(--card-s-x);
   border: 1px solid var(--aspen-color-border-subtle);

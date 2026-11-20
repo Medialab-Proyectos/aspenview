@@ -166,6 +166,12 @@
   margin-inline: auto;
 }
 
+.stageItem {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
 .stage {
   display: flex;
   flex: 1 0 0;
@@ -229,7 +235,7 @@
 .cardText {
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-variable-2);
-  line-height: 1.3;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
@@ -413,9 +419,7 @@
   letter-spacing: -0.32px;
 }
 
-.pillar:hover { background: var(--aspen-color-ink-strong); }
-.pillar:hover .pillarTitle,
-.pillar:hover .pillarText { color: #fff; }
+/* hover: shared .hover-blue (Excel 4/37) */
 
 /* ---------- Quality ---------- */
 .quality {
@@ -668,7 +672,8 @@
 
 @media (max-width: 767px) {
   .stages { flex-wrap: wrap; }
-  .stage { flex-basis: 50%; padding: 20px 16px; border-bottom: 1px solid var(--aspen-color-ink-pre-dark); }
+  .stageItem { flex-basis: 50%; }
+  .stage { padding: 20px 16px; border-bottom: 1px solid var(--aspen-color-ink-pre-dark); }
   .stepEyebrow { flex-wrap: wrap; gap: 8px 16px; white-space: normal; }
   .progress { width: 120px; }
   .card { flex-basis: 100%; }

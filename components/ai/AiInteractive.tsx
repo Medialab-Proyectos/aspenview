@@ -76,10 +76,10 @@ export function EnableDimensions({ children }: { children: ReactNode }) {
 
 /* ---------- Componente - responsable ai (2047:12230) — MOUSE_ENTER, SMART_ANIMATE 0.3s ---------- */
 const PRINCIPLES = [
-  { title: "Human governance", text: "People remain accountable for critical decisions." },
-  { title: "Security by design", text: "Access and controls are built in." },
-  { title: "Transparent performance", text: "AI-enabled processes remain observable." },
-  { title: "Continuous evaluation", text: "Performance and guardrails evolve together." },
+  { title: "Human Governance", text: "People remain accountable for critical decisions." },
+  { title: "Security by Design", text: "Access and controls are built in." },
+  { title: "Transparent Performance", text: "AI-enabled processes remain observable." },
+  { title: "Continuous Evaluation", text: "Performance and guardrails evolve together." },
 ];
 
 export function ResponsibleAi() {

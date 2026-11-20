@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         <p>We collect several types of data related to your use of our Services (your “Personal Information”):</p>
         <ul>
           <li>
-            <strong>Shared Contact Information</strong> – such as your name, email address, and phone number
+            <strong>Shared Contact Information</strong>: such as your name, email address, and phone number
           </li>
           <li>
             <strong>Usage Information</strong>
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
             </ul>
           </li>
           <li>
-            <strong>Third Party Information</strong> – third parties (for example, marketing services and recruitment
+            <strong>Third Party Information</strong>: third parties (for example, marketing services and recruitment
             agencies) may provide additional Personal Information about you.
           </li>
         </ul>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection id="collection" heading="2. Collection of your Personal Information">
+      <LegalSection id="collection" heading="2. Collection of Your Personal Information">
         <p>
           You may voluntarily provide Personal Information when you fill out forms on our website to request additional
           information or by corresponding with us by phone, email, or otherwise. We collect certain information, such as
@@ -76,7 +76,7 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection id="use" heading="3. Use of your Personal Information">
+      <LegalSection id="use" heading="3. Use of Your Personal Information">
         <p>Your Personal Information is collected to allow us to provide you with the Services, including but not limited to:</p>
         <ul>
           <li>
@@ -140,7 +140,7 @@ export default function PrivacyPage() {
         </ul>
       </LegalSection>
 
-      <LegalSection id="protection" heading="4. Protection of your Personal Information">
+      <LegalSection id="protection" heading="4. Protection of Your Personal Information">
         <p>
           We do not sell your Personal Information to third parties. We use industry best practices, technology and
           encryption (for in transit as well as for at rest data) to keep your Personal Information secure.

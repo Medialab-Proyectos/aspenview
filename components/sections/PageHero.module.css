@@ -187,9 +187,12 @@
 }
 
 @media (max-width: 1199px) {
+  /* Devs comment (1531:5075 / 1531:5646): copy + media centred on the Y axis of the hero */
   .inner {
-    min-height: 0;
+    min-height: 900px;
     flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
     align-items: flex-start;
   }
 
@@ -213,9 +216,27 @@
 }
 
 @media (max-width: 767px) {
-  .media {
+  .inner {
+    min-height: 680px;
+  }
+
+  /* Figma 1781:8159: full-width button on phones */
+  .actions,
+  .actions > * {
     width: 100%;
+    justify-content: center;
+  }
+
+  /* Figma 1781:8160: 255px animation under the copy */
+  .media {
+    width: 255px;
     height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 255 / 247;
+  }
+
+  /* Devs comment 2014151352: the dotted pattern reads far too strong on phones */
+  .maskLeft,
+  .maskRight {
+    opacity: 0.35;
   }
 }

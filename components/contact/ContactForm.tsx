@@ -12,7 +12,7 @@ const TABS = [
   {
     key: "project",
     label: "Discuss a project",
-    title: "Let's talk about your project",
+    title: "Let's Talk About Your Project",
     intro: "Tell us what you're working on and we'll connect you with the right experts.",
     question: "What are you looking to solve?",
     options: ["Software Engineering", "Data Engineering BI & AI", "Agentic Process Automation", "Customer Success", "Other"],
@@ -20,7 +20,7 @@ const TABS = [
   {
     key: "talent",
     label: "Find talent",
-    title: "Build your team",
+    title: "Build Your Team",
     intro: "Find the expertise and delivery capacity you need.",
     question: "What kind of support are you looking for?",
     options: ["Data Platforms", "Microsoft Ecosystem", "Modern Development Stacks", "Cybersecurity", "Customer Experience"],
@@ -28,16 +28,16 @@ const TABS = [
   {
     key: "partner",
     label: "Salesforce / Ai agents",
-    title: "Let's explore a partnership",
+    title: "Let's Explore a Partnership",
     intro: "Discover opportunities to collaborate and grow together.",
     question: "What would you like your AI agent to help you achieve?",
     options: [
-      "Grow — Sales, pipeline intelligence & account research",
-      "Serve — Customer service, case resolution & employee support",
-      "Run — Workflow automation, approvals & operations",
-      "Enable — Knowledge assistants, productivity & internal support",
-      "Protect — Compliance, monitoring, finance & risk",
-      "Not sure yet — Help me identify the right AI agent",
+      "Grow: Sales, pipeline intelligence & account research",
+      "Serve: Customer service, case resolution & employee support",
+      "Run: Workflow automation, approvals & operations",
+      "Enable: Knowledge assistants, productivity & internal support",
+      "Protect: Compliance, monitoring, finance & risk",
+      "Not sure yet: Help me identify the right AI agent",
     ],
   },
 ] as const;
@@ -162,6 +162,17 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const t = TABS[tab];
 
+  /* Deep links from CTAs elsewhere on the site: /contact?tab=partner&need=Grow preselects the tab and option */
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const i = TABS.findIndex((x) => x.key === q.get("tab"));
+    if (i < 0) return;
+    setTab(i);
+    const need = q.get("need")?.toLowerCase();
+    const opt = need && TABS[i].options.find((o) => o.toLowerCase().startsWith(need));
+    if (opt) setTopic(opt);
+  }, []);
+
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
@@ -203,7 +214,7 @@ export default function ContactForm() {
     return (
       <div className={styles.card}>
         <div className={styles.sent} role="status">
-          <h2 className={styles.formTitle}>Thank you!</h2>
+          <h2 className={styles.formTitle}>Thank You!</h2>
           <p className={styles.formIntro}>We received your message and will get back to you shortly.</p>
         </div>
       </div>

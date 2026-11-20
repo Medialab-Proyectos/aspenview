@@ -46,19 +46,19 @@ export default function Services() {
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow>Our services</Eyebrow>
-            <span className={styles.title}>Technology expertise, agentic by design</span>
+            <Eyebrow>Our Services</Eyebrow>
+            <span className={styles.title}>Technology Expertise, Agentic by Design</span>
           </h2>
           <p className={styles.lead}>
             AspenView combines specialized expertise, nearshore execution and agentic AI to help organizations build,
-            modernize and operate faster—without compromising quality, control or accountability.
+            modernize and operate faster, without compromising quality, control or accountability.
           </p>
         </div>
 
         <div className={styles.grid}>
           <div className={styles.row}>
             {CARDS.map((c) => (
-              <article key={c.n} className={styles.card}>
+              <article key={c.n} className={styles.card} data-glow>
                 <div className={styles.cardTop}>
                   <span className={styles.num}>{c.n}</span>
                   {c.icon}
@@ -74,7 +74,7 @@ export default function Services() {
             ))}
           </div>
 
-          <article className={`${styles.card} ${styles.wide}`}>
+          <article className={`${styles.card} ${styles.wide}`} data-glow>
             <div className={styles.photo}>
               <img alt="Customer success professionals working together" src="/assets/home/customer-success.png" />
             </div>

@@ -16,9 +16,9 @@ export default function ContactHero() {
       </div>
       <div className={`wrap ${styles.inner}`}>
         <h1 className={styles.title}>
-          How can we{" "}
+          How Can We{" "}
           <br />
-          <strong>help you?</strong>
+          <strong>Help You?</strong>
         </h1>
         <ContactForm />
       </div>

@@ -51,12 +51,12 @@ export function CareersCulture() {
             <div className={`${styles.muted16} ${styles.paras}`}>
               <p>
                 At AspenView, we blend the discipline and performance of U.S. business culture with the depth,
-                adaptability, and richness of Latin American talent – creating a global, high-performing workplace built
+                adaptability, and richness of Latin American talent, creating a global, high-performing workplace built
                 on collaboration, trust, and inclusivity.
               </p>
               <p>
                 We intentionally create an environment where individuals feel supported, empowered, and positioned to
-                succeed. Our culture is grounded in mutual respect, and a shared commitment to growth–both for our clients
+                succeed. Our culture is grounded in mutual respect, and a shared commitment to growth, both for our clients
                 and for one another.
               </p>
             </div>
@@ -78,8 +78,8 @@ export function CareersGrowth() {
         <span className={styles.pillFloating}>Powered by connection</span>
         <div className={`wrap ${styles.grow}`}>
           <h2 className={styles.growTitle}>
-            <span>Grow faster.</span>
-            <span>Go further.</span>
+            <span>Grow Faster.</span>
+            <span>Go Further.</span>
           </h2>
           <p className={styles.growText}>
             When our people grow, AspenView grows with them. That’s why we foster an environment where{" "}
@@ -90,7 +90,7 @@ export function CareersGrowth() {
       </div>
       <div className={`wrap ${styles.evp}`}>
         <div className={styles.evpHead}>
-          <h2 className={styles.evpHeading}>The AspenView employee value promise</h2>
+          <h2 className={styles.evpHeading}>The AspenView Employee Value Promise</h2>
           <div className={styles.evpIntro}>
             <p>At AspenView, we believe exceptional talent deserves an exceptional environment.</p>
             <p>
@@ -120,7 +120,7 @@ export function CareersValues() {
         <span className={styles.horizonShade} aria-hidden />
         <div className={`wrap ${styles.horizonInner}`}>
           <div className={styles.horizonCopy}>
-            <h2 className={`${styles.mainTitle} ${styles.light}`}>Expand your professional horizon</h2>
+            <h2 className={`${styles.mainTitle} ${styles.light}`}>Expand Your Professional Horizon</h2>
             <div className={styles.horizonText}>
               <p>We partner with leading U.S. enterprises and bring together leadership with deep global experience.</p>
               <p>
@@ -152,7 +152,7 @@ const QUOTES = [
     name: "-Alicia Burgess",
   },
   {
-    text: "“A year ago I joined Aspenview not knowing quite what to expect. Today, I can say it’s more than a company to me — it’s a place where my ideas are heard, my growth is supported, and the people around me feel like a real team. I’m grateful to be here.”",
+    text: "“A year ago I joined Aspenview not knowing quite what to expect. Today, I can say it’s more than a company to me; it’s a place where my ideas are heard, my growth is supported, and the people around me feel like a real team. I’m grateful to be here.”",
     name: "-Camilo Paez",
   },
   {
@@ -167,9 +167,9 @@ export function CareersTestimonials() {
       <div className={`wrap ${styles.testimonialsInner}`}>
         <div className={styles.testimonialsCopy}>
           <h2 className={`${styles.mainTitle} ${styles.light}`}>
-            Our people in
+            Our People in
             <br />
-            their words
+            Their Words
           </h2>
           <div className={styles.quotes}>
             {QUOTES.map((q) => (
@@ -190,10 +190,10 @@ export function CareersTestimonials() {
 
 /* ---------- Hiring process (1048:5775) ---------- */
 const STEPS = [
-  { title: "Application review", text: "Our team carefully reviews your experience, skills, and alignment with AspenView opportunities." },
-  { title: "Talent screening", text: "Initial conversation with our People team to understand your goals, expertise, and career fit." },
+  { title: "Application Review", text: "Our team carefully reviews your experience, skills, and alignment with AspenView opportunities." },
+  { title: "Talent Screening", text: "Initial conversation with our People team to understand your goals, expertise, and career fit." },
   { title: "Technical & Role Interviews", text: "Collaborative interviews focused on technical capability, communication, and role-specific strengths." },
-  { title: "Final match & offer", text: "Successful candidates receive final client alignment and a competitive offer to join our network." },
+  { title: "Final Match & Offer", text: "Successful candidates receive final client alignment and a competitive offer to join our network." },
 ];
 const FLAGS = [
   { w: 51, alt: "Colombia" },
@@ -212,9 +212,9 @@ export function CareersHiring() {
           <p className={styles.hiringEyebrow}>Hiring process overview</p>
           <div className={styles.hiringBlock}>
             <h2 className={styles.title40}>
-              What to expect
+              What to Expect
               <br />
-              when you apply
+              When You Apply
             </h2>
             <p className={styles.muted20}>
               Our hiring process is designed to be transparent, efficient, and candidate-centered, ensuring every step
@@ -223,7 +223,7 @@ export function CareersHiring() {
           </div>
           <img alt="" src={`${A}/hire-line.svg`} className={styles.hireLine} />
           <div className={styles.hiringBlock}>
-            <h2 className={styles.title40}>Where we hire</h2>
+            <h2 className={styles.title40}>Where We Hire</h2>
             <p className={styles.muted20}>
               We hire across Latin America’s strongest talent hubs, connecting exceptional professionals with global
               opportunities in engineering, delivery, operations, and beyond.
@@ -252,10 +252,29 @@ export function CareersHiring() {
 }
 
 /* ---------- Meet our people team (1198:3608) ---------- */
+/* card team (652:4856): Default photo → Hovered blue panel with name, role, bio and LinkedIn */
 const TEAM = [
-  { img: "team-1.jpg", href: "https://www.linkedin.com/in/danielaossa/" },
-  { img: "team-2.png", href: "https://www.linkedin.com/in/adolfojgarcia/" },
-  { img: "team-3.jpg", href: "https://www.linkedin.com/in/ivanhr/" },
+  {
+    img: "team-1.jpg",
+    href: "https://www.linkedin.com/in/danielaossa/",
+    name: "Daniela Ossa",
+    role: "Director, People",
+    bio: "Daniela connects exceptional tech talent with exciting career opportunities at AspenView, bringing 13+ years of global recruitment experience and a passion for helping people and teams grow.",
+  },
+  {
+    img: "team-2.png",
+    href: "https://www.linkedin.com/in/adolfojgarcia/",
+    name: "Adolfo Garcia",
+    role: "People Operations Partner",
+    bio: "Adolfo helps create a workplace where people feel supported, connected, and empowered to grow, bringing 7+ years of experience in talent management, employee engagement, and building teams across global markets.",
+  },
+  {
+    img: "team-3.jpg",
+    href: "https://www.linkedin.com/in/ivanhr/",
+    name: "Ivan Gomez",
+    role: "Senior Manager, Talent Operations",
+    bio: "Ivan helps bring great talent and opportunities together at AspenView, drawing on 15+ years of experience building and growing teams across North America, LATAM, and EMEA.",
+  },
 ];
 
 export function CareersTeam() {
@@ -263,7 +282,7 @@ export function CareersTeam() {
     <section className={`${styles.white} ${styles.gap}`}>
       <div className={styles.blueBandFlat}>
         <div className={`wrap ${styles.teamHead}`}>
-          <h2 className={styles.teamTitle}>Meet our people team</h2>
+          <h2 className={styles.teamTitle}>Meet Our People Team</h2>
           <p className={styles.teamText}>
             Our team is dedicated to connecting great talent with the right opportunities while creating positive
             experiences for candidates and partners.
@@ -272,16 +291,27 @@ export function CareersTeam() {
       </div>
       <div className={`wrap ${styles.team}`}>
         {TEAM.map((m) => (
-          <a
-            key={m.href}
-            href={m.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.teamCard}
-            aria-label="People team member on LinkedIn"
-          >
-            <img alt="" src={`${A}/${m.img}`} />
-          </a>
+          <article key={m.href} className={styles.teamCard} tabIndex={0}>
+            <img alt={m.name} src={`${A}/${m.img}`} />
+            <div className={styles.teamPanel}>
+              <div className={styles.teamInfo}>
+                <div>
+                  <h3 className={styles.teamName}>{m.name}</h3>
+                  <p className={styles.teamRole}>{m.role}</p>
+                </div>
+                <p className={styles.teamBio}>{m.bio}</p>
+              </div>
+              <a
+                href={m.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.teamLinkedIn}
+                aria-label={`${m.name} on LinkedIn`}
+              >
+                <img alt="" src={`${A}/linkedin.svg`} width={36} height={36} />
+              </a>
+            </div>
+          </article>
         ))}
       </div>
     </section>
@@ -304,7 +334,7 @@ export function CareersJoin() {
         <div className={`wrap ${styles.crewInner}`}>
           <div className={styles.crewCopy}>
             <div className={styles.crewText}>
-              <h2 className={`${styles.mainTitle} ${styles.light}`}>Become part of the AspenCrew</h2>
+              <h2 className={`${styles.mainTitle} ${styles.light}`}>Become Part of the AspenCrew</h2>
               <p>
                 At AspenView, we believe people and technology drive transformative change. Join a team that values your
                 expertise, fosters your growth, and empowers you to make a lasting impact.

@@ -35,8 +35,8 @@ export function CsHero() {
             <span>Customer success</span>
           </span>
           <h1 className={styles.heroTitle}>
-            <span>Retain more customers.</span>
-            <strong>Grow lasting relationships.</strong>
+            <span>Retain More Customers.</span>
+            <strong>Grow Lasting Relationships.</strong>
           </h1>
           <p className={styles.heroText}>
             Scale your Customer Success capabilities with experienced nearshore professionals who help SaaS and
@@ -55,22 +55,22 @@ export function CsHero() {
 const CHALLENGES = [
   {
     title: "Talent & Scale",
-    subtitle: "Scale expertise, not costs.",
+    subtitle: "Scale Expertise, Not Costs.",
     body: "Experienced Customer Success professionals are costly to recruit and retain in North America. Access qualified nearshore talent to scale your team without the cost of equivalent US-based resources.",
   },
   {
     title: "Customer Retention",
     subtitle: (
       <>
-        Turn customer relationships into <br />
-        lasting loyalty.
+        Turn Customer Relationships Into <br />
+        Lasting Loyalty.
       </>
     ),
     body: "Limited engagement and inconsistent support can weaken adoption and increase churn. Proactive Customer Success professionals strengthen relationships, drive product adoption, and protect renewals.",
   },
   {
     title: "Account Growth",
-    subtitle: "Unlock more value from every customer.",
+    subtitle: "Unlock More Value From Every Customer.",
     body: "Overstretched teams miss opportunities to deepen relationships and expand existing accounts. Dedicated professionals identify customer needs, demonstrate value, and support upselling and cross-selling.",
   },
 ];
@@ -82,7 +82,7 @@ export function CsChallenge() {
       <div className={`wrap ${styles.sectionInner} ${styles.center}`}>
         <SectionHeader
           eyebrow="The challenge"
-          title="Winning customers is only the beginning. Retaining them drives growth."
+          title="Winning Customers Is Only the Beginning. Retaining Them Drives Growth."
           titleWidth={850}
           text={
             <p>
@@ -122,17 +122,17 @@ export function CsChallenge() {
 /* ---------------- What we do (tabs, ON_CLICK) ---------------- */
 const MODELS = [
   {
-    label: "Dedicated talent",
+    label: "Dedicated Talent",
     title: "Dedicated Customer Success Talent",
     text: "Extend your existing team with qualified, bilingual professionals who integrate into your organization, systems, and customer relationships.",
   },
   {
-    label: "Managed teams",
+    label: "Managed Teams",
     title: "Managed Customer Success Teams",
     text: "Strengthen your Customer Success operations with dedicated teams, experienced leadership, and structured performance management.",
   },
   {
-    label: "Complete function",
+    label: "Complete Function",
     title: "End-to-End Customer Success Management",
     text: "Build and operate a complete Customer Success function, from defining processes and engagement strategies to managing teams, performance, and continuous improvement.",
   },
@@ -148,7 +148,7 @@ export function CsWhatWeDo() {
         <div className={styles.headerBlock}>
           <SectionHeader
             eyebrow="What we do"
-            title="The right people. The expertise to make them successful."
+            title="The Right People. The Expertise to Make Them Successful."
             titleWidth={700}
             text={
               <p>
@@ -226,7 +226,7 @@ export function CsWhatWeDo() {
 /* ---------------- How it works (stepper, ON_CLICK) ---------------- */
 const STAGES = [
   { label: "Onboard", title: "Onboard", text: "Guide customers through implementation, product education, and initial engagement to accelerate time-to-value." },
-  { label: "Drive adoption", title: "Drive Adoption", text: "Help customers understand and maximize product capabilities, encouraging consistent usage and stronger engagement." },
+  { label: "Drive Adoption", title: "Drive Adoption", text: "Help customers understand and maximize product capabilities, encouraging consistent usage and stronger engagement." },
   { label: "Engage", title: "Engage", text: "Maintain proactive relationships, monitor customer health, address challenges, and demonstrate ongoing value through regular business reviews." },
   { label: "Retain", title: "Retain", text: "Identify potential risks early, strengthen customer satisfaction, and support structured renewal conversations." },
   { label: "Expand", title: "Expand", text: "Recognize opportunities to deliver additional value, support upselling and cross-selling, and strengthen long-term account growth." },
@@ -240,7 +240,7 @@ export function CsHowItWorks() {
       <div className={`wrap ${styles.sectionInner} ${styles.center}`}>
         <SectionHeader
           eyebrow="How it works"
-          title="Supporting every stage of the customer relationship."
+          title="Supporting Every Stage of the Customer Relationship."
           titleWidth={556}
           text={
             <p>
@@ -315,10 +315,10 @@ export function CsCapabilities() {
           </span>
           <h2 className={styles.capsHeading}>
             <Eyebrow tone="white">Capabilities</Eyebrow>
-            <span className={styles.capsTitle}>Experienced professionals. Built for customer success</span>
+            <span className={styles.capsTitle}>Experienced Professionals. Built for Customer Success</span>
           </h2>
           <div className={styles.capsSub}>
-            <h3 className={styles.capsSubtitle}>Our Customer Success expertise</h3>
+            <h3 className={styles.capsSubtitle}>Our Customer Success Expertise</h3>
             <p className={styles.capsText}>
               Our nearshore Customer Success professionals combine industry experience, proven processes, and a deep
               understanding of the customer lifecycle to help SaaS and technology companies strengthen relationships,

@@ -10,7 +10,7 @@ export function WhoHeroCard() {
     <aside className={styles.heroCard}>
       <img alt="" src={`${A}/who-spark.svg`} width={60} height={60} />
       <div className={styles.heroCardCopy}>
-        <h2 className={styles.heroCardTitle}>An AI-native technology services company</h2>
+        <h2 className={styles.heroCardTitle}>An AI-Native Technology Services Company</h2>
         <p>
           Bringing together exceptional talent, modern technology and a shared commitment to helping our clients move
           faster and achieve more.
@@ -34,7 +34,7 @@ export function WhoGrove() {
           <div className={a.headerTight}>
             <h2 className={a.heading}>
               <Eyebrow>THE IDEA BEHIND ASPENVIEW</Eyebrow>
-              <span className={`${a.title} ${styles.max560}`}>Stronger together, like an aspen grove</span>
+              <span className={`${a.title} ${styles.max560}`}>Stronger Together, Like an Aspen Grove</span>
             </h2>
             <div className={`${a.muted16} ${a.paras} ${styles.max600}`}>
               <p>
@@ -42,7 +42,7 @@ export function WhoGrove() {
                 surface.
               </p>
               <p>
-                Their interconnected root systems allow individual trees to grow stronger together — creating resilience,
+                Their interconnected root systems allow individual trees to grow stronger together, creating resilience,
                 adaptability and strength across the entire grove.
               </p>
               <p>That idea reflects how we see technology partnerships.</p>
@@ -97,12 +97,12 @@ export function WhoWhatWeDo() {
         <div className={styles.whatCopy}>
           <h2 className={a.heading}>
             <Eyebrow tone="white">WHAT WE DO</Eyebrow>
-            <span className={`${a.title} ${a.titleLight}`}>Built to make technology deliver more</span>
+            <span className={`${a.title} ${a.titleLight}`}>Built to Make Technology Deliver More</span>
           </h2>
           <div className={`${a.paras} ${styles.whatText}`}>
             <p>
               We connect high-caliber engineering, data and AI expertise across Latin America with the needs of North
-              American organizations — creating teams and solutions built around what our clients need to achieve.
+              American organizations, creating teams and solutions built around what our clients need to achieve.
             </p>
             <p>
               From specialized expertise to dedicated teams and managed delivery, we bring the right capabilities together
@@ -128,7 +128,7 @@ const VALUES = [
   { icon: "val-unread", title: "Reliability", tag: "Own the outcome.", text: "We do what we say we'll do, take responsibility for our commitments and show up when it matters." },
   { icon: "val-user", title: "Client Focus", tag: "Start with what matters.", text: "We listen first, understand the bigger picture and stay focused on creating meaningful value." },
   { icon: "val-course", title: "Excellence", tag: "Keep raising the bar.", text: "We bring high standards to our work, stay curious and continuously look for better ways to deliver." },
-  { icon: "val-heart", title: "Trust & Respect", tag: "Better together.", text: "We value different experiences, perspectives and ideas — challenging each other constructively and succeeding together." },
+  { icon: "val-heart", title: "Trust & Respect", tag: "Better together.", text: "We value different experiences, perspectives and ideas, challenging each other constructively and succeeding together." },
 ];
 
 export function WhoValues() {
@@ -139,7 +139,7 @@ export function WhoValues() {
           <h2 className={a.heading}>
             <Eyebrow>WHAT WE BELIEVE</Eyebrow>
             <span className={`${a.title} ${styles.max850}`}>
-              Technology changes quickly. The principles behind great partnerships shouldn&apos;t
+              Technology Changes Quickly. The Principles Behind Great Partnerships Shouldn&apos;t
             </span>
           </h2>
           <p className={`${a.muted16} ${styles.max750}`}>
@@ -148,7 +148,7 @@ export function WhoValues() {
         </div>
         <div className={styles.values}>
           {VALUES.map((v, i) => (
-            <article key={v.title} className={styles.value}>
+            <article key={v.title} className={`${styles.value} hover-blue`}>
               <div className={styles.valueTop}>
                 <span className={styles.valueNum}>{String(i + 1).padStart(2, "0")}</span>
                 <img alt="" src={`${A}/${v.icon}.svg`} width={32} height={32} />

@@ -12,7 +12,7 @@ const MEANING = [
     video: "/videos/native-meaning-1.webm",
     height: 192.733,
     title: "AI-Native",
-    text: "Processes designed around the combined capabilities of people + AI — rather than simply adding AI to the way work has always been done.",
+    text: "Processes designed around the combined capabilities of people + AI, rather than simply adding AI to the way work has always been done.",
   },
   {
     eyebrow: "THE EXECUTION",
@@ -29,7 +29,7 @@ export function NativeMeaning() {
       <div className={`wrap ${t.section} ${styles.meaningSection}`}>
         <div className={`${t.header} ${styles.meaningHeader}`}>
           <h2 className={t.heading}>
-            <Eyebrow size="sm">What AI-native means</Eyebrow>
+            <Eyebrow size="sm">What AI-Native Means</Eyebrow>
             <span className={t.title}>
               AI-Native by Design. <strong>Built Around a Smarter Way of Working</strong>
             </span>
@@ -41,7 +41,7 @@ export function NativeMeaning() {
         </div>
         <div className={styles.meanings}>
           {MEANING.map((m) => (
-            <article key={m.title} className={styles.meaning}>
+            <article key={m.title} className={`${styles.meaning} hover-blue-text`}>
               <p className={styles.meaningEyebrow}>{m.eyebrow}</p>
               <div className={styles.meaningMedia} style={{ height: m.height }}>
                 <video src={m.video} autoPlay muted loop playsInline preload="metadata" aria-hidden />
@@ -60,12 +60,12 @@ export function NativeMeaning() {
 
 /* ---------- AI built into how we work (2061:33421) ---------- */
 const OPS = [
-  { title: "Talent", ratio: "1158 / 554", glow: "a" },
-  { title: "Readiness", ratio: "1086 / 560", glow: "b" },
-  { title: "Engineering", ratio: "1138 / 562", glow: "b" },
-  { title: "Delivery", ratio: "1206 / 426", glow: "a" },
-  { title: "Quality", ratio: "1028 / 588", glow: "b" },
-  { title: "Intelligence", ratio: "1116 / 684", glow: "b" },
+  { title: "Talent", ratio: "1158 / 554", glow: "a", body: "Smarter talent alignment." },
+  { title: "Readiness", ratio: "1086 / 560", glow: "b", body: "Greater visibility and predictability." },
+  { title: "Engineering", ratio: "1138 / 562", glow: "b", body: "Agent-driven delivery." },
+  { title: "Delivery", ratio: "1206 / 426", glow: "a", body: "More intelligent execution." },
+  { title: "Quality", ratio: "1028 / 588", glow: "b", body: "AI-enabled validation." },
+  { title: "Intelligence", ratio: "1116 / 684", glow: "b", body: "Better signals for better decisions." },
 ];
 
 export function NativeOperating() {
@@ -74,15 +74,15 @@ export function NativeOperating() {
       <div className={`wrap ${t.section}`}>
         <h2 className={t.heading}>
           <Eyebrow tone="white" size="sm">
-            AI built into how we work
+            AI Built Into How We Work
           </Eyebrow>
           <span className={`${t.title} ${t.titleLight} ${styles.wideTitle}`}>
-            Across the AspenView <strong>operating model.</strong>
+            Across the AspenView <strong>Operating Model.</strong>
           </span>
         </h2>
         <div className={styles.ops}>
           {OPS.map((o, i) => (
-            <article key={o.title} className={styles.op}>
+            <article key={o.title} className={`${styles.op} reveal-card`} tabIndex={0}>
               <div className={styles.opMedia}>
                 <span className={styles.opGlow} aria-hidden>
                   <img alt="" src={`${A}/ops-glow-${o.glow}.svg`} />
@@ -99,7 +99,12 @@ export function NativeOperating() {
                   />
                 </div>
               </div>
-              <h3 className={styles.opTitle}>{o.title}</h3>
+              <div className={styles.opCopy}>
+                <h3 className={styles.opTitle}>{o.title}</h3>
+                <div className="reveal-body">
+                  <p className={styles.opBody}>{o.body}</p>
+                </div>
+              </div>
             </article>
           ))}
         </div>
@@ -116,12 +121,12 @@ export function NativeWhy() {
         <div className={t.header}>
           <h2 className={t.heading}>
             <Eyebrow tone="white" size="sm">
-              Why it matters
+              Why It Matters
             </Eyebrow>
             <span className={`${t.title} ${t.titleLight}`}>
-              Experience that goes
+              Experience That Goes
               <br />
-              <strong>beyond the theory</strong>
+              <strong>Beyond the Theory</strong>
             </span>
           </h2>
           <p className={t.leadLarge}>We face the same questions our clients do.</p>

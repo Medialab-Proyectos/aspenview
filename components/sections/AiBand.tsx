@@ -4,7 +4,7 @@ import styles from "./AiBand.module.css";
 
 /** Blue "AI as the delivery core" band (Figma 1272:5720). */
 export default function AiBand({
-  text = "AI is central to our innovation strategy — faster time-to-value, increased agility, and stronger outcomes through smart agents and automated workflows.",
+  text = "AI is central to our innovation strategy; faster time-to-value, increased agility, and stronger outcomes through smart agents and automated workflows.",
   cta = { label: "AI Transformation", href: ROUTES.aiTransformation },
 }: {
   text?: string;
@@ -18,7 +18,7 @@ export default function AiBand({
             <img alt="" src="/assets/icons/widget2-blue.svg" width={24} height={24} />
           </span>
           <h2 className={styles.title}>
-            AI <span className={styles.light}>as the</span> delivery core
+            AI <span className={styles.light}>as the</span> Delivery Core
           </h2>
         </div>
         <p className={styles.text}>{text}</p>

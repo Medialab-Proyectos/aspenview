@@ -6,9 +6,13 @@ import styles from "./Careers.module.css";
 const A = "/assets/careers";
 
 /* ---------- Employee value promise cards (card values 653:5107 → 653:5105, ON_CLICK SMART_ANIMATE 0.3s) ----------
-   Only "Compensation & Benefits" has its list in Figma; cards without items stay closed (no toggle). */
+   Item lists come from each instance's properties in Figma (1087:4631–4634). */
 const EVP: { icon: string; title: string; items: string[] }[] = [
-  { icon: "evp-aspen", title: "The AspenView experience", items: [] },
+  {
+    icon: "evp-aspen",
+    title: "The AspenView Experience",
+    items: ["Cultural Mix", "Global Exposure", "Fun", "Health & Well-being", "Voice of Employee"],
+  },
   {
     icon: "evp-medal",
     title: "Compensation & Benefits",
@@ -22,8 +26,22 @@ const EVP: { icon: string; title: string; items: string[] }[] = [
       "Employee Assistance Program",
     ],
   },
-  { icon: "evp-plant", title: "Career Growth & Advancement", items: [] },
-  { icon: "evp-users", title: "Networking & Community", items: [] },
+  {
+    icon: "evp-plant",
+    title: "Career Growth & Advancement",
+    items: ["Professional Development", "Centers of Excellence", "Mentorship", "Recognition Program", "Career Progression"],
+  },
+  {
+    icon: "evp-users",
+    title: "Networking & Community",
+    items: [
+      "Technology Community Engagement (Tech Meetups, Hackathons)",
+      "Internal Collaboration",
+      "Aspen Circle Referral Program",
+      "Continuous Learning (Udemy Business Unlimited)",
+      "English Language Growth (Families Included)",
+    ],
+  },
 ];
 
 export function EvpCards() {
@@ -77,7 +95,7 @@ export function EvpCards() {
 }
 
 /* ---------- Why AspenView value cards (Card 711:7271 → 711:7245, ON_CLICK SMART_ANIMATE) ----------
-   Image boxes reproduce each card's crop from Figma. Only "Integrity" has body copy in the design. */
+   Image boxes reproduce each card's crop from Figma; body copy from each instance's "Body text" (1048:5751–5756). */
 type Crop = { w: number; inset?: string; img: CSSProperties };
 const VALUES: { title: string; img: string; crop: Crop; text: string[] }[] = [
   {
@@ -93,25 +111,34 @@ const VALUES: { title: string; img: string; crop: Crop; text: string[] }[] = [
     title: "Trust & Respect",
     img: "value-trust.jpg",
     crop: { w: 792, img: { left: "17.99%", top: "-0.1%", width: "100%", height: "100%" } },
-    text: [],
+    text: [
+      "We build trust through collaboration, honesty, and consistency.",
+      "We cultivate respect by valuing diverse perspectives, treating everyone with dignity, and nurturing an environment where all voices are heard and appreciated.",
+    ],
   },
   {
     title: "Reliability",
     img: "value-reliability.jpg",
     crop: { w: 800.443, inset: "-15.45% -15.23% -7.46% -7.36%", img: { left: "13.26%", top: "-1.57%", width: "100%", height: "100%" } },
-    text: [],
+    text: [
+      "We are a dependable partner. We honor our promises and support our clients, employees, and stakeholders by fostering accountability and a culture of resilience.",
+    ],
   },
   {
     title: "Excellence",
     img: "value-excellence.jpg",
     crop: { w: 858, img: { left: "26.43%", top: "9.66%", width: "90.43%", height: "90.44%" } },
-    text: [],
+    text: [
+      "We strive for excellence. We set high standards, innovate, and continuously improve to inspire confidence and create lasting, exceptional results.",
+    ],
   },
   {
-    title: "Client focus",
+    title: "Client Focus",
     img: "value-client.jpg",
     crop: { w: 792, inset: "-8.7% -8.73%", img: { left: "26.21%", top: "12.7%", width: "87.14%", height: "87.16%" } },
-    text: [],
+    text: [
+      "We place our clients at the center of everything we do. We empower employees to understand client needs, build enduring relationships, and create value that exceeds expectations.",
+    ],
   },
 ];
 

@@ -22,18 +22,18 @@ const SLIDES: Slide[] = [
     eyebrow: "Technology Services",
     title: (
       <>
-        The AI-native technology partner built <strong>to move fast</strong>
+        The AI-Native Technology Partner Built <strong>to Move Fast.</strong>
       </>
     ),
     text: "We help organizations build and scale technology teams faster, combining expert engineering across Latin America with AI-powered delivery.",
     cta: "Accelerate your next move",
-    href: ROUTES.talentEnablement,
+    href: ROUTES.aiTransformation,
   },
   {
     eyebrow: "Leadership",
     title: (
       <>
-        Fortune 500 experience. <strong>Focused on your growth</strong>.
+        Fortune 500 Experience. <strong>Focused on Your Growth</strong>.
       </>
     ),
     text: "Work with a technology partner led by executives who’ve helped some of the world’s largest organizations solve complex business challenges.",
@@ -44,8 +44,8 @@ const SLIDES: Slide[] = [
     eyebrow: "Talent",
     title: (
       <>
-        <span className={styles.line}>The right talent. </span>
-        <strong className={styles.line}>Ready to scale your business.</strong>
+        <span className={styles.line}>The Right Talent. </span>
+        <strong className={styles.line}>Ready to Scale Your Business.</strong>
       </>
     ),
     text: "From software engineering to AI and data, we build high-performing nearshore teams that integrate seamlessly with yours.",

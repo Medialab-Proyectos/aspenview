@@ -18,8 +18,8 @@ export default function SoftwareEngineeringPage() {
     <>
       <ServiceHero
         eyebrow="Software engineering"
-        title="Build better software"
-        highlight="Move faster with AI"
+        title="Build Better Software"
+        highlight="Move Faster With AI"
         text="Expert engineering talent combined with a disciplined, AI-accelerated delivery model to build, modernize and scale software,  without compromising quality, security or human accountability."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
         mediaLabel="Governed delivery lifecycle"
@@ -30,7 +30,7 @@ export default function SoftwareEngineeringPage() {
         data={{
           title: (
             <>
-              Engineering teams are being asked to deliver more, <strong>with the same resources</strong>
+              Engineering Teams Are Being Asked to Deliver More, <strong>With the Same Resources</strong>
             </>
           ),
           text: (
@@ -44,24 +44,45 @@ export default function SoftwareEngineeringPage() {
             image: { src: "/assets/software/challenge-main.gif", inset: "28.74% 0", opacity: 0.5 },
             title: (
               <>
-                More demand, <strong>same capacity</strong>
+                More Demand, <strong>Same Capacity</strong>
               </>
             ),
             text: "Delivery expectations keep rising while engineering capacity stays flat.",
             tags: ["Backlog", "Budget", "Velocity"],
+            label: "BACKLOG",
+            shortTitle: "Flat Budgets, Growing Ambition",
+            shortText: "Backlogs keep expanding while headcount and budget stay the same.",
           },
           side: [
             {
               label: "AI RISK",
               image: { src: "/assets/software/challenge-ai-risk.gif" },
-              title: "AI implementation complexity",
+              title: "AI Implementation Complexity",
               text: "Adopting AI without controls introduces quality, security and maintainability risk.",
+              expanded: {
+                title: (
+                  <>
+                    Reliable Engineering Performance, <strong>Not AI Experiments</strong>
+                  </>
+                ),
+                text: "Used well, AI compresses delivery timelines. Used without controls, it introduces quality, security and maintainability risk.",
+                tags: ["Quality", "Security", "Maintainability"],
+              },
             },
             {
               label: "TALENT",
               image: { src: "/assets/software/challenge-talent.gif" },
-              title: "Talent constraints",
+              title: "Talent Constraints",
               text: "Specialized engineering skills remain difficult to secure and slow to onboard.",
+              expanded: {
+                title: (
+                  <>
+                    Specialized Skills, <strong>Hard to Secure</strong>
+                  </>
+                ),
+                text: "Senior engineering profiles stay scarce and slow to onboard, right when delivery pressure peaks.",
+                tags: ["Hiring", "Onboarding", "Seniority"],
+              },
             },
           ],
         }}
@@ -71,7 +92,7 @@ export default function SoftwareEngineeringPage() {
         data={{
           title: (
             <>
-              Software engineering, built around people and <strong>accelerated by AI</strong>
+              Software Engineering, Built Around People and <strong>Accelerated by AI</strong>
             </>
           ),
           text: (
@@ -90,17 +111,17 @@ export default function SoftwareEngineeringPage() {
           cards: [
             {
               icon: "/assets/icons/widget4-blue.svg",
-              title: "AI embedded throughout",
-              text: "AI operates inside the engineering lifecycle — not as a separate tool or workstream.",
+              title: "AI Embedded Throughout",
+              text: "AI operates inside the engineering lifecycle; not as a separate tool or workstream.",
             },
             {
               icon: "/assets/icons/user-check-blue.svg",
-              title: "Human accountability",
+              title: "Human Accountability",
               text: "Critical outputs and decisions are reviewed and validated by experienced engineers.",
             },
             {
               icon: "/assets/icons/shield-check-blue.svg",
-              title: "Governed by design",
+              title: "Governed by Design",
               text: "Security, quality and oversight are built into the process from the beginning.",
             },
           ],
@@ -111,9 +132,9 @@ export default function SoftwareEngineeringPage() {
         data={{
           title: (
             <>
-              From requirement
+              From Requirement
               <br />
-              <strong>to production</strong>
+              <strong>to Production</strong>
             </>
           ),
           text: "AI is integrated across the delivery lifecycle, not added as a separate step.",
@@ -150,17 +171,13 @@ export default function SoftwareEngineeringPage() {
               items: "Monitoring / Continuous improvement",
             },
           ],
-          note: {
-            label: "ACCOUNTABILITY",
-            text: "At every stage, AI agents can perform defined work while human engineers retain final accountability for critical decisions.",
-          },
         }}
       />
 
       <Capabilities
         data={{
-          title: "Where we can help",
-          subtitle: "Six capability areas",
+          title: "Where We Can Help",
+          subtitle: "Six Capability Areas",
           text: "One governed delivery model: engage us for a full lifecycle or a single pressure point.",
           items: [
             {
@@ -210,7 +227,7 @@ export default function SoftwareEngineeringPage() {
       />
 
       <ShaderCta
-        title={<>Have a software priority that needs to <strong>move faster?</strong></>}
+        title={<>Have a Software Priority That Needs to <strong>Move Faster?</strong></>}
         text="Bring the engineering expertise and AI-enabled delivery model needed to turn it into execution."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
       />

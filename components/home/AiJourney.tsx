@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Eyebrow } from "../ui";
+import { Eyebrow, PrimaryButton } from "../ui";
+import { ROUTES } from "@/lib/routes";
 import styles from "./AiJourney.module.css";
 
 // Figma component set "Selector ai native" (1345:8324) — 4 variants
@@ -75,11 +76,14 @@ export default function AiJourney() {
             </span>
           </h2>
           <div className={styles.sub}>
-            <h3 className={styles.subtitle}>AI-native by design</h3>
+            <h3 className={styles.subtitle}>AI-Native by Design</h3>
             <p className={styles.lead}>
               We help organizations move from AI ambition to operational impact connecting transformation, data,
               engineering and intelligent automation.
             </p>
+            <PrimaryButton href={ROUTES.aiTransformation} arrow className={styles.cta}>
+              Put AI to Work
+            </PrimaryButton>
           </div>
         </div>
 

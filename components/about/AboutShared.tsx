@@ -39,7 +39,7 @@ export function AboutHero({
           <span className={styles.heroVeil} aria-hidden />
         </>
       ) : (
-        <span className={styles.heroGlow} aria-hidden>
+        <span className={`${styles.heroGlow} ${photo ? styles.heroGlowPhoto : ""}`} aria-hidden>
           <img alt="" src={`${A}/hero-glow.svg`} />
         </span>
       )}

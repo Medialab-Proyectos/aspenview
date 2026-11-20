@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactHero from "@/components/contact/ContactHero";
+import ContactLocations from "@/components/contact/ContactLocations";
 
 export const metadata: Metadata = {
   title: "Contact | AspenView",
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactHero />;
+  return (
+    <>
+      <ContactHero />
+      <ContactLocations />
+    </>
+  );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Eyebrow, LinkButton, PrimaryButton } from "../ui";
+import { Eyebrow, LinkButton } from "../ui";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Talent.module.css";
 
@@ -11,7 +11,7 @@ const CARDS = [
     label: "01 / THE FRAMEWORK",
     name: "Aureum",
     highlight: true,
-    title: "Anticipating talent demand",
+    title: "Anticipating Talent Demand",
     body: "Through Aureum, our proactive talent planning framework, we build qualified, offer-ready pipelines ahead of demand, so the right talent is ready when you need it.",
     video: "/videos/talent-aureum.webm",
     ratio: "640 / 233",
@@ -19,7 +19,7 @@ const CARDS = [
   {
     label: "02 / THE SYSTEM",
     name: "Vantage",
-    title: "Matching talent with precision",
+    title: "Matching Talent With Precision",
     body: "Our proprietary AI platform, Vantage, combines intelligent matching, technical validation, and candidate verification to accelerate confident selection.",
     video: "/videos/talent-vantage.webm",
     ratio: "640 / 320",
@@ -27,7 +27,7 @@ const CARDS = [
   {
     label: "03 / THE PROCESS",
     name: "RevMax Agile Delivery",
-    title: "Accelerating delivery through agility",
+    title: "Accelerating Delivery Through Agility",
     body: "RevMax Agile Delivery connects Talent Acquisition, Sales, and Delivery through a structured, agile process with daily coordination and quality checkpoints.",
     video: "/videos/talent-process.webm",
     ratio: "640 / 320",
@@ -35,7 +35,7 @@ const CARDS = [
   {
     label: "04 / THE TEAM",
     name: "Experienced Talent Specialists",
-    title: "Expertise behind every decision",
+    title: "Expertise Behind Every Decision",
     body: "Our engineering-certified Talent Acquisition specialists work alongside technical experts to assess capabilities, validate quality, and ensure the right fit.",
     video: "/videos/talent-specialists.webm",
     ratio: "640 / 320",
@@ -111,10 +111,10 @@ export default function Talent() {
           <div className={styles.header}>
             <h2 className={styles.heading}>
               <Eyebrow>Talent Enablement</Eyebrow>
-              <span className={styles.title}>The right team, ready before you ask.</span>
+              <span className={styles.title}>The Right Team, Ready Before You Ask.</span>
             </h2>
             <div className={styles.side}>
-              <h3 className={styles.subtitle}>Four strengths. One delivery advantage.</h3>
+              <h3 className={styles.subtitle}>Four Strengths. One Delivery Advantage.</h3>
               <p className={styles.lead}>
                 We combine proactive talent planning, AI-powered technology, agile execution, and expert oversight to
                 deliver the engineering talent and technology teams your business needs, faster and with confidence.
@@ -150,14 +150,11 @@ export default function Talent() {
             />
           </div>
           <div className={styles.qualityCopy}>
-            <h3 className={styles.qualityTitle}>Quality continues beyond deployment.</h3>
+            <h3 className={styles.qualityTitle}>Quality Continues Beyond Deployment.</h3>
             <p className={styles.qualityText}>
               Dedicated Engineering Managers, structured onboarding, and A+ Standards ensure continuous performance,
               accountability, and improvement throughout every engagement.
             </p>
-            <PrimaryButton href={ROUTES.deliveryExcellence} className={styles.qualityBtn}>
-              Explore Our Delivery Approach
-            </PrimaryButton>
           </div>
         </div>
       </section>

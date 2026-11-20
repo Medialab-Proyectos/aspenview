@@ -9,7 +9,7 @@ export type HowItWorksData = {
   title: ReactNode;
   text: ReactNode;
   steps: { icon: string; title: string; body: string; items: string; line?: string }[];
-  note: { label: string; text: string };
+  note?: { label: string; text: string };
 };
 
 /**
@@ -59,13 +59,15 @@ export default function HowItWorks({ data }: { data: HowItWorksData }) {
             })}
           </ol>
 
-          <div className={styles.note}>
-            <div className={styles.noteLabel}>
-              <img alt="" src="/assets/how/shield-check-white.svg" width={40} height={40} />
-              <span>{data.note.label}</span>
+          {data.note && (
+            <div className={styles.note}>
+              <div className={styles.noteLabel}>
+                <img alt="" src="/assets/how/shield-check-white.svg" width={40} height={40} />
+                <span>{data.note.label}</span>
+              </div>
+              <p className={styles.noteText}>{data.note.text}</p>
             </div>
-            <p className={styles.noteText}>{data.note.text}</p>
-          </div>
+          )}
         </div>
       </div>
     </section>

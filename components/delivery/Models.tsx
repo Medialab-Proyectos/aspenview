@@ -18,9 +18,9 @@ export function MdHero() {
         <div className={styles.heroCopy}>
           <Eyebrow tone="white">Delivery models</Eyebrow>
           <h1 className={styles.heroTitle}>
-            Structured to deliver.
+            Structured to Deliver.
             <br />
-            <strong>Agile by design.</strong>
+            <strong>Agile by Design.</strong>
           </h1>
           <div className={styles.heroText}>
             <p>
@@ -64,11 +64,11 @@ export function MdValue() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow>How we deliver value</Eyebrow>
+            <Eyebrow>How We Deliver Value</Eyebrow>
             <span className={styles.title}>
-              The expertise you need.
+              The Expertise You Need.
               <br />
-              <strong>The delivery you can trust.</strong>
+              <strong>The Delivery You Can Trust.</strong>
             </span>
           </h2>
           <p className={styles.lead}>
@@ -77,7 +77,7 @@ export function MdValue() {
         </div>
         <div className={styles.values}>
           {VALUE.map((v, i) => (
-            <article key={v.title} className={styles.value}>
+            <article key={v.title} className={`${styles.value} hover-blue-text`}>
               <div className={styles.valueTop}>
                 <span className={styles.valueGlow} aria-hidden>
                   <img alt="" src={`${A}/value-glow.svg`} />
@@ -110,23 +110,19 @@ export function MdModels() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">Our service delivery models</Eyebrow>
+            <Eyebrow tone="white">Our Service Delivery Models</Eyebrow>
             <span className={`${styles.title} ${styles.titleLight}`}>
-              Three ways to partner.
+              Three Ways to Partner.
               <br />
-              <strong>One commitment to excellence.</strong>
+              <strong>One Commitment to Excellence.</strong>
             </span>
           </h2>
           <div className={`${styles.lead} ${styles.leadPale}`}>
             <p>
-              At AspenView, we partner with our clients to provide scalable nearshore outsourcing for their technology and
-              data functions. Whether our clients require dedicated nearshore talent to seamlessly expand their existing
-              teams, specialized functional managed services to optimize specific IT or Data processes like Quality
-              Assurance or Data Management, or comprehensive lifecycle managed services for end-to-end digital
-              transformation, our expert solutions are crafted to drive efficiency, reduce costs, and accelerate their
-              path to innovation.
+              At AspenView, we offer flexible nearshore delivery models, from specialized engineering talent and
+              dedicated teams to managed services, helping businesses accelerate growth, improve operational
+              performance, and turn technology investments into measurable results.
             </p>
-            <p>We offer flexible and tailored delivery models designed to meet unique business needs:</p>
           </div>
         </div>
         <ModelsTabs />
@@ -157,18 +153,18 @@ export function MdDifference() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow>The AspenView difference</Eyebrow>
+            <Eyebrow>The AspenView Difference</Eyebrow>
             <span className={styles.title}>
-              Accountability at every step.
+              Accountability at Every Step.
               <br />
-              <strong>Confidence in every outcome.</strong>
+              <strong>Confidence in Every Outcome.</strong>
             </span>
           </h2>
           <p className={styles.lead}>Our ASDS™ framework is built on the principles that make delivery dependable.</p>
         </div>
         <div className={styles.diffs}>
           {DIFF.map((d) => (
-            <article key={d.title} className={styles.diff}>
+            <article key={d.title} className={`${styles.diff} hover-blue`}>
               <span className={styles.diffRing}>
                 <img alt="" src={`${A}/${d.icon}.svg`} width={32} height={32} />
               </span>
@@ -201,11 +197,11 @@ export function MdQuality() {
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
-            <Eyebrow tone="white">Continuous improvement &amp; quality assurance</Eyebrow>
+            <Eyebrow tone="white">Continuous Improvement &amp; Quality Assurance</Eyebrow>
             <span className={`${styles.title} ${styles.titleLight}`}>
-              Quality is built in.
+              Quality Is Built In.
               <br />
-              <strong>Improvement never stops.</strong>
+              <strong>Improvement Never Stops.</strong>
             </span>
           </h2>
           <p className={`${styles.lead} ${styles.leadPale}`}>
@@ -214,7 +210,7 @@ export function MdQuality() {
         </div>
         <div className={styles.qualities}>
           {QUALITY.map((q, i) => (
-            <article key={q.title} className={styles.qualityCard}>
+            <article key={q.title} className={`${styles.qualityCard} hover-blue`}>
               <span className={styles.qualityNum}>{String(i + 1).padStart(2, "0")}</span>
               <img alt="" src={`${A}/${q.icon}.svg`} width={40} height={40} />
               <h3 className={styles.qualityTitle}>{q.title}</h3>

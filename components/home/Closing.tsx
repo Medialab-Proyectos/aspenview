@@ -17,7 +17,7 @@ export default function Closing() {
               <div className={styles.careersHead}>
                 <Eyebrow tone="white">Careers</Eyebrow>
                 <div className={styles.rooted}>
-                  <img alt="Rooted in people — Powered by connection" src="/assets/home/rooted-in-people.png" />
+                  <img alt="Rooted in people, powered by connection" src="/assets/home/rooted-in-people.png" />
                 </div>
               </div>
               <p className={styles.careersText}>
@@ -27,7 +27,7 @@ export default function Closing() {
               </p>
             </div>
             <div className={styles.careersCta}>
-              <h2 className={styles.careersTitle}>Want to be part of the AspenCrew?</h2>
+              <h2 className={styles.careersTitle}>Want to Be Part of the AspenCrew?</h2>
               <PrimaryButton href={ROUTES.careers} arrow>
                 Explore Opportunities
               </PrimaryButton>
@@ -45,8 +45,8 @@ export default function Closing() {
           <img alt="" src="/assets/home/patron-dots.svg" />
         </span>
         <p className={styles.bannerText}>
-          Experience the difference of a partner dedicated to your <b className={styles.bright}>long-term success</b> –{" "}
-          <b>AspenView Technology Partners</b> –{" "}
+          Experience the difference of a partner dedicated to your <b className={styles.bright}>long-term success</b>:{" "}
+          <b>AspenView Technology Partners</b>,{" "}
           <b className={styles.bright}>ready to scale and evolve alongside your organization</b>.
         </p>
       </section>
@@ -58,7 +58,7 @@ export default function Closing() {
             <span className={styles.glow} aria-hidden>
               <img alt="" src="/assets/home/cta-glow.svg" />
             </span>
-            <h2 className={styles.ctaTitle}>Build what’s next with a team ready now.</h2>
+            <h2 className={styles.ctaTitle}>Build What’s Next With a Team Ready Now.</h2>
             <p className={styles.ctaText}>Tell us where you’re headed. We’ll show you the fastest, clearest path there.</p>
           </div>
           <div className={styles.ctaActions}>

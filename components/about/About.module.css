@@ -66,7 +66,7 @@
 .muted16tight {
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-variable-2);
-  line-height: 1.3;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
@@ -74,7 +74,7 @@
 .blue14,
 .soft14 {
   font-size: var(--text-body-small);
-  line-height: normal;
+  line-height: 1.4;
 }
 
 .muted14 { color: var(--aspen-color-ink-muted); }
@@ -104,6 +104,22 @@
   width: 502px;
   height: 502px;
   pointer-events: none;
+}
+
+/* Leadership (Figma 1894:20123 / 1908:19566): glow pushed up into the top-right corner so it no longer
+   sits behind the cut-out team photo (Devs comments 2014309920 / 2014310215) */
+.heroGlowPhoto {
+  right: calc(50% - 804px);
+  top: -238px;
+}
+
+@media (max-width: 1199px) {
+  .heroGlowPhoto {
+    right: -47px;
+    top: -101px;
+    width: 338px;
+    height: 338px;
+  }
 }
 
 .heroGlow img {
@@ -388,7 +404,7 @@
   border-radius: var(--aspen-radius-md);
   background: rgba(0, 139, 201, 0.3);
   font-size: var(--text-body-small);
-  line-height: normal;
+  line-height: 1.4;
 }
 
 .aiSolutionBody {
@@ -416,7 +432,7 @@
   align-items: center;
   gap: 16px;
   font-size: var(--text-body-variable-2);
-  line-height: 1.1094;
+  line-height: 1.5;
   letter-spacing: -0.4px;
 }
 
@@ -501,7 +517,7 @@
   gap: 16px 12px;
   color: var(--aspen-color-ink-strong);
   font-size: var(--text-body-small);
-  line-height: normal;
+  line-height: 1.4;
 }
 
 .hoursBar {
@@ -719,7 +735,7 @@
 .econCaption {
   color: #fff;
   font-size: var(--text-body-small);
-  line-height: normal;
+  line-height: 1.4;
   text-align: center;
 }
 

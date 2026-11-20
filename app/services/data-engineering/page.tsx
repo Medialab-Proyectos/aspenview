@@ -10,7 +10,7 @@ import { ROUTES } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "Data Engineering, BI & AI — AspenView Technology Partners",
   description:
-    "Connect data engineering, governance, BI, analytics and AI into one continuous discipline—from raw information to trusted decisions.",
+    "Connect data engineering, governance, BI, analytics and AI into one continuous discipline, from raw information to trusted decisions.",
 };
 
 const G = "/assets/glyphs";
@@ -22,13 +22,13 @@ export default function DataEngineeringPage() {
         eyebrow="Data Engineering, BI & AI"
         title={
           <>
-            Turn your data into something your business and AI
+            Turn Your Data Into Something Your Business and AI
             <br />
           </>
         }
-        highlight="can trust"
+        highlight="Can Trust"
         highlightInline
-        text="Connect data engineering, governance, BI, analytics and AI into one continuous discipline—from raw information to trusted decisions."
+        text="Connect data engineering, governance, BI, analytics and AI into one continuous discipline, from raw information to trusted decisions."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
         mediaLabel="Trusted data lifecycle"
         image={{ src: "/assets/data/hero.gif", width: 600, height: 390 }}
@@ -38,7 +38,7 @@ export default function DataEngineeringPage() {
         data={{
           title: (
             <>
-              AI ambitions are moving faster than <strong>data readiness</strong>
+              AI Ambitions Are Moving Faster Than <strong>Data Readiness</strong>
             </>
           ),
           text: (
@@ -51,24 +51,45 @@ export default function DataEngineeringPage() {
             image: { src: "/assets/data/challenge-1.gif", inset: "19.23% 0" },
             title: (
               <>
-                Connect the <strong>data foundation</strong>
+                Connect the <strong>Data Foundation</strong>
               </>
             ),
-            text: "Bring fragmented data into one continuous discipline—from raw information to trusted decisions.",
+            text: "Bring fragmented data into one continuous discipline, from raw information to trusted decisions.",
             tags: ["Systems", "Integrations", "Trust"],
+            label: "FOUNDATION",
+            shortTitle: "Fragmented Systems",
+            shortText: "Data lives across disconnected platforms and pipelines.",
           },
           side: [
             {
               label: "READINESS",
               image: { src: "/assets/data/challenge-2.gif", inset: "19.49% 0" },
-              title: "Inconsistent data quality",
+              title: "Inconsistent Data Quality",
               text: "AI ambitions depend on reliable data.",
+              expanded: {
+                title: (
+                  <>
+                    Reliable Data, <strong>Reliable AI</strong>
+                  </>
+                ),
+                text: "AI ambitions depend on reliable data. Inconsistent quality undermines every model, report and decision built on top of it.",
+                tags: ["Quality", "Consistency", "Accuracy"],
+              },
             },
             {
               label: "GOVERNANCE",
               image: { src: "/assets/data/challenge-3.gif", inset: "12.82% 0" },
-              title: "Limited governance",
-              text: "Trust requires lineage, consitency and control.",
+              title: "Limited Governance",
+              text: "Trust requires lineage, consistency and control.",
+              expanded: {
+                title: (
+                  <>
+                    Governance That <strong>Builds Trust</strong>
+                  </>
+                ),
+                text: "Trust requires lineage, consistency and control across every source, pipeline and decision.",
+                tags: ["Lineage", "Control", "Compliance"],
+              },
             },
           ],
         }}
@@ -79,13 +100,13 @@ export default function DataEngineeringPage() {
           layout: "grid",
           title: (
             <>
-              One connected <strong>data discipline</strong>
+              One Connected <strong>Data Discipline</strong>
             </>
           ),
           text: (
             <>
               <p>
-                AspenView connects the capabilities required to move from fragmented data to trusted intelligence—and
+                AspenView connects the capabilities required to move from fragmented data to trusted intelligence; and
                 ultimately to AI that can operate on a reliable foundation.
               </p>
               <p>
@@ -133,9 +154,9 @@ export default function DataEngineeringPage() {
         data={{
           title: (
             <>
-              From requirement
+              From Requirement
               <br />
-              <strong>to production</strong>
+              <strong>to Production</strong>
             </>
           ),
           text: "AI is integrated across the delivery lifecycle, not added as a separate step.",
@@ -180,9 +201,9 @@ export default function DataEngineeringPage() {
 
       <Capabilities
         data={{
-          title: "Where we can help",
-          subtitle: "Six capability areas",
-          text: "Six recurring data challenges, connected by one continuous discipline—from raw information to trusted decisions.",
+          title: "Where We Can Help",
+          subtitle: "Six Capability Areas",
+          text: "Six recurring data challenges, connected by one continuous discipline, from raw information to trusted decisions.",
           items: [
             {
               label: "Data Cleansing & AI Readiness",
@@ -231,7 +252,7 @@ export default function DataEngineeringPage() {
       />
 
       <ShaderCta
-        title={<>Ready to turn your data into a stronger foundation for <strong>growth and AI?</strong></>}
+        title={<>Ready to Turn Your Data Into a Stronger Foundation for <strong>Growth and AI?</strong></>}
         text="Let's identify where better data can create the greatest impact."
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
       />

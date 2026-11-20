@@ -40,7 +40,7 @@ export default function Commitments() {
         <div className={`wrap ${styles.inner}`}>
           <div className={styles.header}>
             <h2 className={styles.heading}>
-              <Eyebrow>Our approach</Eyebrow>
+              <Eyebrow>Our Approach</Eyebrow>
               <span className={styles.title}>
                 <span className={styles.titleDark}>Our Four</span>
                 <br />
@@ -72,7 +72,7 @@ export default function Commitments() {
           <img alt="" src="/assets/home/wave.png" />
         </div>
         <div className={`wrap ${styles.partnersInner}`}>
-          <h2 className={styles.partnersTitle}>Building great technology with great partners</h2>
+          <h2 className={styles.partnersTitle}>Building Great Technology With Great Partners</h2>
           <div className={styles.marquee}>
             <div className={styles.track}>
               <LogoSet />

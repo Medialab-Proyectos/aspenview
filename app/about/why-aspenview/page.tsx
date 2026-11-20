@@ -19,8 +19,8 @@ export default function WhyAspenviewPage() {
     <>
       <AboutHero
         eyebrow="WHY ASPENVIEW"
-        title="Technology resources are easy to find, the right partner isn’t"
-        text="The challenge isn't simply finding technology capability. It's finding the right expertise, at the right time, with a partner that understands what you're trying to achieve — and can deliver against it."
+        title="Technology Resources Are Easy to Find, the Right Partner Isn’t"
+        text="The challenge isn't simply finding technology capability. It's finding the right expertise, at the right time, with a partner that understands what you're trying to achieve, and can deliver against it."
       />
       <WhyPillars />
       <WhyLeadership />

@@ -13,9 +13,9 @@ export default function AgenticEngineeringPage() {
     <>
       <AiHero
         eyebrow="Agentic Engineering"
-        title="Build software differently."
-        accent="Engineered by people. Powered by agents."
-        text="Move beyond AI-assisted coding to an engineering model where intelligent agents work across the development lifecycle — while your engineers govern quality, security and outcomes."
+        title="Build Software Differently."
+        accent="Engineered by People. Powered by Agents."
+        text="Move beyond AI-assisted coding to an engineering model where intelligent agents work across the development lifecycle; while your engineers govern quality, security and outcomes."
         cta="Explore Agentic engineering"
         ctaHref="#the-shift"
         video="/videos/agentic-engineering-hero.webm"
@@ -30,7 +30,7 @@ export default function AgenticEngineeringPage() {
       <AiGridCta
         title={
           <>
-            Ready to rethink <strong>how software gets built?</strong>
+            Ready to Rethink <strong>How Software Gets Built?</strong>
           </>
         }
         cta="Talk to our team"

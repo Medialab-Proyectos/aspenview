@@ -14,8 +14,8 @@ export default function AiNativePage() {
     <>
       <AiHero
         eyebrow="AI-Native at AspenView"
-        title="We're not just talking about AI."
-        accent="We're building our business around it."
+        title="We're Not Just Talking About AI."
+        accent="We're Building Our Business Around It."
         text={
           <>
             We&apos;re redesigning how AspenView operates around what
@@ -35,9 +35,9 @@ export default function AiNativePage() {
       <AiGridCta
         title={
           <>
-            Build an organization ready
+            Build an Organization Ready
             <br />
-            for <strong>what AI makes possible</strong>
+            for <strong>What AI Makes Possible</strong>
           </>
         }
         cta="Start your AI transformation"

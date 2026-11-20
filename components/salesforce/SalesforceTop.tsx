@@ -17,12 +17,12 @@ export function SfHero() {
       <div className={styles.heroInner}>
         <div className={styles.heroCopy}>
           <h1 className={styles.heroTitle}>
-            From connected
+            From Connected
             <br />
-            data to intelligent agents
+            Data to Intelligent Agents
           </h1>
           <div className={styles.heroDays}>
-            <p className={styles.heroSmall}>in little as:</p>
+            <p className={styles.heroSmall}>in as little as:</p>
             <p className={styles.heroBig}>10 days</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ export function SfHero() {
 /* ---------- Built on Salesforce (2156:30807) ---------- */
 const STATS = [
   { title: "24/7", text: "AI-powered execution" },
-  { title: "AI-native", text: "Built for AI. Not retrofitted." },
+  { title: "AI-Native", text: "Built for AI. Not retrofitted." },
   { title: "5", text: "Business areas for AI agents" },
   { title: "LATAM", text: "Regional talent. Enterprise execution." },
 ];
@@ -56,9 +56,9 @@ export function SfBuilt() {
         <h2 className={styles.heading}>
           <Eyebrow>Built on Salesforce</Eyebrow>
           <span className={styles.title}>
-            Enterprise ambition.
+            Enterprise Ambition.
             <br />
-            Production-ready execution.
+            Production-Ready Execution.
           </span>
         </h2>
         <div className={styles.stats}>
@@ -69,12 +69,6 @@ export function SfBuilt() {
             </div>
           ))}
         </div>
-        <div className={styles.statLinks}>
-          <span>Agentforce</span>
-          <span>Data 360</span>
-          <span>AI implementation</span>
-          <span>Enterprise integration</span>
-        </div>
       </div>
     </section>
   );
@@ -82,9 +76,9 @@ export function SfBuilt() {
 
 /* ---------- Why (2160:32002) ---------- */
 const WHY = [
-  { icon: "spark", tag: "WHY AGENTIC AI?", a: "AI that ", b: "does the work", text: "Agents reason, act and execute across workflows — moving AI from answers to measurable business outcomes." },
-  { icon: "shield-check", tag: "WHY SALESFORCE?", a: "Enterprise AI ", b: "built on trust", text: "Agentforce + Data 360 connect trusted data, business context and enterprise governance to deploy AI at scale." },
-  { icon: "share-circle", tag: "WHY ASPENVIEW?", a: "Built for the ", b: "AI era", text: "AI-native delivery, vetted engineering talent and nearshore execution designed to move from idea to production in as little as 10 days." },
+  { icon: "spark", tag: "WHY AGENTIC AI?", a: "AI That ", b: "Does the Work", text: "Agents reason, act and execute across workflows, moving AI from answers to measurable business outcomes." },
+  { icon: "shield-check", tag: "WHY SALESFORCE?", a: "Enterprise AI ", b: "Built on Trust", text: "Agentforce + Data 360 connect trusted data, business context and enterprise governance to deploy AI at scale." },
+  { icon: "share-circle", tag: "WHY ASPENVIEW?", a: "Built for the ", b: "AI Era", text: "AI-native delivery, vetted engineering talent and nearshore execution designed to move from idea to production in as little as 10 days." },
 ];
 
 export function SfWhy() {
@@ -92,7 +86,7 @@ export function SfWhy() {
     <section className={styles.pale}>
       <div className={`wrap ${styles.whyInner}`}>
         {WHY.map((w) => (
-          <article key={w.tag} className={styles.whyCard}>
+          <article key={w.tag} className={`${styles.whyCard} hover-blue`}>
             <div className={styles.whyTop}>
               <span className={styles.ringLg}>
                 <img alt="" src={`/assets/salesforce/${w.icon}.svg`} width={32} height={32} />
@@ -123,8 +117,8 @@ const PRODUCTS: Product[] = [
         <img alt="Agentforce" src="/assets/salesforce/agentforce.png" />
       </span>
     ),
-    title: "AI agents that take action",
-    text: "Design and deploy production-grade AI agents that transform how teams serve, sell and operate — with enterprise-ready orchestration and governance.",
+    title: "AI Agents That Take Action",
+    text: "Design and deploy production-grade AI agents that transform how teams serve, sell and operate, with enterprise-ready orchestration and governance.",
     caps: ["Custom Agent Design", "Prompt Engineering & Guardrails", "Agent Orchestration", "Tool Integration", "Measurable ROI"],
     cta: "Explore Agentforce",
   },
@@ -134,8 +128,8 @@ const PRODUCTS: Product[] = [
         <img alt="Data 360" src="/assets/salesforce/data360.png" />
       </span>
     ),
-    title: "Trusted data that powers AI",
-    text: "Unify customer and enterprise data into a trusted foundation that gives Agentforce — and your teams — the context to act intelligently.",
+    title: "Trusted Data That Powers AI",
+    text: "Unify customer and enterprise data into a trusted foundation that gives Agentforce, and your teams, the context to act intelligently.",
     caps: ["Unified Customer View", "Data Integration & Unification", "Identity Resolution", "Real-Time Customer Insights", "AI-Ready Data Foundation"],
     cta: "Explore Data 360",
   },
@@ -149,7 +143,7 @@ const PRODUCTS: Product[] = [
         <img alt="Claudeforce" src="/assets/salesforce/claudeforce.svg" className={styles.claude} />
       </span>
     ),
-    title: "Bring AI into the flow of work",
+    title: "Bring AI Into the Flow of Work",
     text: "Put Agentforce directly into the tools teams already use, enabling AI-powered conversations, approvals and workflows without leaving the channel.",
     caps: ["AI-Powered Collaboration", "Employee Productivity", "AI-Powered Workflows", "In-Channel Approvals", "Agentforce Integration"],
     cta: "Explore Slack & Claudeforce",
@@ -162,7 +156,7 @@ const PRODUCTS: Product[] = [
         <img alt="" src="/assets/salesforce/mulesoft-c.svg" className={styles.muleC} />
       </span>
     ),
-    title: "Connect AI to the systems that run your business",
+    title: "Connect AI to the Systems That Run Your Business",
     text: "Connect Salesforce, Agentforce and Data 360 across enterprise and legacy systems through secure, real-time integrations.",
     caps: ["API-Led Integration", "Agent Orchestration", "Legacy System Connectivity", "Secure Integrations", "Real-Time Data Flow"],
     cta: "Explore Mulesoft",
@@ -188,8 +182,12 @@ export function SfProducts() {
                           <p className={styles.productText}>{p.text}</p>
                         </div>
                       </div>
-                      <div className={styles.productCaps}>
-                        <h4 className={styles.productCapsTitle}>Capabilities</h4>
+                      {/* Excel 53: capabilities open on demand instead of all being shown at once */}
+                      <details className={styles.productCaps}>
+                        <summary className={styles.productCapsTitle}>
+                          <h4>Capabilities</h4>
+                          <span className={styles.capsToggle} aria-hidden />
+                        </summary>
                         <ul className={styles.capList}>
                           {p.caps.map((c) => (
                             <li key={c}>
@@ -200,7 +198,7 @@ export function SfProducts() {
                             </li>
                           ))}
                         </ul>
-                      </div>
+                      </details>
                     </div>
                     <div className={styles.productFoot}>
                       <img alt="" src="/assets/salesforce/card-line.svg" className={styles.productLine} />

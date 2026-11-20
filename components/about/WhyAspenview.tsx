@@ -8,7 +8,7 @@ const A = "/assets/about";
 const PILLARS = [
   { icon: "pillar-energy", w: 63, title: "Speed", text: "Senior teams that start fast, decide fast and ship in weeks, not quarters." },
   { icon: "pillar-spark", w: 32, title: "Quality", text: "Engineering rigor and craft that hold up under real business pressure." },
-  { icon: "pillar-diagram", w: 32, title: "Business impact", text: "Every engagement tied to an outcome someone is accountable for." },
+  { icon: "pillar-diagram", w: 32, title: "Business Impact", text: "Every engagement tied to an outcome someone is accountable for." },
 ];
 
 export function WhyPillars() {
@@ -18,14 +18,14 @@ export function WhyPillars() {
         <h2 className={styles.heading}>
           <Eyebrow>WHY ASPENVIEW</Eyebrow>
           <span className={styles.title}>
-            One partnership built for speed, quality
+            One Partnership Built for Speed, Quality
             <br />
-            and measurable business impact
+            and Measurable Business Impact
           </span>
         </h2>
         <div className={styles.pillars}>
           {PILLARS.map((p, i) => (
-            <article key={p.title} className={styles.pillar}>
+            <article key={p.title} className={`${styles.pillar} hover-blue`}>
               <div className={styles.pillarTop}>
                 <span className={styles.pillarNum}>{String(i + 1).padStart(2, "0")}</span>
                 <img alt="" src={`${A}/${p.icon}.svg`} width={p.w} height={32} />
@@ -62,7 +62,7 @@ export function WhyLeadership() {
     <section className={styles.white}>
       <div className={`wrap ${styles.leadRow}`}>
         <img
-          alt="We don’t start with what we can sell. We start with what you need to achieve — how we open every conversation."
+          alt="We don’t start with what we can sell. We start with what you need to achieve: how we open every conversation."
           src={`${A}/leadership-globe.png`}
           className={styles.globe}
         />
@@ -71,9 +71,9 @@ export function WhyLeadership() {
             <h2 className={styles.heading}>
               <Eyebrow>LEADERSHIP</Eyebrow>
               <span className={styles.title}>
-                Leadership that understands
+                Leadership That Understands
                 <br />
-                your world
+                Your World
               </span>
             </h2>
             <div className={`${styles.muted16} ${styles.paras}`}>
@@ -122,7 +122,7 @@ export function WhyAiNative() {
             </span>
           </h2>
           <p className={styles.white16}>
-            We combine human expertise with AI across how we plan, build and deliver — helping teams move faster, make
+            We combine human expertise with AI across how we plan, build and deliver, helping teams move faster, make
             better-informed decisions and continuously improve execution.
           </p>
         </div>
@@ -151,7 +151,7 @@ export function WhyAiNative() {
           <article className={`${styles.aiCard} ${styles.aiSolution}`}>
             <p className={styles.aiEyebrow}>WHEN AI IS THE SOLUTION</p>
             <div className={styles.aiSolutionBody}>
-              <h3 className={styles.aiSolutionTitle}>From opportunity to practical implementation</h3>
+              <h3 className={styles.aiSolutionTitle}>From Opportunity to Practical Implementation</h3>
               <ol className={styles.aiSteps}>
                 {SOLUTION.map((s) => (
                   <li key={s}>
@@ -179,12 +179,12 @@ export function WhyTalent() {
           <div className={styles.headerTight}>
             <h2 className={styles.heading}>
               <Eyebrow>TALENT</Eyebrow>
-              <span className={styles.title}>Exceptional talent. Closer to you.</span>
+              <span className={styles.title}>Exceptional Talent. Closer to You.</span>
             </h2>
             <div className={`${styles.muted16} ${styles.paras}`}>
               <p>
                 Great delivery still depends on great people. We connect our clients with high-caliber engineering, data
-                and AI talent across Latin America — combining deep technical expertise with geographic proximity,
+                and AI talent across Latin America, combining deep technical expertise with geographic proximity,
                 timezone alignment and close collaboration with North American teams.
               </p>
               <p>
@@ -239,10 +239,10 @@ export function WhyTalent() {
 
 /* ---------- Speed & quality (1885:17354) ---------- */
 const STEPS = [
-  { icon: "step-magnifer", title: "Rigorous talent selection", text: "We select for depth, not availability." },
+  { icon: "step-magnifer", title: "Rigorous Talent Selection", text: "We select for depth, not availability." },
   { icon: "step-clipboard", title: "Readiness", text: "Teams arrive prepared to contribute from day one." },
-  { icon: "step-shield", title: "Quality practices", text: "Standards embedded in how we build, test and ship." },
-  { icon: "step-help", title: "Ongoing delivery support", text: "Continuous support to keep execution on track." },
+  { icon: "step-shield", title: "Quality Practices", text: "Standards embedded in how we build, test and ship." },
+  { icon: "step-help", title: "Ongoing Delivery Support", text: "Continuous support to keep execution on track." },
 ];
 
 export function WhySpeed() {
@@ -252,7 +252,7 @@ export function WhySpeed() {
         <div className={styles.headerTight}>
           <h2 className={styles.heading}>
             <Eyebrow>SPEED &amp; QUALITY</Eyebrow>
-            <span className={styles.title}>Speed without sacrificing quality</span>
+            <span className={styles.title}>Speed Without Sacrificing Quality</span>
           </h2>
           <p className={`${styles.muted16} ${styles.max700}`}>
             Moving faster only matters if what gets delivered works. Our approach combines rigorous talent selection,
@@ -262,7 +262,7 @@ export function WhySpeed() {
         </div>
         <ol className={styles.steps}>
           {STEPS.map((s, i) => (
-            <li key={s.title} className={styles.step}>
+            <li key={s.title} className={`${styles.step} hover-blue-text`}>
               <div className={styles.stepHead}>
                 <div className={styles.stepTrack}>
                   <span className={styles.stepRing}>
@@ -289,9 +289,9 @@ export function WhySpeed() {
 
 /* ---------- Economics (1889:17755) ---------- */
 const BENEFITS = [
-  { icon: "econ-scale", title: "Deep technical expertise", text: "Add the people and skills your roadmap needs." },
-  { icon: "econ-energy", title: "Accelerate priorities", text: "Bring critical initiatives forward." },
-  { icon: "econ-routing", title: "Redirect resources", text: "Fund the initiatives that matter most." },
+  { icon: "econ-scale", title: "Deep Technical Expertise", text: "Add the people and skills your roadmap needs." },
+  { icon: "econ-energy", title: "Accelerate Priorities", text: "Bring critical initiatives forward." },
+  { icon: "econ-routing", title: "Redirect Resources", text: "Fund the initiatives that matter most." },
 ];
 
 export function WhyEconomics() {
@@ -302,7 +302,7 @@ export function WhyEconomics() {
           <div className={styles.headerTight}>
             <h2 className={styles.heading}>
               <Eyebrow>ECONOMICS</Eyebrow>
-              <span className={styles.title}>Economics that create room to do more</span>
+              <span className={styles.title}>Economics That Create Room to Do More</span>
             </h2>
             <p className={styles.muted16}>
               Our Latin American delivery model can provide meaningful total cost of employee (TCE) savings compared with
@@ -312,7 +312,7 @@ export function WhyEconomics() {
           <p className={styles.econStatement}>We see it as the opportunity to do more with the same investment.</p>
           <ul className={styles.benefits}>
             {BENEFITS.map((b) => (
-              <li key={b.title} className={styles.benefit}>
+              <li key={b.title} className={`${styles.benefit} hover-blue`}>
                 <img alt="" src={`${A}/${b.icon}.svg`} width={26} height={26} />
                 <div>
                   <h3 className={styles.benefitTitle}>{b.title}</h3>
@@ -330,7 +330,7 @@ export function WhyEconomics() {
                 Core delivery
               </div>
               <div className={styles.econCaption}>
-                <p className={styles.econCaptionTitle}>U.S.-based capability</p>
+                <p className={styles.econCaptionTitle}>U.S.-Based Capability</p>
                 <p>
                   Same investment,
                   <br />
@@ -348,7 +348,7 @@ export function WhyEconomics() {
                 </div>
               </div>
               <div className={styles.econCaption}>
-                <p className={styles.econCaptionTitle}>AspenView model</p>
+                <p className={styles.econCaptionTitle}>AspenView Model</p>
                 <p>
                   Same investment,
                   <br />

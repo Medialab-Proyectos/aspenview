@@ -10,7 +10,7 @@ import { ROUTES } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "Agentic Process Automation — AspenView Technology Partners",
   description:
-    "Design intelligent agents that can reason, adapt and act across complex processes—while keeping access, decisions and outcomes governed.",
+    "Design intelligent agents that can reason, adapt and act across complex processes, while keeping access, decisions and outcomes governed.",
 };
 
 const G = "/assets/glyphs";
@@ -22,13 +22,13 @@ export default function AgenticAutomationPage() {
         eyebrow="Agentic Process Automation"
         title={
           <>
-            Automate work
+            Automate Work
             <br />
-            that
+            That
           </>
         }
-        highlight="rules-based systems can’t"
-        text={"Design intelligent agents that can reason, adapt and act across complex \nprocesses—while keeping access, decisions and outcomes governed."}
+        highlight="Rules-Based Systems Can’t"
+        text={"Design intelligent agents that can reason, adapt and act across complex \nprocesses, while keeping access, decisions and outcomes governed."}
         cta={{ label: "Talk to our team", href: ROUTES.contact }}
         mediaLabel="Reason. Adapt. Act"
         image={{ src: "/assets/agentic/hero.gif", width: 645, height: 525 }}
@@ -39,9 +39,9 @@ export default function AgenticAutomationPage() {
         data={{
           title: (
             <>
-              Automation has
+              Automation Has
               <br />
-              reached <strong>the limits of rules.</strong>
+              Reached <strong>the Limits of Rules.</strong>
             </>
           ),
           text: (
@@ -55,24 +55,45 @@ export default function AgenticAutomationPage() {
             image: { src: "/assets/agentic/challenge-1.gif", inset: "21.49% 0" },
             title: (
               <>
-                Make sense of <strong>unstructured work</strong>
+                Make Sense of <strong>Unstructured Work</strong>
               </>
             ),
             text: "Reasoning agents can interpret information that does not fit neatly into fixed instructions.",
             tags: ["Emails", "Documents", "Conversations"],
+            label: "UNSTRUCTURED WORK",
+            shortTitle: "Unstructured Information",
+            shortText: "Emails, documents and conversations don’t fit fixed scripts.",
           },
           side: [
             {
               label: "EXCEPTIONS",
               image: { src: "/assets/agentic/challenge-2.gif", inset: "15.45% 0 16.16% 0" },
-              title: "Exceptions & judgement calls",
+              title: "Exceptions & Judgement Calls",
               text: "Enterprise work rarely follows one predictable path.",
+              expanded: {
+                title: (
+                  <>
+                    Handle Exceptions, <strong>Not Just Rules</strong>
+                  </>
+                ),
+                text: "Enterprise work rarely follows one predictable path. Agents reason through exceptions and escalate judgement calls instead of breaking on them.",
+                tags: ["Exceptions", "Decisions", "Escalations"],
+              },
             },
             {
               label: "OPERATIONAL CONTROL",
               image: { src: "/assets/agentic/challenge-3.gif", inset: "17.47% 0 18.18% 0" },
-              title: "Governance at every action",
+              title: "Governance at Every Action",
               text: "Intelligent automation needs control beyond policy.",
+              expanded: {
+                title: (
+                  <>
+                    Governance <strong>at Every Action</strong>
+                  </>
+                ),
+                text: "Intelligent automation needs control beyond policy: permissions, audit trails and human oversight on every step agents take.",
+                tags: ["Permissions", "Audit", "Oversight"],
+              },
             },
           ],
         }}
@@ -82,9 +103,9 @@ export default function AgenticAutomationPage() {
         data={{
           title: (
             <>
-              Intelligent automation
+              Intelligent Automation
               <br />
-              needs <strong>more than an agent</strong>
+              Needs <strong>More Than an Agent</strong>
             </>
           ),
           text: (
@@ -124,12 +145,12 @@ export default function AgenticAutomationPage() {
         data={{
           title: (
             <>
-              From opportunity to
+              From Opportunity to
               <br />
-              <strong>governed automation.</strong>
+              <strong>Governed Automation.</strong>
             </>
           ),
-          text: "Discover, automate, test, deploy and watch—with control built into every stage.",
+          text: "Discover, automate, test, deploy and watch, with control built into every stage.",
           steps: [
             {
               icon: `${G}/magnifer-zoom-in.svg`,
@@ -158,22 +179,22 @@ export default function AgenticAutomationPage() {
             {
               icon: `${G}/eye.svg`,
               title: "Watch",
-              body: "Continuously govern identity, access, performance and cost—and identify the next opportunity.",
+              body: "Continuously govern identity, access, performance and cost, and identify the next opportunity.",
               items: "Identity & access / Performance & cost",
             },
           ],
           note: {
             label: "ACCOUNTABILITY",
-            text: "Permissions are scoped, actions are auditable and agent access can be revoked—creating operational controls rather than relying solely on policy.",
+            text: "Permissions are scoped, actions are auditable and agent access can be revoked, creating operational controls rather than relying solely on policy.",
           },
         }}
       />
 
       <Capabilities
         data={{
-          title: "Where we can help",
-          subtitle: "Six capability areas",
-          text: "Process intelligence, interoperability and governance—connected across the automation lifecycle.",
+          title: "Where We Can Help",
+          subtitle: "Six Capability Areas",
+          text: "Process intelligence, interoperability and governance, connected across the automation lifecycle.",
           items: [
             {
               label: "Process Intelligence",
@@ -224,7 +245,7 @@ export default function AgenticAutomationPage() {
       <ShaderCta
         title={
           <>
-            Where could intelligent automation make the <strong>biggest difference?</strong>
+            Where Could Intelligent Automation Make the <strong>Biggest Difference?</strong>
           </>
         }
         text="Let’s identify the processes where agentic automation can create meaningful, controlled impact."

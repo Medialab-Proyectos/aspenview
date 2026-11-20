@@ -73,7 +73,7 @@
 .meaningText {
   color: var(--aspen-color-ink-muted);
   font-size: var(--text-body-variable);
-  line-height: 1.3;
+  line-height: 1.4;
   letter-spacing: -0.4px;
 }
 
@@ -134,8 +134,32 @@
   object-fit: contain;
 }
 
-.opTitle {
+/* Figma 2064:33826 Opened: brighter glow + body copy */
+.op { outline: none; }
+
+.opGlow { transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out); opacity: 0.7; }
+
+@media (hover: hover) {
+  .op:hover .opGlow,
+  .op:focus-visible .opGlow { opacity: 1; transform: scale(1.15); }
+}
+
+.opCopy {
+  display: flex;
+  flex-direction: column;
   padding: var(--card-s-y) var(--card-s-x);
+}
+
+.opBody {
+  padding-top: var(--gap-subtitle-to-texts);
+  color: #fff;
+  font-size: var(--text-body-variable-2);
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.opTitle {
   font-size: var(--text-subtitle);
   font-weight: 500;
   line-height: normal;
@@ -290,8 +314,10 @@
 
 @media (max-width: 767px) {
   .meaning { padding: var(--card-s-y) var(--card-xs-x); }
-  .whyRow { padding-inline: 0; gap: 12px; }
-  .whyIcon { width: 44px; height: 44px; padding: 8px; }
-  .whyAnswer { padding-left: 56px; padding-right: 0; }
-  .whyCard { height: 300px; }
+  /* Figma 2291:38742 (corrected): 14/18 rows, 54px disc, answer flush under the row with an 8px gap */
+  .whyRow { padding: 14px 18px; gap: 16px; }
+  .whyQ { font-size: 16px; }
+  .whyAnswer { gap: 8px; padding: 0 18px 14px; margin-top: -6px; }
+  .whyCard { height: auto; }
+  .whyCardMedia { flex: none; height: 230px; }
 }

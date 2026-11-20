@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
 import "./globals.css";
 
 // Roboto variable (latin, wght 300–700) self-hosted so builds never depend on Google Fonts at build time
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <NavBar />
         <main>{children}</main>
         <Footer />
+        <CursorGlow />
       </body>
     </html>
   );

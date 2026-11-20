@@ -37,7 +37,12 @@ function AospNote() {
 }
 
 /* ---------- Hero (2923:26405) ---------- */
-const STAGES = ["Onboarding", "Client Launch", "Quality at Every Step", "Success That Continues"];
+const STAGES = [
+  { label: "Onboarding", href: "#onboarding" },
+  { label: "Client Launch", href: "#client-launch" },
+  { label: "Quality at Every Step", href: "#quality" },
+  { label: "Success That Continues", href: "#success" },
+];
 
 export function ExHero() {
   return (
@@ -70,16 +75,16 @@ export function ExHero() {
               </p>
             </div>
           </div>
-          <PrimaryButton href={ROUTES.contact} className={styles.heroBtn}>
-            Contact
-          </PrimaryButton>
         </div>
       </div>
       <ol className={styles.stages}>
         {STAGES.map((s, i) => (
-          <li key={s} className={styles.stage}>
-            <span className={styles.stageNum}>{String(i + 1).padStart(2, "0")}</span>
-            <span>{s}</span>
+          <li key={s.label} className={styles.stageItem}>
+            {/* Excel 28: each stage turns blue on its own hover, not the whole strip */}
+            <a href={s.href} className={`${styles.stage} hover-blue`}>
+              <span className={styles.stageNum}>{String(i + 1).padStart(2, "0")}</span>
+              <span>{s.label}</span>
+            </a>
           </li>
         ))}
       </ol>
@@ -96,18 +101,18 @@ const ONBOARD = [
 
 export function ExOnboarding() {
   return (
-    <section className={styles.pale}>
+    <section className={styles.pale} id="onboarding">
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepEyebrow num="01" label="A STRONG START" step={1} />
-          <h2 className={styles.title}>Onboarding. Aligned from day one.</h2>
+          <h2 className={styles.title}>Onboarding. Aligned From Day One.</h2>
           <p className={styles.lead}>
             We align your priorities, teams, and expectations from the start, creating a clear foundation for success.
           </p>
         </div>
         <div className={styles.cards}>
           {ONBOARD.map((c, i) => (
-            <article key={c.title} className={styles.card}>
+            <article key={c.title} className={`${styles.card} hover-blue`}>
               <div className={styles.cardTop}>
                 <span className={styles.ring}>
                   <img alt="" src={`${A}/${c.icon}.svg`} width={32} height={32} />
@@ -130,7 +135,7 @@ export function ExOnboarding() {
 /* ---------- 02 Client launch (2926:27271 + 2926:27333) ---------- */
 export function ExLaunch() {
   return (
-    <section className={styles.launch}>
+    <section className={styles.launch} id="client-launch">
       <img alt="" src={`${A}/launch-bg.png`} className={styles.launchBg} />
       <span className={styles.launchShade} aria-hidden />
       <div className={`wrap ${styles.launchInner}`}>
@@ -169,10 +174,10 @@ export function ExPillars() {
             </div>
           </div>
           <div className={styles.pillarsCol}>
-            <h2 className={styles.pillarsTitle}>Four pillars of a successful launch</h2>
+            <h2 className={styles.pillarsTitle}>Four Pillars of a Successful Launch</h2>
             <ol className={styles.pillars}>
               {PILLARS.map((p, i) => (
-                <li key={p.title} className={styles.pillar}>
+                <li key={p.title} className={`${styles.pillar} hover-blue`}>
                   <span className={styles.pillarNum}>{String(i + 1).padStart(2, "0")}</span>
                   <div className={styles.pillarCopy}>
                     <h3 className={styles.pillarTitle}>{p.title}</h3>
@@ -198,7 +203,7 @@ const QUALITY = [
 
 export function ExQuality() {
   return (
-    <section className={styles.white}>
+    <section className={styles.white} id="quality">
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepEyebrow num="03" label="QUALITY AT EVERY STEP" step={3} />
@@ -212,7 +217,7 @@ export function ExQuality() {
           {QUALITY.map((q, i) => (
             <div key={q.title} className={styles.qualityGroup}>
               {i > 0 && <img alt="" src={`${A}/quality-line.svg`} className={styles.qualityLine} />}
-              <div className={styles.qualityRow}>
+              <div className={`${styles.qualityRow} hover-blue`}>
                 <div className={styles.qualityHead}>
                   <span className={styles.ring}>
                     <img alt="" src={`${A}/${q.icon}.svg`} width={32} height={32} />
@@ -239,7 +244,7 @@ const SUCCESS = [
 
 export function ExSuccess() {
   return (
-    <section className={styles.dark}>
+    <section className={styles.dark} id="success">
       <div className={`wrap ${styles.section}`}>
         <div className={styles.header}>
           <StepEyebrow num="04" label="SUCCESS THAT CONTINUES" step={4} tone="dark" />
@@ -265,7 +270,7 @@ export function ExSuccess() {
           </article>
           <div className={styles.successList}>
             {SUCCESS.map((s, i) => (
-              <article key={s.title} className={styles.successCard}>
+              <article key={s.title} className={`${styles.successCard} hover-blue`}>
                 <div className={styles.successCardMain}>
                   <span className={styles.ringGlass}>
                     <img alt="" src={`${A}/${s.icon}.svg`} width={32} height={32} />
@@ -291,7 +296,7 @@ export function ExCta() {
     <section className={styles.cta}>
       <div className={`wrap ${styles.ctaInner}`}>
         <div className={styles.ctaCopy}>
-          <h2 className={styles.ctaTitle}>Ready to make delivery excellence your advantage?</h2>
+          <h2 className={styles.ctaTitle}>Your Technology Priorities Deserve More Than Great Execution.</h2>
           <p className={styles.ctaText}>
             Let’s align your teams, protect continuity, and turn disciplined delivery into measurable business impact at
             every stage.
@@ -299,7 +304,7 @@ export function ExCta() {
         </div>
         <div className={styles.ctaAction}>
           <PrimaryButton href={ROUTES.contact} arrow>
-            Let&apos;s talk about your priorities
+            Let’s Talk About Your Project
           </PrimaryButton>
         </div>
       </div>
