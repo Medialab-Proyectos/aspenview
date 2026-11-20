@@ -11,6 +11,7 @@ type Payload = {
   lastName?: string;
   email?: string;
   company?: string;
+  country?: string;
   topic?: string;
   details?: string;
   updates?: boolean;
@@ -34,6 +35,8 @@ export async function POST(req: Request) {
     lastName: clean(body.lastName, 120),
     email: clean(body.email, 200),
     company: clean(body.company, 200),
+    /* only sent from the Salesforce solutions tab */
+    country: clean(body.country, 80) || undefined,
     topic: clean(body.topic, 200),
     details: clean(body.details, 5000),
     updates: Boolean(body.updates),

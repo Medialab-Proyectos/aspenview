@@ -31,18 +31,14 @@ const TABS = [
     title: "Let's Explore a Partnership",
     intro: "Discover opportunities to collaborate and grow together.",
     question: "What would you like your AI agent to help you achieve?",
-    options: [
-      "Grow: Sales, pipeline intelligence & account research",
-      "Serve: Customer service, case resolution & employee support",
-      "Run: Workflow automation, approvals & operations",
-      "Enable: Knowledge assistants, productivity & internal support",
-      "Protect: Compliance, monitoring, finance & risk",
-      "Not sure yet: Help me identify the right AI agent",
-    ],
+    /* Figma "Dropdown form 3" (2577:22818), updated 20/11 */
+    options: ["Agentforce", "Data 360", "MuleSoft", "Slack", "I’m not sure yet"],
+    /* Figma "Dropdown country" (3067:52833), only on this tab */
+    countries: ["Colombia", "Mexico", "Brazil", "Chile", "Peru", "Argentina", "Other"],
   },
 ] as const;
 
-type Errors = Partial<Record<"firstName" | "lastName" | "email" | "company" | "topic" | "consent", string>>;
+type Errors = Partial<Record<"firstName" | "lastName" | "email" | "company" | "country" | "topic" | "consent", string>>;
 
 function Label({ htmlFor, children, required }: { htmlFor?: string; children: string; required?: boolean }) {
   return (
@@ -156,13 +152,15 @@ export default function ContactForm() {
   const uid = useId();
   const [tab, setTab] = useState(0);
   const [topic, setTopic] = useState("");
+  const [country, setCountry] = useState("");
   const [updates, setUpdates] = useState(false);
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const t = TABS[tab];
+  const countries = "countries" in t ? t.countries : null;
 
-  /* Deep links from CTAs elsewhere on the site: /contact?tab=partner&need=Grow preselects the tab and option */
+  /* Deep links from CTAs elsewhere on the site: /contact?tab=partner&need=agentforce preselects the tab and option */
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
     const i = TABS.findIndex((x) => x.key === q.get("tab"));
@@ -182,6 +180,7 @@ export default function ContactForm() {
     if (!v("lastName")) next.lastName = "Please enter your last name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email"))) next.email = "Please enter a valid work email.";
     if (!v("company")) next.company = "Please enter your company.";
+    if (countries && !country) next.country = "Please select your country.";
     if (!topic) next.topic = "Please select an option.";
     if (!consent) next.consent = "Please acknowledge the Privacy Policy to continue.";
     setErrors(next);
@@ -198,6 +197,7 @@ export default function ContactForm() {
           lastName: v("lastName"),
           email: v("email"),
           company: v("company"),
+          country: countries ? country : undefined,
           topic,
           details: v("details"),
           updates,
@@ -236,7 +236,8 @@ export default function ContactForm() {
               onClick={() => {
                 setTab(i);
                 setTopic("");
-                setErrors((er) => ({ ...er, topic: undefined }));
+                setCountry("");
+                setErrors((er) => ({ ...er, topic: undefined, country: undefined }));
               }}
             >
               {x.label}
@@ -281,6 +282,24 @@ export default function ContactForm() {
           <input id={`${uid}-co`} name="company" placeholder="Company name" autoComplete="organization" className={`${styles.field} ${errors.company ? styles.invalid : ""}`} aria-invalid={!!errors.company} />
           {errors.company && <p className={styles.error}>{errors.company}</p>}
         </div>
+        {countries && (
+          <div className={styles.input}>
+            <Label htmlFor={`${uid}-ct`} required>
+              Country
+            </Label>
+            <Select
+              id={`${uid}-ct`}
+              options={countries}
+              value={country}
+              invalid={!!errors.country}
+              onChange={(val) => {
+                setCountry(val);
+                setErrors((er) => ({ ...er, country: undefined }));
+              }}
+            />
+            {errors.country && <p className={styles.error}>{errors.country}</p>}
+          </div>
+        )}
         <div className={styles.input}>
           <Label htmlFor={`${uid}-tp`} required>
             {t.question}
