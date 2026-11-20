@@ -21,7 +21,7 @@ export default function ContactLocations() {
         </h2>
         <ul className={styles.offices}>
           {OFFICES.map((o) => (
-            <li key={o.city} className={`${styles.office} hover-blue`}>
+            <li key={o.city} className={`${styles.office} hover-glow`}>
               {o.label && <p className={styles.officeLabel}><T>{o.label}</T></p>}
               <h3 className={styles.officeCity}><T>{o.city}</T></h3>
               <a

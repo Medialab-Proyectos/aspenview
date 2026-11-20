@@ -23,7 +23,7 @@ export function WhyPillars() {
         </h2>
         <div className={styles.pillars}>
           {PILLARS.map((p, i) => (
-            <article key={p.title} className={`${styles.pillar} hover-blue`}>
+            <article key={p.title} className={styles.pillar}>
               <div className={styles.pillarTop}>
                 <span className={styles.pillarNum}>{String(i + 1).padStart(2, "0")}</span>
                 <img alt="" src={`${A}/${p.icon}.svg`} width={p.w} height={32} />
@@ -277,7 +277,7 @@ export function WhyEconomics() {
           <p className={styles.econStatement}><T>{"We see it as the opportunity to do more with the same investment."}</T></p>
           <ul className={styles.benefits}>
             {BENEFITS.map((b) => (
-              <li key={b.title} className={`${styles.benefit} hover-blue`}>
+              <li key={b.title} className={`${styles.benefit} hover-tint`}>
                 <img alt="" src={`${A}/${b.icon}.svg`} width={26} height={26} />
                 <div>
                   <h3 className={styles.benefitTitle}><T>{b.title}</T></h3>

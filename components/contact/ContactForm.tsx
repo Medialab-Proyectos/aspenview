@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import Link from "@/components/i18n/LocaleLink";
 import { ROUTES } from "@/lib/routes";
 import styles from "./Contact.module.css";
@@ -164,6 +164,24 @@ export default function ContactForm() {
   const t = TABS[tab];
   const countries = "countries" in t ? t.countries : null;
 
+  /* C-09: the Salesforce tab adds the Country field. The other tabs keep that space free below the card, so the
+     hero (and its cover background) stays the same height when switching tabs. Company is the same label + field
+     shape as Country, so its height + the field gap is the space to hold. */
+  const companyRef = useRef<HTMLDivElement>(null);
+  const [reserve, setReserve] = useState(0);
+  useLayoutEffect(() => {
+    const el = companyRef.current;
+    if (countries || !el) return setReserve(0);
+    const measure = () => {
+      const gap = parseFloat(getComputedStyle(el.parentElement!).rowGap) || 0;
+      setReserve(Math.round(el.offsetHeight + gap));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [countries]);
+
   /* Deep links from CTAs elsewhere on the site: /contact?tab=partner&need=agentforce preselects the tab and option */
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
@@ -226,7 +244,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className={styles.card} onSubmit={onSubmit} noValidate>
+    <form className={styles.card} onSubmit={onSubmit} noValidate style={reserve ? { marginBottom: reserve } : undefined}>
       <div className={styles.cardHead}>
         <p className={styles.cardEyebrow}><T>{"How can we help you?"}</T></p>
         <div className={styles.tabs} role="tablist" aria-label={tr("Type of inquiry")}>
@@ -273,7 +291,7 @@ export default function ContactForm() {
           <input id={`${uid}-em`} name="email" type="email" placeholder="name@company.com" autoComplete="email" className={`${styles.field} ${errors.email ? styles.invalid : ""}`} aria-invalid={!!errors.email} />
           {errors.email && <p className={styles.error}><T>{errors.email}</T></p>}
         </div>
-        <div className={styles.input}>
+        <div className={styles.input} ref={companyRef}>
           <Label htmlFor={`${uid}-co`} required><T>{"Company"}</T></Label>
           <input id={`${uid}-co`} name="company" placeholder={tr("Company name")} autoComplete="organization" className={`${styles.field} ${errors.company ? styles.invalid : ""}`} aria-invalid={!!errors.company} />
           {errors.company && <p className={styles.error}><T>{errors.company}</T></p>}

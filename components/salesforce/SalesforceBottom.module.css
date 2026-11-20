@@ -477,6 +477,15 @@
 /* Use case CTAs (Excel 57) sit at the bottom of each card */
 .useCta { margin-top: auto; padding-top: 16px; }
 
+/* C-03: the label wraps inside the card instead of running past its edge (longer copy in Spanish) */
+.useCta {
+  justify-content: flex-start;
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+.useCta > :last-child { flex-shrink: 0; }
+
 /* Quick start CTAs (Excel 58) */
 .qsFootRow {
   display: flex;

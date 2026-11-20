@@ -128,7 +128,7 @@ export function WhoValues() {
         </div>
         <div className={styles.values}>
           {VALUES.map((v, i) => (
-            <article key={v.title} className={`${styles.value} hover-blue`}>
+            <article key={v.title} className={`${styles.value} hover-glow`}>
               <div className={styles.valueTop}>
                 <span className={styles.valueNum}>{String(i + 1).padStart(2, "0")}</span>
                 <img alt="" src={`${A}/${v.icon}.svg`} width={32} height={32} />

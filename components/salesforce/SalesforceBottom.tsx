@@ -70,10 +70,10 @@ export function SfDeliver() {
 /* ---------- Use cases (2405:29188) ---------- */
 const USES = [
   { icon: "uc-course-up", title: "Grow", cta: "Accelerate Growth", items: ["Sales qualification", "Pipeline intelligence", "Account research", "Next-best action"] },
-  { icon: "uc-chat-line", title: "Serve", cta: "Elevate Customer Experience", items: ["Customer support", "Case resolution", "Employee support", "Voice agents"] },
+  { icon: "uc-chat-line", title: "Serve", cta: "Elevate Experience", items: ["Customer support", "Case resolution", "Employee support", "Voice agents"] },
   { icon: "uc-plain", title: "Run", cta: "Optimize Operations", items: ["Workflow automation", "Approvals", "Operations", "Document processing"] },
-  { icon: "uc-hourglass", title: "Enable", cta: "Empower Your Teams", items: ["Knowledge assistants", "Productivity", "Internal support"] },
-  { icon: "uc-shield", title: "Protect", cta: "Strengthen Business Resilience", items: ["Compliance", "Monitoring", "Finance", "Risk"] },
+  { icon: "uc-hourglass", title: "Enable", cta: "Empower Teams", items: ["Knowledge assistants", "Productivity", "Internal support"] },
+  { icon: "uc-shield", title: "Protect", cta: "Strengthen Resilience", items: ["Compliance", "Monitoring", "Finance", "Risk"] },
 ];
 
 export function SfUseCases() {

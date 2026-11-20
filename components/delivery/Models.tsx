@@ -149,7 +149,7 @@ export function MdDifference() {
         </div>
         <div className={styles.diffs}>
           {DIFF.map((d) => (
-            <article key={d.title} className={`${styles.diff} hover-blue`}>
+            <article key={d.title} className={`${styles.diff} hover-lift`}>
               <span className={styles.diffRing}>
                 <img alt="" src={`${A}/${d.icon}.svg`} width={32} height={32} />
               </span>

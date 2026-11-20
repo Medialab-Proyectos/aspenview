@@ -234,7 +234,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
-  align-items: center;
+  align-items: stretch; /* C-02: the tallest card sets the row height, the others stretch to it */
   justify-content: space-between;
   padding-block: var(--pad-section-y);
 }
@@ -299,6 +299,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  align-items: flex-start; /* C-01: each card sizes to its own content, so opening one doesn't stretch the others */
   gap: var(--gap-subtitle-to-texts);
   width: 100%;
 }
@@ -308,6 +309,7 @@
   flex: 1 0 0;
   flex-wrap: wrap;
   align-content: flex-start;
+  align-items: flex-start;
   gap: 16px;
   min-width: 600px;
 }
@@ -316,10 +318,8 @@
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 32px;
+  gap: 32px; /* C-01: with Capabilities closed, "Explore…" follows right after it */
   min-width: 300px;
-  min-height: 797px;
   padding: var(--card-m-x) var(--card-s-x) var(--card-m-y);
   background: #fff;
 }
@@ -443,10 +443,9 @@
   letter-spacing: -0.4px;
 }
 
+/* block, not flex: a closed <details> still counts its hidden content as a flex item and adds an empty gap (C-01) */
 .productCaps {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-subtitle-to-texts);
+  display: block;
 }
 
 .productCaps .capList { margin-top: var(--gap-subtitle-to-texts); }
