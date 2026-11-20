@@ -125,7 +125,8 @@
 .heroTitle {
   font-size: var(--text-main-title);
   font-weight: 300;
-  line-height: 0.938;
+  /* Figma text style "Main Title - Light" (1.1); the 93.8% override looked cramped */
+  line-height: 1.1;
   letter-spacing: -0.04em;
 }
 
@@ -684,7 +685,6 @@
   .heroCopy { flex: 0 1 460px; }
   .heroMedia { flex: 0 0 260px; }
   .heroGlow { left: calc(100% - 140px); top: 120px; width: 900px; height: 900px; }
-  .heroTitle { line-height: 1; }
   .stat { padding: 32px; }
 
   .aureum { flex-direction: column; align-items: flex-start; gap: 16px; }
