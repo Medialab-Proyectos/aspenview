@@ -27,7 +27,7 @@ const TABS = [
   },
   {
     key: "partner",
-    label: "Salesforce / Ai agents",
+    label: "Salesforce solutions",
     title: "Let's Explore a Partnership",
     intro: "Discover opportunities to collaborate and grow together.",
     question: "What would you like your AI agent to help you achieve?",
