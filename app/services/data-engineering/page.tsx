@@ -56,9 +56,9 @@ export default function DataEngineeringPage() {
             ),
             text: "Bring fragmented data into one continuous discipline, from raw information to trusted decisions.",
             tags: ["Systems", "Integrations", "Trust"],
-            label: "FOUNDATION",
+            label: "FRAGMENTATION",
             shortTitle: "Fragmented Systems",
-            shortText: "Data lives across disconnected platforms and pipelines.",
+            shortText: "Disconnected systems hold AI initiatives back.",
           },
           side: [
             {
@@ -69,11 +69,11 @@ export default function DataEngineeringPage() {
               expanded: {
                 title: (
                   <>
-                    Reliable Data, <strong>Reliable AI</strong>
+                    Trusted AI Starts With <strong>Trusted Data</strong>
                   </>
                 ),
-                text: "AI ambitions depend on reliable data. Inconsistent quality undermines every model, report and decision built on top of it.",
-                tags: ["Quality", "Consistency", "Accuracy"],
+                text: "Building more AI on top of an unreliable data foundation doesn’t solve the problem. It amplifies it.",
+                tags: [],
               },
             },
             {
@@ -84,11 +84,11 @@ export default function DataEngineeringPage() {
               expanded: {
                 title: (
                   <>
-                    Governance That <strong>Builds Trust</strong>
+                    Build Intelligence on <strong>Governed Data</strong>
                   </>
                 ),
-                text: "Trust requires lineage, consistency and control across every source, pipeline and decision.",
-                tags: ["Lineage", "Control", "Compliance"],
+                text: "Improve trust, consistency, lineage and control across the data lifecycle.",
+                tags: [],
               },
             },
           ],

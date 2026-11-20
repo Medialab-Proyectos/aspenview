@@ -78,14 +78,17 @@ export default function Challenge({ data }: { data: ChallengeData }) {
                     <div key="open" className={styles.bodyIn}>
                       <h3 className={styles.openTitle}>{c.open.title}</h3>
                       <p className={styles.openText}>{c.open.text}</p>
-                      <ul className={styles.tags}>
-                        {c.open.tags.map((t) => (
-                          <li key={t} className={styles.tag}>
-                            <img alt="" src="/assets/icons/dot-bright.svg" width={6} height={6} />
-                            {t}
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Figma only defines tags for the first card's open state */}
+                      {c.open.tags.length > 0 && (
+                        <ul className={styles.tags}>
+                          {c.open.tags.map((t) => (
+                            <li key={t} className={styles.tag}>
+                              <img alt="" src="/assets/icons/dot-bright.svg" width={6} height={6} />
+                              {t}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   ) : (
                     <div key="short" className={styles.bodyIn}>

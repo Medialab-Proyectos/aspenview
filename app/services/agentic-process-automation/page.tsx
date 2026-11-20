@@ -62,7 +62,7 @@ export default function AgenticAutomationPage() {
             tags: ["Emails", "Documents", "Conversations"],
             label: "UNSTRUCTURED WORK",
             shortTitle: "Unstructured Information",
-            shortText: "Emails, documents and conversations don’t fit fixed scripts.",
+            shortText: "Emails, documents and conversations resist fixed scripts.",
           },
           side: [
             {
@@ -73,11 +73,11 @@ export default function AgenticAutomationPage() {
               expanded: {
                 title: (
                   <>
-                    Handle Exceptions, <strong>Not Just Rules</strong>
+                    Adapt When <strong>the Path Changes</strong>
                   </>
                 ),
-                text: "Enterprise work rarely follows one predictable path. Agents reason through exceptions and escalate judgement calls instead of breaking on them.",
-                tags: ["Exceptions", "Decisions", "Escalations"],
+                text: "Introduce reasoning into workflows that require context, exceptions and judgment.",
+                tags: [],
               },
             },
             {
@@ -88,11 +88,11 @@ export default function AgenticAutomationPage() {
               expanded: {
                 title: (
                   <>
-                    Governance <strong>at Every Action</strong>
+                    Keep Every Action <strong>Under Control</strong>
                   </>
                 ),
-                text: "Intelligent automation needs control beyond policy: permissions, audit trails and human oversight on every step agents take.",
-                tags: ["Permissions", "Audit", "Oversight"],
+                text: "Scope permissions, audit actions and revoke access as operational needs change.",
+                tags: [],
               },
             },
           ],

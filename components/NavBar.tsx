@@ -14,10 +14,11 @@ import {
   ROUTES,
   SERVICES_MENU,
   SIDEBAR_GROUPS,
+  STRATEGY_MENU,
   type NavLink,
 } from "@/lib/routes";
 
-type MenuId = "services" | "deliver" | "ai" | "about" | "lang";
+type MenuId = "services" | "strategy" | "deliver" | "ai" | "about" | "lang";
 
 const dropdownMotion = {
   initial: { opacity: 0, y: -6 },
@@ -146,10 +147,11 @@ export default function NavBar() {
               </div>
             </NavItem>
 
-            <Link href={ROUTES.strategy} className={`${styles.navBtn} ${styles.navBtnWide}`}>
-              <span>Strategy</span>
-              <MaskIcon src="/assets/nav/arrow-down-2.svg" size={20} className={styles.chev} />
-            </Link>
+            <NavItem id="strategy" label="Strategy" open={open} setOpen={setOpen} offsetX={-40} wide>
+              <div className={styles.ddSimple} style={{ width: 224 }}>
+                <LinkList links={STRATEGY_MENU} onNavigate={close} />
+              </div>
+            </NavItem>
 
             <NavItem id="deliver" label="How we deliver" open={open} setOpen={setOpen} offsetX={-50}>
               <div className={styles.ddSimple} style={{ width: 224 }}>
